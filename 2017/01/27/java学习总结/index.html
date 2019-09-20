@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="This is MyBlog Notes">
-<meta name="keywords" content="Git,merge">
+  <meta name="description" content="java学习笔记">
+<meta name="keywords" content="java,notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Git系列】01——git常用命令">
+<meta property="og:title" content="【java学习笔记】">
 <meta property="og:url" content="http://yoursite.com/2017/01/27/java学习总结/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="This is MyBlog Notes">
+<meta property="og:description" content="java学习笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T12:03:32.354Z">
+<meta property="og:updated_time" content="2019-09-20T06:01:51.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【Git系列】01——git常用命令">
-<meta name="twitter:description" content="This is MyBlog Notes">
+<meta name="twitter:title" content="【java学习笔记】">
+<meta name="twitter:description" content="java学习笔记">
   <link rel="canonical" href="http://yoursite.com/2017/01/27/java学习总结/">
 
 
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>【Git系列】01——git常用命令 | MyBlog</title>
+  <title>【java学习笔记】 | MyBlog</title>
   
 
 
@@ -250,7 +250,7 @@
       <meta itemprop="name" content="MyBlog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">【Git系列】01——git常用命令
+        <h1 class="post-title" itemprop="name headline">【java学习笔记】
 
           
         </h1>
@@ -277,7 +277,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 12:03:32" itemprop="dateModified" datetime="2019-09-19T12:03:32Z">2019-09-19</time>
+                <time title="修改时间：2019-09-20 06:01:51" itemprop="dateModified" datetime="2019-09-20T06:01:51Z">2019-09-20</time>
               </span>
             
           
@@ -287,7 +287,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
@@ -306,7 +306,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>java学习笔记</p>
+<a id="more"></a>
+<p>  1.this和super</p>
+<pre><code>作用:
+    this: 区分本类的成员变量和局部变量同名情况
+    super:区分父类的成员变量和局部变量同名情况
+
+用法:
+    this.成员变量名;//访问本类的成员变量
+    this.成员方法名();//调用本类成员方法(this可以省略)
+
+    super.成员变量名;//访问父类的成员变量
+    super.成员方法名();//调用父类的成员方法(super不可以省略)</code></pre><p>  2.扩展:<br>            this(参数);//调用本类的其他构造,具体是哪一个构造,由参数类型决定<br>            supe    r(参数)://调用父类的构造,具体哪一个构造,由参数类型决定<br>                结论:a.子类中任何一个构造,都会无条件先调用父类的无参构造<br>                    b.我们可以通过 super(参数),调用父类中指定参数的构造<br>  3.方法的重写:<br>        在子类从 出现了和父类一模一样的方法(修饰符可以不一样) 那么子类中这个方法我们重写后的方法<br>            a.注意事项<br>                    1: 子类和父类中重写的那个方法权限可以不一样,子类方法权限&gt;=父类方法权限<br>                    2.如果父类的方法是private修饰,子类不能重写<br>            b.什么时候需要进行方法的重写<br>                    父类中方法,太low,不适用,不完善,那么子类需要自己重写他,自己实现他<br>   4.抽象类<br>            概念:<br>                什么叫抽象类: 只要一个类 是abstract修饰的那么这个类就是抽象类<br>                            和 这个类中有没有抽象方法,没有必然的联系</p>
+<pre><code>    什么叫抽象方法:
+            方法由abstract修饰,并且没有方法体的方法    
+
+    一个抽象类的 是可以没有抽象方法,那么这个类的作用不允许你创建对象
+作用:
+    不能创建对象,天生作为父类
+抽象类中的抽象方法有什么作用?
+        1.抽象类中的抽象方法不是为了调用的
+        2.为了强制子类去重写</code></pre>
     </div>
 
     
@@ -321,9 +342,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Git/" rel="tag"># Git</a>
+              <a href="/tags/java/" rel="tag"># java</a>
             
-              <a href="/tags/merge/" rel="tag"># merge</a>
+              <a href="/tags/notes/" rel="tag"># notes</a>
             
           </div>
         
