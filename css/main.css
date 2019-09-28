@@ -1674,7 +1674,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffd25c;
+  background: #7d49f0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2743,4 +2743,174 @@ header.post-header {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+/*顶部设置*/
+.header {
+  position: inherit;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+left
+  top: 0;
+  width: 60%;
+  background: #fff;
+  z-index: 99999;
+  height: 30px;
+}
+/*header渐变色背景*/
+.header {
+  background-image: linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%) !important;
+}
+/*文章```代码块顶部样式*/
+.highlight figcaption {
+  margin: 0em;
+  padding: 0.5em;
+  background: #eee;
+  border-bottom: 1px solid #e9e9e9;
+}
+.highlight figcaption a {
+  color: #5073b8;
+}
+/*修改main-inner离顶部距离，为了兼容某些特殊情况*/
+.main-inner {
+  margin-top: 0px;
+}
+/*阅读全文按钮设置*/
+.post-button .btn {
+  color: #555;
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: 15px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
+  border: none !important;
+  transition-property: unset;
+  padding: 0px 15px;
+  margin: inherit;
+}
+.post-button .btn:hover {
+  color: #fff;
+  border-radius: 3px;
+  font-size: 15px;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
+  background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+  margin: inherit;
+}
+div.post-meta {
+  font-size: 12px;
+}
+/*修改链接颜色*/
+a {
+  border-bottom: none;
+}
+/*鼠标放在链接上的样式*/
+a:hover {
+  color: #1774d1;
+  border-bottom-color: #a166ab !important;
+}
+/*文章内样式*/
+.post {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #4d9fe5;
+  background: #fff;
+}
+.post-block {
+  margin-bottom: 20px;
+}
+.post-body {
+  color: #000;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+/*菜单栏样式*/
+.site-nav-toggle {
+  margin-right: 0px;
+}
+.page-post-detail .post-title {
+  font-weight: 0;
+  font-size: 0px !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+div#posts.posts-expand {
+  border: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-bottom: 10px;
+  box-shadow: 0 0 3px #000;
+}
+.tag-cloud a:before {
+  display: none;
+}
+section._135editor {
+  display: none;
+}
+/* 文章页面 */
+h2.post-title {
+  font-weight: 600;
+  border: 0px solid #fff;
+  padding-left: 0px;
+}
+h1.post-title {
+  font-weight: 600;
+  border: 0px solid #fff;
+  padding-left: 0px;
+}
+/*文章标题字体*/
+.posts-expand .post-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+/*文章标题动态效果*/
+.posts-expand .post-title-link::before {
+  background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+/*文章的描述description*/
+.posts-expand .post-meta .post-description {
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  color: #666;
+}
+/* 代码样式设置 */
+code {
+/*color: #e96900;*/
+  padding: 3px 5px;
+  margin: 0 2px;
+  border-radius: 2px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 14px;
+}
+em {
+  color: #7f8c8d;
+}
+.posts-expand .post-body p a {
+  color: #50adea;
+  font-weight: 400;
+}
+.posts-expand .post-body ul li p {
+  text-align: left;
+}
+blockquote,
+.tip {
+  padding: 12px 24px 12px 30px;
+  margin: 2em 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  background-color: #f8f8f8;
+  position: relative;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  border-left-color: #f66;
+}
+ol,
+ul {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+p {
+  margin: 0 0;
+  letter-spacing: 1px;
 }
