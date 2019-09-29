@@ -58,14 +58,14 @@
 </script>
 
   <meta name="description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
-<meta name="keywords" content="javaweb,JDBC,notes">
+<meta name="keywords" content="notes,javaweb,JDBC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC基础学习篇--day1">
 <meta property="og:url" content="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/index.html">
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-29T06:03:38.062Z">
+<meta property="og:updated_time" content="2019-09-29T14:12:36.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC基础学习篇--day1">
 <meta name="twitter:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
@@ -277,7 +277,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-29 06:03:38" itemprop="dateModified" datetime="2019-09-29T06:03:38Z">2019-09-29</time>
+                <time title="修改时间：2019-09-29 14:12:36" itemprop="dateModified" datetime="2019-09-29T14:12:36Z">2019-09-29</time>
               </span>
             
           
@@ -308,16 +308,16 @@
       
         <p>【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解  </p>
 <a id="more"></a>
-<h2 id="主要学习内容："><a href="#主要学习内容：" class="headerlink" title="主要学习内容："></a>主要学习内容：</h2><blockquote>
-<p>JDBC基本概念<br>快速入门<br>对JDBC中各个接口和类详解  </p>
-</blockquote>
-<h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><blockquote>
-<p>基本概念：Java DateBase Connectivity Java 数据库连接，用Java语言操作数据库。JDBC的实质是由sun公司定义的一套操作数据库的接口，我们使用这套接口（JDBC编程），执行驱动jar包中的实现类。  </p>
-</blockquote>
-<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><p>  &nbsp;<strong>· 步骤</strong>：</p>
-<blockquote>
+<h2 id="主要学习内容："><a href="#主要学习内容：" class="headerlink" title="主要学习内容："></a>主要学习内容：</h2><p>&#160;&#160;1. JDBC基本概念<br>&#160;&#160;2. 快速入门<br>&#160;&#160;3. 对JDBC中各个接口和类详解  </p>
+<h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><p>基本概念：Java DateBase Connectivity Java 数据库连接，用Java语言操作数据库。JDBC的实质是由sun公司定义的一套操作数据库的接口，我们使用这套接口（JDBC编程），执行驱动jar包中的实现类。  </p>
+<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ul>
+<li>步骤  <blockquote>
 <ol>
-<li>导入驱动jar包：mysql-connector-java-5.1.37-bin.jar<br>&#160;&#160;&#160;&#160;1. 复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下<br>&#160;&#160;&#160;&#160;2. 右键–&gt;Add As Library  </li>
+<li>导入驱动jar包：mysql-connector-java-5.1.37-bin.jar  <ol>
+<li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li>
+<li>右键–&gt;Add As Library  </li>
+</ol>
+</li>
 <li>注册驱动</li>
 <li>获取数据库连接对象</li>
 <li>定义sql</li>
@@ -326,25 +326,24 @@
 <li>释放资源</li>
 </ol>
 </blockquote>
-<p>  &nbsp;<strong>· 代码</strong>：</p>
-<pre><code>public static void main(String[] args) throws Exception {
-    //1.导入驱动jar包
-    //2.注册驱动
-    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
-    //3.获取数据库的连接对象
-    Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/stu&quot;, &quot;root&quot;, &quot;root0809&quot;);
-    //4.定义sql语句
-    String sql = &quot;update account set balance =   100 where id    =   1&quot;;
-    //5.获取执行sql的对象 Statement
-    Statement stmt = conn.createStatement();
-    //6.执行sql
-    int count = stmt.executeUpdate(sql);
-    //7.处理结果
-    System.out.println(count);
-    //8.释放资源
-    stmt.close();
-    conn.close();
-}</code></pre>
+</li>
+<li>代码    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">    //1.导入驱动jar包</span><br><span class="line">    //2.注册驱动</span><br><span class="line">    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    //3.获取数据库的连接对象</span><br><span class="line">    Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/stu&quot;, &quot;root&quot;, &quot;root0809&quot;);</span><br><span class="line">    //4.定义sql语句</span><br><span class="line">    String sql = &quot;update account set balance =   100 where id    =   1&quot;;</span><br><span class="line">    //5.获取执行sql的对象 Statement</span><br><span class="line">    Statement stmt = conn.createStatement();</span><br><span class="line">    //6.执行sql</span><br><span class="line">    int count = stmt.executeUpdate(sql);</span><br><span class="line">    //7.处理结果</span><br><span class="line">    System.out.println(count);</span><br><span class="line">    //8.释放资源</span><br><span class="line">    stmt.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="各个对象详解："><a href="#各个对象详解：" class="headerlink" title="各个对象详解："></a>各个对象详解：</h3><p><strong>1.驱动管理对象：DriverManager</strong>  </p>
+<ul>
+<li>功能：</li>
+</ul>
+<blockquote>
+<ol>
+<li>注册驱动：告诉计算及使用哪一个数据驱动jar<br>   注册驱动DriverManager：static void registerDriver(Driver driver)  </li>
+<li>获取数据库连接:<br>· 方法：static Connection getConnection(String url, String user, String password)<br>· 参数介绍：<br>   url:指定连接的路径  <pre><code>语法：jdbc:mysql://ip地址(域名):端口号/数据库名称  
+例子：jdbc:mysql://localhost:3306/db3  
+细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称  </code></pre>   user:用户名<br>   password:密码  </li>
+</ol>
+</blockquote>
+
     </div>
 
     
@@ -371,11 +370,11 @@
           
           <div class="post-tags">
             
+              <a href="/tags/notes/" rel="tag"># notes</a>
+            
               <a href="/tags/javaweb/" rel="tag"># javaweb</a>
             
               <a href="/tags/JDBC/" rel="tag"># JDBC</a>
-            
-              <a href="/tags/notes/" rel="tag"># notes</a>
             
           </div>
         
@@ -442,7 +441,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要学习内容："><span class="nav-number">1.</span> <span class="nav-text">主要学习内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC："><span class="nav-number">2.</span> <span class="nav-text">JDBC：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速入门："><span class="nav-number">2.1.</span> <span class="nav-text">快速入门：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要学习内容："><span class="nav-number">1.</span> <span class="nav-text">主要学习内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC："><span class="nav-number">2.</span> <span class="nav-text">JDBC：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速入门："><span class="nav-number">2.1.</span> <span class="nav-text">快速入门：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各个对象详解："><span class="nav-number">2.2.</span> <span class="nav-text">各个对象详解：</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->

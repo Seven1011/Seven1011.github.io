@@ -1674,7 +1674,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fc2b62;
+  background: #e578ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2934,4 +2934,9 @@ pre,
   color: #4d4d4c;
   line-height: 1.6;
   margin: 0 auto 20px;
+}
+.highlight .code pre {
+  background-color: #ffded4;
+  padding-left: 10px;
+  width: 100%;
 }
