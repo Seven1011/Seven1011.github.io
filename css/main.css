@@ -402,8 +402,8 @@ body {
 }
 pre,
 .highlight {
-  background: #1d1f21;
-  color: #c5c8c6;
+  background: #f7f7f7;
+  color: #4d4d4c;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -425,13 +425,13 @@ pre {
 }
 pre code {
   background: none;
-  color: #c5c8c6;
+  color: #4d4d4c;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
 }
 .highlight *::selection {
-  background: #373b41;
+  background: #d6d6d6;
 }
 .highlight pre {
   border: 0;
@@ -450,7 +450,7 @@ pre code {
 .highlight figcaption {
   background: #eee;
   border-bottom: 1px solid #e9e9e9;
-  color: #c5c8c6;
+  color: #4d4d4c;
   line-height: 1em;
   margin: 0;
   padding: 0.5em;
@@ -464,21 +464,21 @@ pre code {
   clear: both;
 }
 .highlight figcaption a {
-  color: #c5c8c6;
+  color: #4d4d4c;
   float: right;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #c5c8c6;
+  border-bottom-color: #4d4d4c;
 }
 .highlight .gutter pre {
-  background-color: #000;
-  color: #888f96;
+  background-color: #eff2f3;
+  color: #869194;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background-color: #1d1f21;
+  background-color: #f7f7f7;
   padding-left: 10px;
   width: 100%;
 }
@@ -495,20 +495,20 @@ pre code {
   border: 0;
 }
 pre .deletion {
-  background: #800000;
+  background: #fdd;
 }
 pre .addition {
-  background: #008000;
+  background: #dfd;
 }
 pre .meta {
-  color: #f0c674;
+  color: #eab700;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #969896;
+  color: #8e908c;
 }
 pre .variable,
 pre .attribute,
@@ -523,7 +523,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c66;
+  color: #c82829;
 }
 pre .number,
 pre .preprocessor,
@@ -533,7 +533,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #de935f;
+  color: #f5871f;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -546,11 +546,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #b5bd68;
+  color: #718c00;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #8abeb7;
+  color: #3e999f;
 }
 pre .function,
 pre .python .decorator,
@@ -560,11 +560,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #81a2be;
+  color: #4271ae;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #b294bb;
+  color: #8959a8;
 }
 .blockquote-center {
   border-left: none;
@@ -1674,7 +1674,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7d49f0;
+  background: #fc2b62;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2747,7 +2747,7 @@ header.post-header {
 /*顶部设置*/
 .header {
   position: inherit;
-  background-color: #fff;
+  background-color: #bbb;
   border-bottom: 1px solid #eee;
 left
   top: 0;
@@ -2785,6 +2785,19 @@ left
   transition-property: unset;
   padding: 0px 15px;
   margin: inherit;
+}
+.posts-expand .post-meta {
+  color: #999;
+  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  margin: 3px 0 10px 0;
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  text-align: center;
+}
+.post-button {
+  margin-top: 12px;
 }
 .post-button .btn:hover {
   color: #fff;
@@ -2835,7 +2848,7 @@ div#posts.posts-expand {
   border: 0px !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   box-shadow: 0 0 3px #000;
 }
 .tag-cloud a:before {
@@ -2868,8 +2881,8 @@ h1.post-title {
 .posts-expand .post-meta .post-description {
   font-style: italic;
   font-size: 14px;
-  margin-top: 30px;
-  margin-bottom: 0px;
+  margin-top: 3px;
+  margin-bottom: 5px;
   color: #666;
 }
 /* 代码样式设置 */
@@ -2899,11 +2912,11 @@ blockquote,
   margin: 2em 0;
   border-left-width: 4px;
   border-left-style: solid;
-  background-color: #f8f8f8;
+  background-color: #fbe8e3;
   position: relative;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
-  border-left-color: #f66;
+  border-left-color: rgba(0,0,0,0.471);
 }
 ol,
 ul {
@@ -2913,4 +2926,12 @@ ul {
 p {
   margin: 0 0;
   letter-spacing: 1px;
+}
+/*代码快设置*/
+pre,
+.highlight {
+  background: #ffded4;
+  color: #4d4d4c;
+  line-height: 1.6;
+  margin: 0 auto 20px;
 }

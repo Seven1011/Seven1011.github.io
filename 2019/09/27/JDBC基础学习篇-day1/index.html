@@ -57,19 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="【转载】主要是对于Windows常用工具的一些总结">
-<meta name="keywords" content="Windows">
+  <meta name="description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
+<meta name="keywords" content="javaweb,JDBC,notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows 常用工具总结">
-<meta property="og:url" content="http://yoursite.com/2019/09/20/Windows-常用工具总结/index.html">
+<meta property="og:title" content="JDBC基础学习篇--day1">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="【转载】主要是对于Windows常用工具的一些总结">
+<meta property="og:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-29T05:48:30.274Z">
+<meta property="og:updated_time" content="2019-09-29T06:03:38.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows 常用工具总结">
-<meta name="twitter:description" content="【转载】主要是对于Windows常用工具的一些总结">
-  <link rel="canonical" href="http://yoursite.com/2019/09/20/Windows-常用工具总结/">
+<meta name="twitter:title" content="JDBC基础学习篇--day1">
+<meta name="twitter:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
+  <link rel="canonical" href="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/">
 
 
 <script id="page-configurations">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title>Windows 常用工具总结 | MyBlog</title>
+  <title>JDBC基础学习篇--day1 | MyBlog</title>
   
 
 
@@ -240,7 +240,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/20/Windows-常用工具总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seven">
@@ -252,7 +252,7 @@
       <meta itemprop="name" content="MyBlog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Windows 常用工具总结
+        <h1 class="post-title" itemprop="name headline">JDBC基础学习篇--day1
 
           
         </h1>
@@ -268,7 +268,7 @@
                 
               
 
-              <time title="创建时间：2019-09-20 13:16:28" itemprop="dateCreated datePublished" datetime="2019-09-20T13:16:28Z">2019-09-20</time>
+              <time title="创建时间：2019-09-27 09:25:27" itemprop="dateCreated datePublished" datetime="2019-09-27T09:25:27Z">2019-09-27</time>
             </span>
           
             
@@ -279,7 +279,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-29 05:48:30" itemprop="dateModified" datetime="2019-09-29T05:48:30Z">2019-09-29</time>
+                <time title="修改时间：2019-09-29 06:03:38" itemprop="dateModified" datetime="2019-09-29T06:03:38Z">2019-09-29</time>
               </span>
             
           
@@ -289,7 +289,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用工具/" itemprop="url" rel="index"><span itemprop="name">实用工具</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a></span>
 
                 
                 
@@ -308,101 +308,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>【转载】主要是对于Windows常用工具的一些总结</p>
+        <p>【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解  </p>
 <a id="more"></a>
-<p>1、文本编辑器</p>
-<pre><code>Sublime text
-Notepad++
-Visual Code
-010 Editor</code></pre><p>2、思维导图工具</p>
-<pre><code>Xmind
-processon（在线）
-draw.io (https://www.draw.io/)
-mindmaster</code></pre><p>3、模拟终端</p>
-<pre><code>MobaXterm
-Xshell(公司开发环境需要购买)
-putty
-securecrt
-WinSCP（SFTP）
-mRemoteNG（推荐使用）
-Powershell
-Terminus</code></pre><p>4、代码管理</p>
-<pre><code>git
-smartGit
-sourceTree
-TortoiseGit
-github（代码仓库托管服务器）
-GitKraken (https://hk.saowen.com/a/1d3ec665c78e3ffc51efdd396acc2a062970131afe4d2539010fb19de494440b)</code></pre><p>5、云工具</p>
-<pre><code>有道云笔记
-百度云</code></pre><p>6、浏览器</p>
-<pre><code>Chrome插件：
-Adblock Plus（广告屏蔽）
-Google翻译
-JSON Editor（JSON数据格式化插件）
-JSON-handle（浏览器窗口JSON数据的查看，相当nice！）
-Octotree（Github or GitLab的code tree插件）
-Postman
-Advanced REST client（推荐使用）
-Bookmarks clean up（便签维护插件）
-EditThisCookie（Cookie编辑插件）
-Wappalyzer（网站实现技术解析）
-ElasticSearch Head
-Tampermonkey
-Wappalyzer
-
-FireFox：
-RESTClient
-HttpRequester
-Firebug
-Elegant JSON Editor</code></pre><p>7、屏幕截取工具</p>
-<pre><code>FastStone Capture</code></pre><p>8、文件查找工具</p>
-<pre><code>Everything</code></pre><p>9、文件数据对比工具</p>
-<pre><code>Beyond Compare 4</code></pre><p>10、XML文件</p>
-<pre><code>xml spy</code></pre><p>11、REST API工具</p>
-<pre><code>Insomnia REST Client</code></pre><p>12、Java开发环境</p>
-<pre><code>JDK
-Maven
-IDEA
-Eclipse</code></pre><p>13、正则表达在线工具</p>
-<pre><code>Regulex (https://jex.im/regulex/)</code></pre><p>14、抓包工具</p>
-<pre><code>Fiddler
-Wireshark</code></pre><p>15、文件资源管理器</p>
-<pre><code>Q-Dir
-freecommander 
-参考链接：http://www.appinn.com/my-love-files-explorer-final/</code></pre><p>16、Markdown文本编辑器</p>
-<pre><code>MarkdownPad
-参考链接：http://www.williamlong.info/archives/4319.html
-Visual Code</code></pre><p>17、代码工具</p>
-<pre><code>searchcode（代码库）
-链接地址：https://searchcode.com/
-Sourcegraph for GitHub（谷歌插件）</code></pre><p>18、文件同步</p>
-<pre><code>filegee + 百度云
-http://www.aiwanba.net/post/985.html
-GoodSync(WRH-LCZ-CJ8-1U5)
-https://sharewareonsale.com/checkout/order-received/11055457?key=wc_order_5af4dd998c8f0</code></pre><p>19、系统环境变量</p>
-<pre><code>EnvMan</code></pre><p>20、PDF工具</p>
-<pre><code>PDFsam(https://pdfsam.org/zh/)</code></pre><p>21、系统工具</p>
-<pre><code>EasyBCD(系统引导设置与管理的免费软件，可以用来装双系统、管理系统引导项http://neosmart.net/EasyBCD/)
-分区助手</code></pre><p>22、renamer lite（批量修改文件名）</p>
-<p>23、数据库工具</p>
-<pre><code>Navicat Premium
-MySQL（SQLyog）
-Razorsql 
-ETL(kettle)
-dbvisualizer
-Excel2Mysql
-Redis Desktop Manager
-DataGrip</code></pre><p>24、任务清单</p>
-<pre><code>Notion
-https://www.notion.so/desktop
-Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3%80%90Windows%E3%80%9101%E2%80%94%E2%80%94%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" target="_blank" rel="noopener">原文链接</a></p>
-
+<h2 id="主要学习内容："><a href="#主要学习内容：" class="headerlink" title="主要学习内容："></a>主要学习内容：</h2><blockquote>
+<p>JDBC基本概念<br>快速入门<br>对JDBC中各个接口和类详解  </p>
+</blockquote>
+<h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><blockquote>
+<p>基本概念：Java DateBase Connectivity Java 数据库连接，用Java语言操作数据库。JDBC的实质是由sun公司定义的一套操作数据库的接口，我们使用这套接口（JDBC编程），执行驱动jar包中的实现类。  </p>
+</blockquote>
+<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><p>  &nbsp;<strong>· 步骤</strong>：</p>
+<blockquote>
+<ol>
+<li>导入驱动jar包：mysql-connector-java-5.1.37-bin.jar<br>&#160;&#160;&#160;&#160;1. 复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下<br>&#160;&#160;&#160;&#160;2. 右键–&gt;Add As Library  </li>
+<li>注册驱动</li>
+<li>获取数据库连接对象</li>
+<li>定义sql</li>
+<li>执行sql，接受返回结果</li>
+<li>处理结果</li>
+<li>释放资源</li>
+</ol>
+</blockquote>
+<p>  &nbsp;<strong>· 代码</strong>：</p>
+<pre><code>public static void main(String[] args) throws Exception {
+    //1.导入驱动jar包
+    //2.注册驱动
+    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+    //3.获取数据库的连接对象
+    Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/stu&quot;, &quot;root&quot;, &quot;root0809&quot;);
+    //4.定义sql语句
+    String sql = &quot;update account set balance =   100 where id    =   1&quot;;
+    //5.获取执行sql的对象 Statement
+    Statement stmt = conn.createStatement();
+    //6.执行sql
+    int count = stmt.executeUpdate(sql);
+    //7.处理结果
+    System.out.println(count);
+    //8.释放资源
+    stmt.close();
+    conn.close();
+}</code></pre>
     </div>
 
     
     
     
       
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2017\01\27\java学习总结\" rel="bookmark">【java学习笔记】</a></div>
+      
+    </li>
+  
+  </ul>
 
         
       
@@ -413,7 +373,11 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
           
           <div class="post-tags">
             
-              <a href="/tags/Windows/" rel="tag"># Windows</a>
+              <a href="/tags/javaweb/" rel="tag"># javaweb</a>
+            
+              <a href="/tags/JDBC/" rel="tag"># JDBC</a>
+            
+              <a href="/tags/notes/" rel="tag"># notes</a>
             
           </div>
         
@@ -423,8 +387,8 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2017/01/27/java学习总结/" rel="next" title="【java学习笔记】">
-                  <i class="fa fa-chevron-left"></i> 【java学习笔记】
+                <a href="/2019/09/20/Windows-常用工具总结/" rel="next" title="Windows 常用工具总结">
+                  <i class="fa fa-chevron-left"></i> Windows 常用工具总结
                 </a>
               
             </div>
@@ -432,10 +396,6 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/27/JDBC基础学习篇-day1/" rel="prev" title="JDBC基础学习篇--day1">
-                  JDBC基础学习篇--day1 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -484,6 +444,8 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要学习内容："><span class="nav-number">1.</span> <span class="nav-text">主要学习内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC："><span class="nav-number">2.</span> <span class="nav-text">JDBC：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速入门："><span class="nav-number">2.1.</span> <span class="nav-text">快速入门：</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
