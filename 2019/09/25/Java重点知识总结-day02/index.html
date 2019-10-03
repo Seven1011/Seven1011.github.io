@@ -57,19 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
-<meta name="keywords" content="notes,javaweb,JDBC">
+  <meta name="description" content="【介绍】java学习过程中重点知识的总结-第二天">
+<meta name="keywords" content="java,notes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC基础学习篇--day1">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/index.html">
+<meta property="og:title" content="Java重点知识总结-day02">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/Java重点知识总结-day02/index.html">
 <meta property="og:site_name" content="Sevenの博客">
-<meta property="og:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
+<meta property="og:description" content="【介绍】java学习过程中重点知识的总结-第二天">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-30T13:15:00.461Z">
+<meta property="og:updated_time" content="2019-10-02T07:30:31.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC基础学习篇--day1">
-<meta name="twitter:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
-  <link rel="canonical" href="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/">
+<meta name="twitter:title" content="Java重点知识总结-day02">
+<meta name="twitter:description" content="【介绍】java学习过程中重点知识的总结-第二天">
+  <link rel="canonical" href="http://yoursite.com/2019/09/25/Java重点知识总结-day02/">
 
 
 <script id="page-configurations">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title>JDBC基础学习篇--day1 | Sevenの博客</title>
+  <title>Java重点知识总结-day02 | Sevenの博客</title>
   
 
 
@@ -238,7 +238,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/Java重点知识总结-day02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seven">
@@ -250,7 +250,7 @@
       <meta itemprop="name" content="Sevenの博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">JDBC基础学习篇--day1
+        <h1 class="post-title" itemprop="name headline">Java重点知识总结-day02
 
           
         </h1>
@@ -266,7 +266,7 @@
                 
               
 
-              <time title="创建时间：2019-09-27 09:25:27" itemprop="dateCreated datePublished" datetime="2019-09-27T09:25:27Z">2019-09-27</time>
+              <time title="创建时间：2019-09-25 09:13:51" itemprop="dateCreated datePublished" datetime="2019-09-25T09:13:51Z">2019-09-25</time>
             </span>
           
             
@@ -277,7 +277,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-30 13:15:00" itemprop="dateModified" datetime="2019-09-30T13:15:00Z">2019-09-30</time>
+                <time title="修改时间：2019-10-02 07:30:31" itemprop="dateModified" datetime="2019-10-02T07:30:31Z">2019-10-02</time>
               </span>
             
           
@@ -287,7 +287,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
@@ -306,66 +306,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解  </p>
+        <p>【介绍】java学习过程中重点知识的总结-第二天</p>
 <a id="more"></a>
-<h2 id="主要学习内容："><a href="#主要学习内容：" class="headerlink" title="主要学习内容："></a>主要学习内容：</h2><p>&#160;&#160;1. JDBC基本概念<br>&#160;&#160;2. 快速入门<br>&#160;&#160;3. 对JDBC中各个接口和类详解  </p>
-<h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><p>基本概念：Java DateBase Connectivity Java 数据库连接，用Java语言操作数据库。JDBC的实质是由sun公司定义的一套操作数据库的接口，我们使用这套接口（JDBC编程），执行驱动jar包中的实现类。  </p>
-<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ul>
-<li>步骤  <blockquote>
-<ol>
-<li>导入驱动jar包：mysql-connector-java-5.1.37-bin.jar  <ol>
-<li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li>
-<li>右键–&gt;Add As Library  </li>
-</ol>
-</li>
-<li>注册驱动</li>
-<li>获取数据库连接对象</li>
-<li>定义sql</li>
-<li>执行sql，接受返回结果</li>
-<li>处理结果</li>
-<li>释放资源</li>
-</ol>
-</blockquote>
-</li>
-<li>代码    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">    //1.导入驱动jar包</span><br><span class="line">    //2.注册驱动</span><br><span class="line">    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    //3.获取数据库的连接对象</span><br><span class="line">    Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/stu&quot;, &quot;root&quot;, &quot;root0809&quot;);</span><br><span class="line">    //4.定义sql语句</span><br><span class="line">    String sql = &quot;update account set balance =   100 where id    =   1&quot;;</span><br><span class="line">    //5.获取执行sql的对象 Statement</span><br><span class="line">    Statement stmt = conn.createStatement();</span><br><span class="line">    //6.执行sql</span><br><span class="line">    int count = stmt.executeUpdate(sql);</span><br><span class="line">    //7.处理结果</span><br><span class="line">    System.out.println(count);</span><br><span class="line">    //8.释放资源</span><br><span class="line">    stmt.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-this和super"><a href="#1-this和super" class="headerlink" title="1.this和super"></a>1.this和super</h4><pre><code>- 作用:
+    this: 区分本类的成员变量和局部变量同名情况
+    super:区分父类的成员变量和局部变量同名情况
 
-</li>
-</ul>
-<h3 id="各个对象详解："><a href="#各个对象详解：" class="headerlink" title="各个对象详解："></a>各个对象详解：</h3><h4 id="1-驱动管理对象：DriverManager"><a href="#1-驱动管理对象：DriverManager" class="headerlink" title="1.驱动管理对象：DriverManager"></a>1.驱动管理对象：DriverManager</h4><ul>
-<li>功能：</li>
-</ul>
-<blockquote>
-<ol>
-<li>注册驱动：告诉计算及使用哪一个数据驱动jar<br>   注册驱动DriverManager：static void registerDriver(Driver driver)  </li>
-<li>获取数据库连接:<br>· 方法：static Connection getConnection(String url, String user, String password)<br>· 参数介绍：  <pre><code>url:指定连接的路径  
-      语法：jdbc:mysql://ip地址(域名):端口号/数据库名称  
-      例子：jdbc:mysql://localhost:3306/db3  
-      细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称  
-user:用户名  
-password:密码  </code></pre></li>
-</ol>
-</blockquote>
-<h4 id="2-数据库连接对象：Connection"><a href="#2-数据库连接对象：Connection" class="headerlink" title="2.数据库连接对象：Connection"></a>2.数据库连接对象：Connection</h4><ul>
-<li>功能<br>   1.获取执行sql的对象<pre><code>· Statement creatStatement()
-· PreparedStatement prepareStatement(String sql)</code></pre>   2.管理事物：<pre><code>* 开启事务：setAutoCommit(boolean autoCommit):调用该方法设置参数为false，即开启事务。
-* 提交事务：commit()
-* 回滚事务：roolback()  </code></pre>   3.Statement:执行sql的对象<pre><code>1.执行sql
-    1.boolean execute(String sql):可以执行任意的sql
-    2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句
-          * 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。
-    3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句</code></pre>   4.ResultSet:结果及对象，封装查询结果<pre><code>* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
-* getXxx(参数):获取数据
-    * Xxx：代表数据类型   如： int getInt() ,    String getString()
-    * 参数：
-        1. int：代表列的编号,从1开始   如： getString(1)
-        2. String：代表列名称。 如： getDouble(&quot;balance&quot;)
-* 注意：
-    * 使用步骤：
-        1. 游标向下移动一行
-        2. 判断是否有数据
-        3. 获取数据</code></pre></li>
-</ul>
+- 用法:
+    this.成员变量名;//访问本类的成员变量
+    this.成员方法名();//调用本类成员方法(this可以省略)
+    super.成员变量名;//访问父类的成员变量
+    super.成员方法名();//调用父类的成员方法(super不可以省略)</code></pre><h4 id="2-扩展"><a href="#2-扩展" class="headerlink" title="2.扩展:"></a>2.扩展:</h4><pre><code>this(参数);//调用本类的其他构造,具体是哪一个构造,由参数类型决定
+super(参数)://调用父类的构造,具体哪一个构造,由参数类型决定
 
+结论:a.子类中任何一个构造,都会无条件先调用父类的无参构造
+        b.我们可以通过 super(参数),调用父类中指定参数的构造</code></pre><h4 id="3-方法的重写"><a href="#3-方法的重写" class="headerlink" title="3.方法的重写:"></a>3.方法的重写:</h4><pre><code>- 在子类从 出现了和父类一模一样的方法(修饰符可以不一样) 那么子类中这个方法我们重写后的方法
+     a.注意事项
+            1: 子类和父类中重写的那个方法权限可以不一样,子类方法权限&gt;=父类方法权限
+            2.如果父类的方法是private修饰,子类不能重写
+     b.什么时候需要进行方法的重写
+            父类中方法,太low,不适用,不完善,那么子类需要自己重写他,自己实现他</code></pre><h4 id="4-抽象类"><a href="#4-抽象类" class="headerlink" title="4.抽象类"></a>4.抽象类</h4><pre><code>- 概念:
+    什么叫抽象类: 只要一个类 是abstract修饰的那么这个类就是抽象类和这个类中有没有抽象
+                 方法,没有必然的联系
+    什么叫抽象方法:
+                 方法由abstract修饰,并且没有方法体的方法    
+                一个抽象类的 是可以没有抽象方法,那么这个类的作用不允许你创建对象  
+- 作用:
+             不能创建对象,天生作为父类
+- 抽象类中的抽象方法有什么作用?
+        1.抽象类中的抽象方法不是为了调用的
+        2.为了强制子类去重写</code></pre>
     </div>
 
     
@@ -384,14 +354,14 @@ password:密码  </code></pre></li>
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="\2019\09\25\Java重点知识总结-day02\" rel="bookmark">Java重点知识总结-day02</a></div>
+      <div class="popular-posts-title"><a href="\2019\09\26\Java重点知识总结-day03\" rel="bookmark">Java重点知识总结-day03</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="\2019\09\26\Java重点知识总结-day03\" rel="bookmark">Java重点知识总结-day03</a></div>
+      <div class="popular-posts-title"><a href="\2019\09\27\JDBC基础学习篇-day1\" rel="bookmark">JDBC基础学习篇--day1</a></div>
       
     </li>
   
@@ -406,11 +376,9 @@ password:密码  </code></pre></li>
           
           <div class="post-tags">
             
+              <a href="/tags/java/" rel="tag"># java</a>
+            
               <a href="/tags/notes/" rel="tag"># notes</a>
-            
-              <a href="/tags/javaweb/" rel="tag"># javaweb</a>
-            
-              <a href="/tags/JDBC/" rel="tag"># JDBC</a>
             
           </div>
         
@@ -420,8 +388,8 @@ password:密码  </code></pre></li>
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/26/Java重点知识总结-day03/" rel="next" title="Java重点知识总结-day03">
-                  <i class="fa fa-chevron-left"></i> Java重点知识总结-day03
+                <a href="/2019/09/24/Java重点知识总结-day01/" rel="next" title="Java重点知识总结-day01">
+                  <i class="fa fa-chevron-left"></i> Java重点知识总结-day01
                 </a>
               
             </div>
@@ -429,6 +397,10 @@ password:密码  </code></pre></li>
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/09/26/Java重点知识总结-day03/" rel="prev" title="Java重点知识总结-day03">
+                  Java重点知识总结-day03 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -477,7 +449,7 @@ password:密码  </code></pre></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要学习内容："><span class="nav-number">1.</span> <span class="nav-text">主要学习内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC："><span class="nav-number">2.</span> <span class="nav-text">JDBC：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速入门："><span class="nav-number">2.1.</span> <span class="nav-text">快速入门：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各个对象详解："><span class="nav-number">2.2.</span> <span class="nav-text">各个对象详解：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-驱动管理对象：DriverManager"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.驱动管理对象：DriverManager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-数据库连接对象：Connection"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.数据库连接对象：Connection</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-this和super"><span class="nav-number">1.</span> <span class="nav-text">1.this和super</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-扩展"><span class="nav-number">2.</span> <span class="nav-text">2.扩展:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-方法的重写"><span class="nav-number">3.</span> <span class="nav-text">3.方法的重写:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-抽象类"><span class="nav-number">4.</span> <span class="nav-text">4.抽象类</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
