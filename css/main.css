@@ -1678,7 +1678,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b4e38f;
+  background: #03fe30;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2748,8 +2748,8 @@ header.post-header {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.7);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.7);
 }
 /*修改main-inner离顶部距离，为了兼容某些特殊情况*/
 .main-inner {
@@ -2893,7 +2893,7 @@ blockquote,
   margin: 2em 0;
   border-left-width: 4px;
   border-left-style: solid;
-  background-color: #fbe8e3;
+  background-color: #d0cabf;
   position: relative;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
@@ -2911,13 +2911,13 @@ p {
 /*代码快设置*/
 pre,
 .highlight {
-  background: #ffded4;
+  background: #c5c1b9;
   color: #4d4d4c;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
 .highlight .code pre {
-  background-color: #ffded4;
+  background-color: #c5c1b9;
   padding-left: 10px;
   width: 100%;
 }
@@ -2968,4 +2968,8 @@ body {
 .footer {
   color: #c18;
   font-size: 0.875em;
+}
+.main-inner {
+  background: #fff;
+  opacity: 0.8;
 }
