@@ -57,19 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="【介绍】java学习过程中重点知识的总结-第二天">
-<meta name="keywords" content="notes,java">
+  <meta name="description" content="【介绍】MySQL基础知识的总结">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java重点知识总结-day02">
-<meta property="og:url" content="http://yoursite.com/2019/09/25/Java重点知识总结-day02/index.html">
+<meta property="og:title" content="MySQL重点知识总结">
+<meta property="og:url" content="http://yoursite.com/2019/10/08/MySQL重点知识总结/index.html">
 <meta property="og:site_name" content="Sevenの博客">
-<meta property="og:description" content="【介绍】java学习过程中重点知识的总结-第二天">
+<meta property="og:description" content="【介绍】MySQL基础知识的总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-02T07:30:31.016Z">
+<meta property="og:updated_time" content="2019-10-07T13:06:07.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java重点知识总结-day02">
-<meta name="twitter:description" content="【介绍】java学习过程中重点知识的总结-第二天">
-  <link rel="canonical" href="http://yoursite.com/2019/09/25/Java重点知识总结-day02/">
+<meta name="twitter:title" content="MySQL重点知识总结">
+<meta name="twitter:description" content="【介绍】MySQL基础知识的总结">
+  <link rel="canonical" href="http://yoursite.com/2019/10/08/MySQL重点知识总结/">
 
 
 <script id="page-configurations">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title>Java重点知识总结-day02 | Sevenの博客</title>
+  <title>MySQL重点知识总结 | Sevenの博客</title>
   
 
 
@@ -224,7 +224,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/Java重点知识总结-day02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/MySQL重点知识总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seven">
@@ -236,7 +236,7 @@
       <meta itemprop="name" content="Sevenの博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Java重点知识总结-day02
+        <h1 class="post-title" itemprop="name headline">MySQL重点知识总结
 
           
         </h1>
@@ -252,19 +252,11 @@
                 
               
 
-              <time title="创建时间：2019-09-25 09:13:51" itemprop="dateCreated datePublished" datetime="2019-09-25T09:13:51Z">2019-09-25</time>
+              <time title="创建时间：2019-10-07 19:39:35 / 修改时间：13:06:07" itemprop="dateCreated datePublished" datetime="2019-10-07T19:39:35Z">2019-10-07</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-02 07:30:31" itemprop="dateModified" datetime="2019-10-02T07:30:31Z">2019-10-02</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -273,7 +265,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
 
                 
                 
@@ -300,36 +292,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>【介绍】java学习过程中重点知识的总结-第二天</p>
+        <p>【介绍】MySQL基础知识的总结</p>
 <a id="more"></a>
-<h4 id="1-this和super"><a href="#1-this和super" class="headerlink" title="1.this和super"></a>1.this和super</h4><pre><code>- 作用:
-    this: 区分本类的成员变量和局部变量同名情况
-    super:区分父类的成员变量和局部变量同名情况
+<h1 id="1、数据库的基本概念"><a href="#1、数据库的基本概念" class="headerlink" title="1、数据库的基本概念"></a>1、数据库的基本概念</h1><ul>
+<li>维基百科定义<blockquote>
+<p>所谓“数据库”系以一定方式储存在一起、能予多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。一个数据库由多个表空间（Tablespace）构成。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li><p>数据库的英文单词：</p>
+<pre><code>DateBase  简称  DB</code></pre></li>
+<li><p>什么是数据库</p>
+<pre><code>用于存储和管理数据的仓库</code></pre></li>
+<li><p>数据库的特点  </p>
+<pre><code>1. 持久化存储数据的，其实数据库就是一个文件系统
+2. 方便存储和管理数据的
+3. 使用统一的方式操作数据库  --SQL</code></pre></li>
+</ol>
+<h1 id="2、MySQL数据库软件"><a href="#2、MySQL数据库软件" class="headerlink" title="2、MySQL数据库软件"></a>2、MySQL数据库软件</h1><ul>
+<li>常见的数据库软件  mysql、oracle、sqlserver、sqlite、postgreSQL等  </li>
+<li>安装–卸载–配置</li>
+</ul>
+<h1 id="3、SQL"><a href="#3、SQL" class="headerlink" title="3、SQL"></a>3、SQL</h1><ol>
+<li><p>什么是SQL</p>
+<pre><code>Structured  Query  Language: 结构化查询语言
+其实就是定义了操作类型数据库的规则，每一种数据库操作的方式存在不一样的地方，被称为“方言”。</code></pre></li>
+<li><p>SQL通用语法</p>
+<pre><code>1. SQL语句可以单行或多行书写，以分号结尾
+2. 可以使用空格和缩进来增强语句的可持续性
+3. MySQL数据库的SQL语句不区分大小写，关键字建议使用大写
+4. 注释
+        · 单行注释：  -- 注释的内容
+                  或  # 注释的内容 （mysql特有）
+        · 多行注释： / * 注释的内容 * /</code></pre></li>
+<li><p>SQL分类</p>
+<pre><code>1. DDL(Date Definition Language) 数据定义语言
+    用来定义数据库对象：数据库、表、列等
+               关键字：crate drop alter
+2. DML(Date Manipulation Language) 数据操作语言
+    用来对数据库中表的数据进行增删改
+              关键字：insert delete update
+3. DQL(Date Query Language) 数据库查询语言
+    用来查询数据库表的记录(数据)
+             关键字：select where
+4. DCL(Date Control Language) 数据库控制语言
+    用来定义数据库的访问权限和安全级别及创建用户
+             关键字： GRANT REVOKE等</code></pre><h2 id="DDL：操作数据库、表"><a href="#DDL：操作数据库、表" class="headerlink" title="DDL：操作数据库、表"></a>DDL：操作数据库、表</h2><pre><code>操作数据库：CRUD</code></pre></li>
+</ol>
+<h3 id="1-C-Creat-创建"><a href="#1-C-Creat-创建" class="headerlink" title="1.C(Creat):创建"></a>1.C(Creat):创建</h3><ul>
+<li>创建数据库：CRUD<pre><code>create database 数据库名称</code></pre></li>
+<li>创建数据库 判断不存在 再进行创建<pre><code>create database if not exists  ···名称</code></pre></li>
+<li>创建数据库，并指定字符集<pre><code>create database 数据库名称 character set 字符集合</code></pre><h3 id="2-R-Rrtrieve-查询"><a href="#2-R-Rrtrieve-查询" class="headerlink" title="2.R(Rrtrieve):查询"></a>2.R(Rrtrieve):查询</h3></li>
+<li>查询所有数据库的名称:<pre><code>show databases;</code></pre></li>
+<li>查询某个数据库的字符集:查询某个数据库的创建语句<pre><code>show create database 数据库名称;</code></pre><h3 id="3-U-Update-修改"><a href="#3-U-Update-修改" class="headerlink" title="3.U(Update):修改"></a>3.U(Update):修改</h3></li>
+<li>修改数据库的字符集<pre><code>alter database 数据库名称 character set 字符集名称;</code></pre><h3 id="4-D-Delete-删除"><a href="#4-D-Delete-删除" class="headerlink" title="4.D(Delete):删除"></a>4.D(Delete):删除</h3></li>
+<li>删除数据库<pre><code>drop database 数据库名称;</code></pre></li>
+<li>判断数据库存在，存在再删除<pre><code>drop database if exists 数据库名称;</code></pre><h3 id="5-使用数据库"><a href="#5-使用数据库" class="headerlink" title="5.使用数据库"></a>5.使用数据库</h3></li>
+<li>查询当前正在使用的数据库名称<pre><code>select database();</code></pre></li>
+<li>使用数据库<pre><code>use 数据库名称;</code></pre></li>
+</ul>
 
-- 用法:
-    this.成员变量名;//访问本类的成员变量
-    this.成员方法名();//调用本类成员方法(this可以省略)
-    super.成员变量名;//访问父类的成员变量
-    super.成员方法名();//调用父类的成员方法(super不可以省略)</code></pre><h4 id="2-扩展"><a href="#2-扩展" class="headerlink" title="2.扩展:"></a>2.扩展:</h4><pre><code>this(参数);//调用本类的其他构造,具体是哪一个构造,由参数类型决定
-super(参数)://调用父类的构造,具体哪一个构造,由参数类型决定
-
-结论:a.子类中任何一个构造,都会无条件先调用父类的无参构造
-        b.我们可以通过 super(参数),调用父类中指定参数的构造</code></pre><h4 id="3-方法的重写"><a href="#3-方法的重写" class="headerlink" title="3.方法的重写:"></a>3.方法的重写:</h4><pre><code>- 在子类从 出现了和父类一模一样的方法(修饰符可以不一样) 那么子类中这个方法我们重写后的方法
-     a.注意事项
-            1: 子类和父类中重写的那个方法权限可以不一样,子类方法权限&gt;=父类方法权限
-            2.如果父类的方法是private修饰,子类不能重写
-     b.什么时候需要进行方法的重写
-            父类中方法,太low,不适用,不完善,那么子类需要自己重写他,自己实现他</code></pre><h4 id="4-抽象类"><a href="#4-抽象类" class="headerlink" title="4.抽象类"></a>4.抽象类</h4><pre><code>- 概念:
-    什么叫抽象类: 只要一个类 是abstract修饰的那么这个类就是抽象类和这个类中有没有抽象
-                 方法,没有必然的联系
-    什么叫抽象方法:
-                 方法由abstract修饰,并且没有方法体的方法    
-                一个抽象类的 是可以没有抽象方法,那么这个类的作用不允许你创建对象  
-- 作用:
-             不能创建对象,天生作为父类
-- 抽象类中的抽象方法有什么作用?
-        1.抽象类中的抽象方法不是为了调用的
-        2.为了强制子类去重写</code></pre>
     </div>
 
     
@@ -356,9 +379,7 @@ super(参数)://调用父类的构造,具体哪一个构造,由参数类型决�
           
           <div class="post-tags">
             
-              <a href="/tags/notes/" rel="tag"># notes</a>
-            
-              <a href="/tags/java/" rel="tag"># java</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
             
           </div>
         
@@ -368,8 +389,8 @@ super(参数)://调用父类的构造,具体哪一个构造,由参数类型决�
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/24/Java重点知识总结-day01/" rel="next" title="Java重点知识总结-day01">
-                  <i class="fa fa-chevron-left"></i> Java重点知识总结-day01
+                <a href="/2019/10/04/Java重点知识总结-day05/" rel="next" title="Java重点知识总结-day05">
+                  <i class="fa fa-chevron-left"></i> Java重点知识总结-day05
                 </a>
               
             </div>
@@ -377,10 +398,6 @@ super(参数)://调用父类的构造,具体哪一个构造,由参数类型决�
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/26/Java重点知识总结-day03/" rel="prev" title="Java重点知识总结-day03">
-                  Java重点知识总结-day03 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -429,7 +446,7 @@ super(参数)://调用父类的构造,具体哪一个构造,由参数类型决�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-this和super"><span class="nav-number">1.</span> <span class="nav-text">1.this和super</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-扩展"><span class="nav-number">2.</span> <span class="nav-text">2.扩展:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-方法的重写"><span class="nav-number">3.</span> <span class="nav-text">3.方法的重写:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-抽象类"><span class="nav-number">4.</span> <span class="nav-text">4.抽象类</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、数据库的基本概念"><span class="nav-number">1.</span> <span class="nav-text">1、数据库的基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、MySQL数据库软件"><span class="nav-number">2.</span> <span class="nav-text">2、MySQL数据库软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、SQL"><span class="nav-number">3.</span> <span class="nav-text">3、SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">3.1.</span> <span class="nav-text">DDL：操作数据库、表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-C-Creat-创建"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.C(Creat):创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-R-Rrtrieve-查询"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.R(Rrtrieve):查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-U-Update-修改"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.U(Update):修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-D-Delete-删除"><span class="nav-number">3.1.4.</span> <span class="nav-text">4.D(Delete):删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用数据库"><span class="nav-number">3.1.5.</span> <span class="nav-text">5.使用数据库</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->

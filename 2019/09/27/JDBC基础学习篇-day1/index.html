@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-30T13:15:00.461Z">
+<meta property="og:updated_time" content="2019-10-07T07:56:52.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC基础学习篇--day1">
 <meta name="twitter:description" content="【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解">
@@ -194,7 +194,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
 
   </li>
   </ul>
@@ -263,7 +263,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-30 13:15:00" itemprop="dateModified" datetime="2019-09-30T13:15:00Z">2019-09-30</time>
+                <time title="修改时间：2019-10-07 07:56:52" itemprop="dateModified" datetime="2019-10-07T07:56:52Z">2019-10-07</time>
               </span>
             
           
@@ -343,11 +343,11 @@ password:密码  </code></pre></li>
 <li>功能<br>   1.获取执行sql的对象<pre><code>· Statement creatStatement()
 · PreparedStatement prepareStatement(String sql)</code></pre>   2.管理事物：<pre><code>* 开启事务：setAutoCommit(boolean autoCommit):调用该方法设置参数为false，即开启事务。
 * 提交事务：commit()
-* 回滚事务：roolback()  </code></pre>   3.Statement:执行sql的对象<pre><code>1.执行sql
+* 回滚事务：roolback()  </code></pre>  3.Statement:执行sql的对象<pre><code>· 执行sql
     1.boolean execute(String sql):可以执行任意的sql
     2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句
           * 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。
-    3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句</code></pre>   4.ResultSet:结果及对象，封装查询结果<pre><code>* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
+    3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句</code></pre>  4.ResultSet:结果及对象，封装查询结果<pre><code>* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true
 * getXxx(参数):获取数据
     * Xxx：代表数据类型   如： int getInt() ,    String getString()
     * 参数：
@@ -357,7 +357,28 @@ password:密码  </code></pre></li>
     * 使用步骤：
         1. 游标向下移动一行
         2. 判断是否有数据
-        3. 获取数据</code></pre></li>
+        3. 获取数据  </code></pre>  5.PreparedStatement：执行sql的对象  <pre><code>1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题
+    1. 输入用户随便，输入密码：a&apos; or &apos;a&apos; = &apos;a
+    2. sql：select * from user where username = &apos;fhdsjkf&apos; and password = &apos;a&apos; or &apos;a&apos; = &apos;a&apos; 
+2. 解决sql注入问题：使用PreparedStatement对象来解决
+3. 预编译的SQL：参数使用?作为占位符
+4. 步骤：
+        1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar
+        2. 注册驱动
+        3. 获取数据库连接对象 Connection
+        4. 定义sql
+            * 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;
+        5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql) 
+        6. 给？赋值：
+            * 方法： setXxx(参数1,参数2)
+                * 参数1：？的位置编号 从1 开始
+                * 参数2：？的值
+        7. 执行sql，接受返回结果，不需要传递sql语句
+        8. 处理结果
+        9. 释放资源
+5. 注意：后期都会使用PreparedStatement来完成增删改查的所有操作
+    1. 可以防止SQL注入
+    2. 效率更高</code></pre></li>
 </ul>
 
     </div>
@@ -479,7 +500,7 @@ password:密码  </code></pre></li>
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -488,7 +509,7 @@ password:密码  </code></pre></li>
       
       <div class="site-state-item site-state-categories">
         
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
         
       </div>
@@ -497,7 +518,7 @@ password:密码  </code></pre></li>
       
       <div class="site-state-item site-state-tags">
         
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
@@ -518,23 +539,17 @@ password:密码  </code></pre></li>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Seven</span>
-
-    <div class="powered-by">
-    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-      本站访客数:<span id="busuanzi_value_site_uv"></span>
-    </span>
-    </div>
 </div>
 
 <div class="theme-info">
 <div class="powered-by"></div>
-<span class="post-count">博客全站共5.2k字</span>
+<span class="post-count">博客全站共6.2k字</span>
 </div>
 
         
