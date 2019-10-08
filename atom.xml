@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sevenの博客</title>
+  
+  <subtitle>时光，不会辜负每一个平静努力的人</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-10-08T02:57:08.840Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Seven</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL重点知识总结</title>
+    <link href="http://yoursite.com/2019/10/08/MySQL%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2019/10/08/MySQL重点知识总结/</id>
+    <published>2019-10-07T19:39:35.000Z</published>
+    <updated>2019-10-08T02:57:08.840Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】MySQL基础知识的总结</p><a id="more"></a><h1 id="1、数据库的基本概念"><a href="#1、数据库的基本概念" class="headerlink" title="1、数据库的基本概念"></a>1、数据库的基本概念</h1><ul><li>维基百科定义<blockquote><p>所谓“数据库”系以一定方式储存在一起、能予多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。一个数据库由多个表空间（Tablespace）构成。</p></blockquote></li></ul><ol><li><p>数据库的英文单词：</p><pre><code>DateBase  简称  DB</code></pre></li><li><p>什么是数据库</p><pre><code>用于存储和管理数据的仓库</code></pre></li><li><p>数据库的特点  </p><pre><code>1. 持久化存储数据的，其实数据库就是一个文件系统2. 方便存储和管理数据的3. 使用统一的方式操作数据库  --SQL</code></pre></li></ol><h1 id="2、MySQL数据库软件"><a href="#2、MySQL数据库软件" class="headerlink" title="2、MySQL数据库软件"></a>2、MySQL数据库软件</h1><ul><li>常见的数据库软件  mysql、oracle、sqlserver、sqlite、postgreSQL等  </li><li>安装–卸载–配置</li></ul><h1 id="3、SQL"><a href="#3、SQL" class="headerlink" title="3、SQL"></a>3、SQL</h1><ol><li><p>什么是SQL</p><pre><code>Structured  Query  Language: 结构化查询语言其实就是定义了操作类型数据库的规则，每一种数据库操作的方式存在不一样的地方，被称为“方言”。</code></pre></li><li><p>SQL通用语法</p><pre><code>1. SQL语句可以单行或多行书写，以分号结尾2. 可以使用空格和缩进来增强语句的可持续性3. MySQL数据库的SQL语句不区分大小写，关键字建议使用大写4. 注释        · 单行注释：  -- 注释的内容                  或  # 注释的内容 （mysql特有）        · 多行注释： / * 注释的内容 * /</code></pre></li><li><p>SQL分类</p><pre><code>1. DDL(Date Definition Language) 数据定义语言    用来定义数据库对象：数据库、表、列等               关键字：crate drop alter2. DML(Date Manipulation Language) 数据操作语言    用来对数据库中表的数据进行增删改              关键字：insert delete update3. DQL(Date Query Language) 数据库查询语言    用来查询数据库表的记录(数据)             关键字：select where4. DCL(Date Control Language) 数据库控制语言    用来定义数据库的访问权限和安全级别及创建用户             关键字： GRANT REVOKE等</code></pre><h2 id="DDL：操作数据库、表"><a href="#DDL：操作数据库、表" class="headerlink" title="DDL：操作数据库、表"></a>DDL：操作数据库、表</h2></li></ol><h3 id="1-操作数据库：CRUD"><a href="#1-操作数据库：CRUD" class="headerlink" title="1.操作数据库：CRUD"></a>1.操作数据库：CRUD</h3><h4 id="1-C-Creat-创建"><a href="#1-C-Creat-创建" class="headerlink" title="1.C(Creat):创建"></a>1.C(Creat):创建</h4><pre><code>* 创建数据库：CRUD        create database 数据库名称* 创建数据库 判断不存在 再进行创建        create database if not exists  ···名称* 创建数据库，并指定字符集        create database 数据库名称 character set 字符集合</code></pre><h4 id="2-R-Rrtrieve-查询"><a href="#2-R-Rrtrieve-查询" class="headerlink" title="2.R(Rrtrieve):查询"></a>2.R(Rrtrieve):查询</h4><pre><code>* 查询所有数据库的名称:        show databases;* 查询某个数据库的字符集:查询某个数据库的创建语句        show create database 数据库名称;</code></pre><h4 id="3-U-Update-修改"><a href="#3-U-Update-修改" class="headerlink" title="3.U(Update):修改"></a>3.U(Update):修改</h4><pre><code>* 修改数据库的字符集        alter database 数据库名称 character set 字符集名称;</code></pre><h4 id="4-D-Delete-删除"><a href="#4-D-Delete-删除" class="headerlink" title="4.D(Delete):删除"></a>4.D(Delete):删除</h4><pre><code>* 删除数据库        drop database 数据库名称;* 判断数据库存在，存在再删除        drop database if exists 数据库名称;</code></pre><h4 id="5-使用数据库"><a href="#5-使用数据库" class="headerlink" title="5.使用数据库"></a>5.使用数据库</h4><pre><code>* 查询当前正在使用的数据库名称        select database();* 使用数据库        use 数据库名称;</code></pre><h3 id="2-操作表"><a href="#2-操作表" class="headerlink" title="2.操作表"></a>2.操作表</h3><h4 id="1-C-Create-创建"><a href="#1-C-Create-创建" class="headerlink" title="1.C(Create):创建"></a>1.C(Create):创建</h4><h5 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h5><pre><code>create table 表名(    列名1 数据类型1,    列名2 数据类型2,    ....    列名n 数据类型n);* 注意：最后一列，不需要加逗号(,)</code></pre><h5 id="2-R-Retrieve-：查询"><a href="#2-R-Retrieve-：查询" class="headerlink" title="2. R(Retrieve)：查询"></a>2. R(Retrieve)：查询</h5><pre><code>* 查询某个数据库中所有的表名称     show tables;* 查询表结构      desc 表名;</code></pre><h5 id="3-U-Update-修改-1"><a href="#3-U-Update-修改-1" class="headerlink" title="3. U(Update):修改"></a>3. U(Update):修改</h5><pre><code>1. 修改表名    alter table 表名 rename to 新的表名;2. 修改表的字符集    alter table 表名 character set 字符集名称;3. 添加一列    alter table 表名 add 列名 数据类型;4. 修改列名称 类型    alter table 表名 change 列名 新列别 新数据类型;    alter table 表名 modify 列名 新数据类型;5. 删除列    alter table 表名 drop 列名;</code></pre><h5 id="4-D-Delete-删除-1"><a href="#4-D-Delete-删除-1" class="headerlink" title="4. D(Delete):删除"></a>4. D(Delete):删除</h5><pre><code>* drop table 表名;* drop table  if exists 表名 ;</code></pre><h5 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h5><pre><code>1. int：整数类型2. double:小数类型3. date:日期，只包含年月日，yyyy-MM-dd4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss        * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值6. varchar：字符串    * name varchar(20):姓名最大20个字符    * zhangsan 8个字符  张三 2个字符</code></pre><h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><h4 id="1-添加数据："><a href="#1-添加数据：" class="headerlink" title="1. 添加数据："></a>1. 添加数据：</h4><pre><code>* 语法：    * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);* 注意：    1. 列名和值要一一对应。    2. 如果表名后，不定义列名，则默认给所有列添加值        insert into 表名 values(值1,值2,...值n);    3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来</code></pre><h4 id="2-删除数据："><a href="#2-删除数据：" class="headerlink" title="2. 删除数据："></a>2. 删除数据：</h4><pre><code>* 语法：    * delete from 表名 [where 条件]* 注意：    1. 如果不加条件，则删除表中所有记录。    2. 如果要删除所有记录        1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作        2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</code></pre><h4 id="3-修改数据："><a href="#3-修改数据：" class="headerlink" title="3. 修改数据："></a>3. 修改数据：</h4><pre><code>* 语法：    * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];* 注意：    1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;</code></pre><h4 id="1-语法："><a href="#1-语法：" class="headerlink" title="1. 语法："></a>1. 语法：</h4><pre><code>select    字段列表from    表名列表where    条件列表group by    分组字段having    分组之后的条件order by    排序limit    分页限定</code></pre><h4 id="2-基础查询"><a href="#2-基础查询" class="headerlink" title="2. 基础查询"></a>2. 基础查询</h4><pre><code>1. 多个字段的查询    select 字段名1，字段名2... from 表名；    * 注意：        * 如果查询所有字段，则可以使用*来替代字段列表。2. 去除重复：    * distinct3. 计算列    * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）    * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null        * 表达式1：哪个字段需要判断是否为null        * 如果该字段为null后的替换值。4. 起别名：    * as：as也可以省略</code></pre><h4 id="3-条件查询"><a href="#3-条件查询" class="headerlink" title="3. 条件查询"></a>3. 条件查询</h4><pre><code>1. where子句后跟条件2. 运算符    * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;    * BETWEEN...AND      * IN( 集合)     * LIKE：模糊查询        * 占位符：            * _:单个任意字符            * %：多个任意字符    * IS NULL      * and  或 &amp;&amp;    * or  或 ||     * not  或 !</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】MySQL基础知识的总结&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java重点知识总结-day05</title>
+    <link href="http://yoursite.com/2019/10/04/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day05/"/>
+    <id>http://yoursite.com/2019/10/04/Java重点知识总结-day05/</id>
+    <published>2019-10-04T09:45:52.000Z</published>
+    <updated>2019-10-06T07:44:08.601Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第五天</p><a id="more"></a><h1 id="1-Date类-日期类"><a href="#1-Date类-日期类" class="headerlink" title="1.Date类:日期类"></a>1.Date类:日期类</h1><pre><code>*     构造:*     public Date();//代表当前系统时间的Date对象*     public Date(long time);//代表距离标准时间 time毫秒值的Date对象*     成员方法:    *     public String toString();//Date    重写Object类的toString方法    *     public long getTime();//获取当前Date对象的毫n秒值</code></pre><h1 id="2-DateFormat-日期格式化类-抽象类"><a href="#2-DateFormat-日期格式化类-抽象类" class="headerlink" title="2.DateFormat:日期格式化类 抽象类"></a>2.DateFormat:日期格式化类 抽象类</h1><pre><code>*     具体的子类:SimpleDateFormat*     构造:*     public SimpleDateFormat(String pattern);//以指定的模式创建格式化对象*     成员方法:*     public String format(Date d);//把date对象按照指定的模式 转成字符串*     public Date parse(String s);//把字符串转成Date对象,如果字符串有问题,就会抛出ParseException  </code></pre><h1 id="3-Calendar-日历类"><a href="#3-Calendar-日历类" class="headerlink" title="3.Calendar:日历类"></a>3.Calendar:日历类</h1><pre><code>* 3.1获取Calendar对象     *     public static Calendar getInstance();//返回的是抽象类Calendar的某一个子类* 3.2成员方法:     *     public int get(int field);//获取指定字段的值     *     public void add(int field,int amount);//给指定的字段增加值     *     public void set(int field,int value);//修改指定字段的值     *     public Date getTime();//把Calendar对象转成Date 对象  </code></pre><h1 id="4-System-系统类"><a href="#4-System-系统类" class="headerlink" title="4.System:系统类"></a>4.System:系统类</h1><pre><code>*     public static void exit(0);//结束JVM*     public static void gc();//通知垃圾回收器过来收垃圾*     public static getProperty(String key);//根据键 获取值*     public static long currentTimeMillis();//获取当前系统的毫秒值  </code></pre><h1 id="5-Math-数学类"><a href="#5-Math-数学类" class="headerlink" title="5.Math:数学类"></a>5.Math:数学类</h1><pre><code>1.求最大值 2.求最小值 3.求绝对值    4.求随机数  5.求四舍五入  6.ceil(向上取整) 7.floor(向下取整) 8.pow(求次幂)  </code></pre><h1 id="6-基类数据类型包装类"><a href="#6-基类数据类型包装类" class="headerlink" title="6.基类数据类型包装类"></a>6.基类数据类型包装类</h1><pre><code>* (8中基本类对应的包装类型)* (自动拆箱装箱)  </code></pre><h1 id="7-正则表达式"><a href="#7-正则表达式" class="headerlink" title="7.正则表达式:"></a>7.正则表达式:</h1><pre><code>* boolean b = &quot;普通字符串&quot;.matches(&quot;正则表达式&quot;);</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】java学习过程中重点知识的总结-第五天&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java重点知识总结-day04</title>
+    <link href="http://yoursite.com/2019/09/28/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day04/"/>
+    <id>http://yoursite.com/2019/09/28/Java重点知识总结-day04/</id>
+    <published>2019-09-27T16:34:44.000Z</published>
+    <updated>2019-10-03T10:49:53.920Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第四天</p><a id="more"></a><h2 id="1-Object类"><a href="#1-Object类" class="headerlink" title="1.Object类"></a>1.Object类</h2><p> <em>· 是所有类的根类</em></p><pre><code>boolean eauals(Object obj); a.Object类中equals方法,比较 是两个对象地址 ,就是 ==号的作用 b.子类为了改变比较规则,可以重写equals方法     比如:Java提供的String 重写了equals,变成比较两个字符串的内容     比如: 我们自己定义的类,也可以重写equals方法,一般比较两个对象的成员变量的值String toString();//返回该对象的字符串表示 ----&gt;hashCode()返回该对象的数字表示 a.Object类中的toString,返回值: &quot;包名.类名@地址值&quot; b.子类为了快速打印一个对象的信息,一般重写toString    在toString方法中,返回需要成员变量的值 注意:    syso(对象) &lt;====&gt; syso(对象.toString());</code></pre><h2 id="2-异常"><a href="#2-异常" class="headerlink" title="2.异常"></a>2.异常</h2><pre><code>异常的根类:    Throwable        --Exception:异常类            -- 编译时异常:编译时报错            -- 运行时异常:运行时报错        --Error:错误类(不研究,出现了错误,改代码)异常的抛出:    throw new 异常类(&quot;&quot;);异常的处理:  不处理,再次声明抛出处理        在抛出异常的方法上  throws xxxException       然后该方法的调用者就必须处理这个异常   捕获处理:        标准的方法:      try{            可能出现问题的代码      }catch(所有可能出现异常的父类 变量名){            处理异常,打印,提示,写入日志      }finally{            释放资源:            1.IO流  2.网络连接 3.数据库连接        }        了解一下:       一次捕获多次处理: 一个try 多个catch  (多个catch中 必须是异常子类在前,父类在后)       多次捕获多次处理: 多个try,每个try多应一个catch        一次捕获一次处理(最常用的):一个try一个catch(catch中异常类必须所有可能出现异常的父类)自定义异常:    固定套路:    1.异常类名 必须用Exception结尾    2.异常类必须 继承 Exception 或者RuntimeException    3.异常类一般提供两个构造: 无参构造+String参数构造编译时异常和运行时异常 怎么区分别:    1.编译时异常 在编译的时候会报错的 (需要我们去处理)    2.运行时异常 在编译的时候不会报错    只要定义一个方法,在方法中抛出一个异常对象,如果编译报错那么就是编译时异常    如果编译成功,那么就是运行时异常</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】java学习过程中重点知识的总结-第四天&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC基础学习篇--day1</title>
+    <link href="http://yoursite.com/2019/09/27/JDBC%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87-day1/"/>
+    <id>http://yoursite.com/2019/09/27/JDBC基础学习篇-day1/</id>
+    <published>2019-09-27T09:25:27.000Z</published>
+    <updated>2019-10-07T07:56:52.463Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解  </p><a id="more"></a><h2 id="主要学习内容："><a href="#主要学习内容：" class="headerlink" title="主要学习内容："></a>主要学习内容：</h2><p>&#160;&#160;1. JDBC基本概念<br>&#160;&#160;2. 快速入门<br>&#160;&#160;3. 对JDBC中各个接口和类详解  </p><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><p>基本概念：Java DateBase Connectivity Java 数据库连接，用Java语言操作数据库。JDBC的实质是由sun公司定义的一套操作数据库的接口，我们使用这套接口（JDBC编程），执行驱动jar包中的实现类。  </p><h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ul><li>步骤  <blockquote><ol><li>导入驱动jar包：mysql-connector-java-5.1.37-bin.jar  <ol><li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li><li>右键–&gt;Add As Library  </li></ol></li><li>注册驱动</li><li>获取数据库连接对象</li><li>定义sql</li><li>执行sql，接受返回结果</li><li>处理结果</li><li>释放资源</li></ol></blockquote></li><li>代码    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">    //1.导入驱动jar包</span><br><span class="line">    //2.注册驱动</span><br><span class="line">    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    //3.获取数据库的连接对象</span><br><span class="line">    Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/stu&quot;, &quot;root&quot;, &quot;root0809&quot;);</span><br><span class="line">    //4.定义sql语句</span><br><span class="line">    String sql = &quot;update account set balance =   100 where id    =   1&quot;;</span><br><span class="line">    //5.获取执行sql的对象 Statement</span><br><span class="line">    Statement stmt = conn.createStatement();</span><br><span class="line">    //6.执行sql</span><br><span class="line">    int count = stmt.executeUpdate(sql);</span><br><span class="line">    //7.处理结果</span><br><span class="line">    System.out.println(count);</span><br><span class="line">    //8.释放资源</span><br><span class="line">    stmt.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="各个对象详解："><a href="#各个对象详解：" class="headerlink" title="各个对象详解："></a>各个对象详解：</h3><h4 id="1-驱动管理对象：DriverManager"><a href="#1-驱动管理对象：DriverManager" class="headerlink" title="1.驱动管理对象：DriverManager"></a>1.驱动管理对象：DriverManager</h4><ul><li>功能：</li></ul><blockquote><ol><li>注册驱动：告诉计算及使用哪一个数据驱动jar<br>   注册驱动DriverManager：static void registerDriver(Driver driver)  </li><li>获取数据库连接:<br>· 方法：static Connection getConnection(String url, String user, String password)<br>· 参数介绍：  <pre><code>url:指定连接的路径        语法：jdbc:mysql://ip地址(域名):端口号/数据库名称        例子：jdbc:mysql://localhost:3306/db3        细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称  user:用户名  password:密码  </code></pre></li></ol></blockquote><h4 id="2-数据库连接对象：Connection"><a href="#2-数据库连接对象：Connection" class="headerlink" title="2.数据库连接对象：Connection"></a>2.数据库连接对象：Connection</h4><ul><li>功能<br>   1.获取执行sql的对象<pre><code>· Statement creatStatement()· PreparedStatement prepareStatement(String sql)</code></pre>   2.管理事物：<pre><code>* 开启事务：setAutoCommit(boolean autoCommit):调用该方法设置参数为false，即开启事务。* 提交事务：commit()* 回滚事务：roolback()  </code></pre>  3.Statement:执行sql的对象<pre><code>· 执行sql    1.boolean execute(String sql):可以执行任意的sql    2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句          * 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。    3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句</code></pre>  4.ResultSet:结果及对象，封装查询结果<pre><code>* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true* getXxx(参数):获取数据    * Xxx：代表数据类型   如： int getInt() ,    String getString()    * 参数：        1. int：代表列的编号,从1开始   如： getString(1)        2. String：代表列名称。 如： getDouble(&quot;balance&quot;)* 注意：    * 使用步骤：        1. 游标向下移动一行        2. 判断是否有数据        3. 获取数据  </code></pre>  5.PreparedStatement：执行sql的对象  <pre><code>1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题    1. 输入用户随便，输入密码：a&apos; or &apos;a&apos; = &apos;a    2. sql：select * from user where username = &apos;fhdsjkf&apos; and password = &apos;a&apos; or &apos;a&apos; = &apos;a&apos; 2. 解决sql注入问题：使用PreparedStatement对象来解决3. 预编译的SQL：参数使用?作为占位符4. 步骤：        1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar        2. 注册驱动        3. 获取数据库连接对象 Connection        4. 定义sql            * 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;        5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql)         6. 给？赋值：            * 方法： setXxx(参数1,参数2)                * 参数1：？的位置编号 从1 开始                * 参数2：？的值        7. 执行sql，接受返回结果，不需要传递sql语句        8. 处理结果        9. 释放资源5. 注意：后期都会使用PreparedStatement来完成增删改查的所有操作    1. 可以防止SQL注入    2. 效率更高</code></pre></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JDBC" scheme="http://yoursite.com/categories/JDBC/"/>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+      <category term="javaweb" scheme="http://yoursite.com/tags/javaweb/"/>
+    
+      <category term="JDBC" scheme="http://yoursite.com/tags/JDBC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java重点知识总结-day03</title>
+    <link href="http://yoursite.com/2019/09/26/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day03/"/>
+    <id>http://yoursite.com/2019/09/26/Java重点知识总结-day03/</id>
+    <published>2019-09-26T15:24:51.000Z</published>
+    <updated>2019-10-03T08:50:57.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第三天</p><a id="more"></a><h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><pre><code>·多态，向下转型具体什么时候用    复习：        1.多态的使用前提：            a.必须有继承或者实现            b.必须有方法的重写            c.表现形式：                父类类型 变量名 = new 子类类型();                接口类型 变量名 = new 实现类类型();        2.多态的成员的特点            使用多态调用成员变量：编译看左边，运行看左边            使用多态调用成员方法：编译看左边，运行看右边        3.多态的弊端：            不能调用子类特有的成员方法，只能调用父类共有的成员方法        4.如果就是想调用子类特有的方法，怎么办？            向下转型，把父类类型的变量，转会到对应的子类类型上·接口有什么构造方法吗？抽象类？有什么作用？        接口没有构造方法        抽象类是有构造方法的                因为所有的类，都有一个共同的父类                    例：public class Person implements Police{                                    public Person(){                                            super();                                    }                                }·this和super的语句形式        this():调用本类构造方法        super():调用父类的构造方法        this()和super()不能同时出现在一个构造方法的第一行</code></pre><h2 id="1-static"><a href="#1-static" class="headerlink" title="1.static"></a>1.static</h2><pre><code>a.什么时候用static来修饰成员    当这个成员不属于某一个对象，而是属于所有对象。或者属于这个类，南无需要static来修饰它b.被static修饰的成员有什么特点    i.存在方法区中的静态区，只有一个空间    ii.静态时有限于对象存在    iii.如何访问静态成员：            对象名.静态成员; //这是可以的，但是不建议            类名.静态成员; //建议使用</code></pre><h2 id="2-final"><a href="#2-final" class="headerlink" title="2.final"></a>2.final</h2><pre><code>final 修饰类(太监类)  不能被继承(没有子类)  但是可以是其他类的子类final 修饰方法（最终方法） 子类不能被重写final 修饰成员变量    a.这个成员变量在创建对象之前必须初始化        （直接复制，在构造方法中赋值）    b.只能赋值一次final 修饰局部变量    a.基本类型        该变量只能赋值一次（实际上就是常量）    b.引用类型        该引用类型的变量保存的地址不能改变        但是地址指向空间中的内存可以改变        final  Person p = new Person();        p = new Person();错误的        p.name = ;正确的        p.age = 18;正确的</code></pre><h2 id="3-包"><a href="#3-包" class="headerlink" title="3.包"></a>3.包</h2><pre><code>导包的关键字 import全限定类名  包名.类名（可以不用导包）后期说反射，用到全限定类名</code></pre><h2 id="4-权限修饰符"><a href="#4-权限修饰符" class="headerlink" title="4.权限修饰符"></a>4.权限修饰符</h2><pre><code>public protected default(默认，可以不写) private如果一个成员指向在本类中使用 用private修饰如果一个成员只想在本类中和本包中使用 不写修饰如果一个成员只想在本类中和本包中或者其他包的子类中使用 用protected修饰如果一个成员想在所有类中都可以使用 用public修饰</code></pre><h2 id="5-内部类"><a href="#5-内部类" class="headerlink" title="5.内部类"></a>5.内部类</h2><pre><code>根据内部类定义位置不同的分类    a.成员内部类定义类中方法外        在其他类中如何创建该类的对象        固定格式                外部类名.内部类名  变量名 = new 外部类()/new内部类();    b.局部内部类定义方法中        在其他类中，是无法使用的        只能局部位置使用</code></pre><h2 id="6-静态代码快"><a href="#6-静态代码快" class="headerlink" title="6.静态代码快"></a>6.静态代码快</h2><pre><code> 代码块，在成员位置使用大括号括起来的一堆代码           public class Person{       静态代码块       static{           代码块       }       public void show(){       }   }·特点   1.当我们使用到一个类时,那么这类中的静态代码块自动执行   2.只会执行一次,第一次使用该类,就立刻执行   3.在同一个类中,静态代码块的优先级很高,比构造方法优先,比main方法优先   4.作用       用来初始化类中某些功能(mysql的数据库驱动的加载)</code></pre><h2 id="7-匿名内部类"><a href="#7-匿名内部类" class="headerlink" title="7.匿名内部类"></a>7.匿名内部类</h2><pre><code>a.作用    快速创建 抽象类的子类对象,接口的实现类对象.b.格式    第一种        new 抽象类(){            重写抽象类中所有的方法        };    第二种        new 抽象类(){            重写抽象类中所有的方法        }.重写后的方法();    第三种        接口类型  变量名 = new 接口(){            重写接口中所有的方法            };       </code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】java学习过程中重点知识的总结-第三天&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java重点知识总结-day02</title>
+    <link href="http://yoursite.com/2019/09/25/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day02/"/>
+    <id>http://yoursite.com/2019/09/25/Java重点知识总结-day02/</id>
+    <published>2019-09-25T09:13:51.000Z</published>
+    <updated>2019-10-02T07:30:31.016Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第二天</p><a id="more"></a><h4 id="1-this和super"><a href="#1-this和super" class="headerlink" title="1.this和super"></a>1.this和super</h4><pre><code>- 作用:    this: 区分本类的成员变量和局部变量同名情况    super:区分父类的成员变量和局部变量同名情况- 用法:    this.成员变量名;//访问本类的成员变量    this.成员方法名();//调用本类成员方法(this可以省略)    super.成员变量名;//访问父类的成员变量    super.成员方法名();//调用父类的成员方法(super不可以省略)</code></pre><h4 id="2-扩展"><a href="#2-扩展" class="headerlink" title="2.扩展:"></a>2.扩展:</h4><pre><code>this(参数);//调用本类的其他构造,具体是哪一个构造,由参数类型决定super(参数)://调用父类的构造,具体哪一个构造,由参数类型决定结论:a.子类中任何一个构造,都会无条件先调用父类的无参构造        b.我们可以通过 super(参数),调用父类中指定参数的构造</code></pre><h4 id="3-方法的重写"><a href="#3-方法的重写" class="headerlink" title="3.方法的重写:"></a>3.方法的重写:</h4><pre><code>- 在子类从 出现了和父类一模一样的方法(修饰符可以不一样) 那么子类中这个方法我们重写后的方法     a.注意事项            1: 子类和父类中重写的那个方法权限可以不一样,子类方法权限&gt;=父类方法权限            2.如果父类的方法是private修饰,子类不能重写     b.什么时候需要进行方法的重写            父类中方法,太low,不适用,不完善,那么子类需要自己重写他,自己实现他</code></pre><h4 id="4-抽象类"><a href="#4-抽象类" class="headerlink" title="4.抽象类"></a>4.抽象类</h4><pre><code>- 概念:    什么叫抽象类: 只要一个类 是abstract修饰的那么这个类就是抽象类和这个类中有没有抽象                 方法,没有必然的联系    什么叫抽象方法:                 方法由abstract修饰,并且没有方法体的方法                    一个抽象类的 是可以没有抽象方法,那么这个类的作用不允许你创建对象  - 作用:             不能创建对象,天生作为父类- 抽象类中的抽象方法有什么作用?        1.抽象类中的抽象方法不是为了调用的        2.为了强制子类去重写</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】java学习过程中重点知识的总结-第二天&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java重点知识总结-day01</title>
+    <link href="http://yoursite.com/2019/09/24/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day01/"/>
+    <id>http://yoursite.com/2019/09/24/Java重点知识总结-day01/</id>
+    <published>2019-09-24T08:36:27.000Z</published>
+    <updated>2019-10-07T11:42:14.287Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第一天</p><a id="more"></a><h1 id="一、java中的基本数据类型"><a href="#一、java中的基本数据类型" class="headerlink" title="一、java中的基本数据类型"></a>一、java中的基本数据类型</h1><pre><code>1. 基本数据类型： 四种 八类    byte(4)  boolean(1)  short(2)  char(2)  int(4)      float(4)  long(8)  double(8)2. 引用数据类型    String  数组  集合  ArrayList  Scanner  Random  自定义类型  </code></pre><h1 id="二、引用数据类型中的String中的方法"><a href="#二、引用数据类型中的String中的方法" class="headerlink" title="二、引用数据类型中的String中的方法"></a>二、引用数据类型中的String中的方法</h1><pre><code>第一种：判断方法        boolean equals(String str):比较两个字符串中的内容是否相等        boolean equalsIgnore(String str):比较两个字符串中的内容是否相等(忽略大小写)        boolean startsWish(String subStr):判断某个字符串是否以指定子串开头        boolean endWish(String subStr):判断某个字符串是否以指定子串结尾第二种：获取方法        int length():获取字符串中字符个数        char charAt(int index):获取字符串中某一个字符        String substring(int startIndex,int endIndex):已制定下标开始截取字符串，到指定下标结束(包括开头，不包括结尾)        int indexof(String substr):获取子串第一次出现的下标第三种：转换方法        String toLowerCase():转成小写串        String toUpperCase():转成大写串        char[] toCharArray():变成字符数组第四种：其他方法        String trim():去掉字符串两端的空格        String[] split(String str):切割字符串  </code></pre><h1 id="三、流-读写文件"><a href="#三、流-读写文件" class="headerlink" title="三、流_读写文件"></a>三、流_读写文件</h1><pre><code>输出流：数据从java程序到文件中FileWriter:文件的字符输出流，写数据(一个字符、一个字符串、一个字符数组)        write(int ch):写一个字符（可以写字符的ASCII码值）        write(char[] chs):写一个字符数组        write(String s):写一个字符串        write(char[] chs,int startIndex,int len):写一个字符数组的一部分        write(String s,int startIndex,int len):写一个字符串的一部分输入流：数据从文件到java程序FilerReader:文件的字符输入流，读数据(一个字符、一个字符数组)        int read():读取一个字符        int read(char[] chs):一个读取一个字符数组                            返回值表示实际读到的字符个数</code></pre><h2 id="文件的路径分为两种："><a href="#文件的路径分为两种：" class="headerlink" title="文件的路径分为两种："></a>文件的路径分为两种：</h2><pre><code>1. 相对路径：相对当前项目而言2. 绝对路径：以盘符开头</code></pre><h2 id="对象的内存图"><a href="#对象的内存图" class="headerlink" title="对象的内存图"></a>对象的内存图</h2><pre><code>Dog d = new Dog();d是引用数据类型，保存到栈(stack)中new Dog():创建对象，保存到堆(heap)中</code></pre><p><img src="/images/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE.jpg" alt="内存图">  </p><h1 id="四、回顾面向对象"><a href="#四、回顾面向对象" class="headerlink" title="四、回顾面向对象"></a>四、回顾面向对象</h1><ol><li><p>什么叫做面向对象</p><pre><code>是一种编程思想，面向对象是相对面向过程而言的。</code></pre><ul><li>面向过程<pre><code>遇到一个问题，自己亲力亲为的一步步去解决。典型代表语言：C语言  </code></pre></li></ul></li><li><p>java中先有类还是先有对象</p><pre><code>类的格式：    public  class  类名{            //成员变量            //成员方法            //构造方法                    }一个标准的类：    1. 封装 (隐藏式线细节，对外暴露公共方式)    2. 构造            无参构造（必须要有）            全参构造（最好有）    3. 引用类型变量的内存  </code></pre></li></ol><h1 id="五、匿名对象"><a href="#五、匿名对象" class="headerlink" title="五、匿名对象"></a>五、匿名对象</h1><pre><code>匿名对象：没有名字的对象语法上：只能创建对象，但不用变量来接收匿名对象的使用：    1. 匿名对象也是对象，具有对象所有的功能    2. 匿名对象的特点：        每一次使用匿名对象是，都是一个新对象    结论：        一个匿名对象只能使用一次  </code></pre><h1 id="六、继承"><a href="#六、继承" class="headerlink" title="六、继承"></a>六、继承</h1><ul><li><p>面向对象三大特点：封装、继承、多态  </p><pre><code>1. java中的继承：两个类之间的关系    一个类（子类/派生类/sub）可以继承另一个类（父类/超类/基类/super）这个过程我们称为java中的继承  2. 继承怎么写    public class 子类 extends 父类{             }3. 如果子类继承了父类，南无子类会自动拥有弗雷中所有成员。（但是private除外，父类中用private修饰的成员，子类不能直接拿过来用）4. 继承的作用：提高代码的复用性</code></pre></li><li><p>继承中子父类的成员变量的特点：  </p><pre><code>1. 字符类的成员变量，不同名时不存在任何问题2. 子父类的成员变量同名时，使用子类的对象访问该成员变量时，优先访问子类自己的</code></pre></li><li><p>继承中子父类成员方法的特点：</p><pre><code>1. 子父类的成员方法不同名时，没有任何问题2. 子父类的成员方法同名时，使用子类的对象调用该成员方法是，优先使用子类自己的</code></pre></li><li><p>结论</p><pre><code>无论是调用成员方法还是访问成员变量，优先访问子类自己的，如果子类没有，再去访问父类的，若父类没有，则报错。</code></pre></li></ul><h1 id="七、java的设计思想"><a href="#七、java的设计思想" class="headerlink" title="七、java的设计思想"></a>七、java的设计思想</h1><pre><code>1.算法2.设计模式3.设计原则</code></pre><ul><li><p>java的一个设计原则：向上抽取原则</p><pre><code>把子类中共有的成员向上抽取一个父类，把这些共有的成员写在父类中。</code></pre></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】java学习过程中重点知识的总结-第一天&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 常用工具总结</title>
+    <link href="http://yoursite.com/2019/09/20/Windows-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2019/09/20/Windows-常用工具总结/</id>
+    <published>2019-09-20T13:16:28.000Z</published>
+    <updated>2019-09-29T05:48:30.274Z</updated>
+    
+    <content type="html"><![CDATA[<p>【转载】主要是对于Windows常用工具的一些总结</p><a id="more"></a><p>1、文本编辑器</p><pre><code>Sublime textNotepad++Visual Code010 Editor</code></pre><p>2、思维导图工具</p><pre><code>Xmindprocesson（在线）draw.io (https://www.draw.io/)mindmaster</code></pre><p>3、模拟终端</p><pre><code>MobaXtermXshell(公司开发环境需要购买)puttysecurecrtWinSCP（SFTP）mRemoteNG（推荐使用）PowershellTerminus</code></pre><p>4、代码管理</p><pre><code>gitsmartGitsourceTreeTortoiseGitgithub（代码仓库托管服务器）GitKraken (https://hk.saowen.com/a/1d3ec665c78e3ffc51efdd396acc2a062970131afe4d2539010fb19de494440b)</code></pre><p>5、云工具</p><pre><code>有道云笔记百度云</code></pre><p>6、浏览器</p><pre><code>Chrome插件：Adblock Plus（广告屏蔽）Google翻译JSON Editor（JSON数据格式化插件）JSON-handle（浏览器窗口JSON数据的查看，相当nice！）Octotree（Github or GitLab的code tree插件）PostmanAdvanced REST client（推荐使用）Bookmarks clean up（便签维护插件）EditThisCookie（Cookie编辑插件）Wappalyzer（网站实现技术解析）ElasticSearch HeadTampermonkeyWappalyzerFireFox：RESTClientHttpRequesterFirebugElegant JSON Editor</code></pre><p>7、屏幕截取工具</p><pre><code>FastStone Capture</code></pre><p>8、文件查找工具</p><pre><code>Everything</code></pre><p>9、文件数据对比工具</p><pre><code>Beyond Compare 4</code></pre><p>10、XML文件</p><pre><code>xml spy</code></pre><p>11、REST API工具</p><pre><code>Insomnia REST Client</code></pre><p>12、Java开发环境</p><pre><code>JDKMavenIDEAEclipse</code></pre><p>13、正则表达在线工具</p><pre><code>Regulex (https://jex.im/regulex/)</code></pre><p>14、抓包工具</p><pre><code>FiddlerWireshark</code></pre><p>15、文件资源管理器</p><pre><code>Q-Dirfreecommander 参考链接：http://www.appinn.com/my-love-files-explorer-final/</code></pre><p>16、Markdown文本编辑器</p><pre><code>MarkdownPad参考链接：http://www.williamlong.info/archives/4319.htmlVisual Code</code></pre><p>17、代码工具</p><pre><code>searchcode（代码库）链接地址：https://searchcode.com/Sourcegraph for GitHub（谷歌插件）</code></pre><p>18、文件同步</p><pre><code>filegee + 百度云http://www.aiwanba.net/post/985.htmlGoodSync(WRH-LCZ-CJ8-1U5)https://sharewareonsale.com/checkout/order-received/11055457?key=wc_order_5af4dd998c8f0</code></pre><p>19、系统环境变量</p><pre><code>EnvMan</code></pre><p>20、PDF工具</p><pre><code>PDFsam(https://pdfsam.org/zh/)</code></pre><p>21、系统工具</p><pre><code>EasyBCD(系统引导设置与管理的免费软件，可以用来装双系统、管理系统引导项http://neosmart.net/EasyBCD/)分区助手</code></pre><p>22、renamer lite（批量修改文件名）</p><p>23、数据库工具</p><pre><code>Navicat PremiumMySQL（SQLyog）Razorsql ETL(kettle)dbvisualizerExcel2MysqlRedis Desktop ManagerDataGrip</code></pre><p>24、任务清单</p><pre><code>Notionhttps://www.notion.so/desktopTrello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3%80%90Windows%E3%80%9101%E2%80%94%E2%80%94%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" target="_blank" rel="noopener">原文链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【转载】主要是对于Windows常用工具的一些总结&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="实用工具" scheme="http://yoursite.com/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Windows" scheme="http://yoursite.com/tags/Windows/"/>
+    
+  </entry>
+  
+</feed>

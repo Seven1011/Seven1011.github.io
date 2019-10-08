@@ -1678,7 +1678,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff79ff;
+  background: #77d7ac;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2972,4 +2972,11 @@ body {
 .main-inner {
   background: #fff;
   opacity: 0.8;
+}
+/*RSS按钮设置*/
+.feed-link a,
+.chat a {
+  border: 0;
+  color: #000;
+  display: block;
 }

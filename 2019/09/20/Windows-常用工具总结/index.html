@@ -14,6 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/H32X32.png?v=7.4.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/H16X16.png?v=7.4.0">
   <link rel="mask-icon" href="/images/H16X16.png?v=7.4.0" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sevenの博客" type="application/atom+xml">
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.0">
 
@@ -290,6 +291,20 @@
               <span id="busuanzi_value_page_pv"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/20/Windows-常用工具总结/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/09/20/Windows-常用工具总结/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -415,7 +430,7 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
           
           <div class="post-tags">
             
-              <a href="/tags/Windows/" rel="tag"># Windows</a>
+              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i>Windows</a>
             
           </div>
         
@@ -451,6 +466,9 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -522,6 +540,11 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
       </div>
     
   </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
 
 
 
@@ -547,7 +570,7 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
 
 <div class="theme-info">
 <div class="powered-by"></div>
-<span class="post-count">博客全站共6.5k字</span>
+<span class="post-count">博客全站共7k字</span>
 </div>
 
         
@@ -687,6 +710,31 @@ Trello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'ectAXqMRTJJDTh8TiLWtEYPu-gzGzoHsz',
+    appKey: '5IjsDHhWSthbwxQTbk8MiXgV',
+    placeholder: '请在此输入您的留言',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
