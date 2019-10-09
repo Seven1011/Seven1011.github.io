@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-08T02:57:08.840Z</updated>
+  <updated>2019-10-09T05:48:52.571Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hexo博客next主题--不蒜子计数不显示问题解决办法</title>
+    <link href="http://yoursite.com/2019/10/09/hexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98-%E4%B8%8D%E8%92%9C%E5%AD%90%E8%AE%A1%E6%95%B0%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/10/09/hexo博客next主题-不蒜子计数不显示问题解决办法/</id>
+    <published>2019-10-09T12:51:23.000Z</published>
+    <updated>2019-10-09T05:48:52.571Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】hexo博客使用next主题时，开启不蒜子计数不显示问题解决办法</p><a id="more"></a><p>最新的next主题中支持了三方插件<code>busuanzi</code>，在主题配置文件中搜索<code>busuanzi</code>，会看到开启不蒜子的按钮。<br><img src="/images/picture/kaiqibusuanzi.jpg" alt="示意图"><br>开启之后部署三连，发现下方的统计图标并没有出现，然后找解决办法，发现网上大多数对于next主题的解决办法修改到期的域名。打开<code>/themes/next/layout/_partials/analytics/busuanzi-counter.swig</code>文件，可以观察到，在新版本next主题中的<code>不蒜子</code>域名已经进行更新:<br><code>&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br>页面却不显示。<br><img src="/images/picture/busuanzijishubuxianshi.jpg" alt><br>查看html代码<br><img src="/images/picture/busuanzicount_1.jpg" alt><br>可以看到<code>style</code>设置为none，在<code>busuanzi-counter.swig</code>将<code>style=&quot;display:none&quot;</code>删除，发现显示还是没有恢复，最后删除同文档中的id即下图红框中内容<br><img src="/images/picture/busuanzicount_2.jpg" alt><br>重新部署后，即可得到最终得结果。<br><img src="/images/picture/busuanzicount_3.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】hexo博客使用next主题时，开启不蒜子计数不显示问题解决办法&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL重点知识总结</title>
     <link href="http://yoursite.com/2019/10/08/MySQL%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2019/10/08/MySQL重点知识总结/</id>
     <published>2019-10-07T19:39:35.000Z</published>
-    <updated>2019-10-08T02:57:08.840Z</updated>
+    <updated>2019-10-08T10:44:11.951Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】MySQL基础知识的总结</p><a id="more"></a><h1 id="1、数据库的基本概念"><a href="#1、数据库的基本概念" class="headerlink" title="1、数据库的基本概念"></a>1、数据库的基本概念</h1><ul><li>维基百科定义<blockquote><p>所谓“数据库”系以一定方式储存在一起、能予多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。一个数据库由多个表空间（Tablespace）构成。</p></blockquote></li></ul><ol><li><p>数据库的英文单词：</p><pre><code>DateBase  简称  DB</code></pre></li><li><p>什么是数据库</p><pre><code>用于存储和管理数据的仓库</code></pre></li><li><p>数据库的特点  </p><pre><code>1. 持久化存储数据的，其实数据库就是一个文件系统2. 方便存储和管理数据的3. 使用统一的方式操作数据库  --SQL</code></pre></li></ol><h1 id="2、MySQL数据库软件"><a href="#2、MySQL数据库软件" class="headerlink" title="2、MySQL数据库软件"></a>2、MySQL数据库软件</h1><ul><li>常见的数据库软件  mysql、oracle、sqlserver、sqlite、postgreSQL等  </li><li>安装–卸载–配置</li></ul><h1 id="3、SQL"><a href="#3、SQL" class="headerlink" title="3、SQL"></a>3、SQL</h1><ol><li><p>什么是SQL</p><pre><code>Structured  Query  Language: 结构化查询语言其实就是定义了操作类型数据库的规则，每一种数据库操作的方式存在不一样的地方，被称为“方言”。</code></pre></li><li><p>SQL通用语法</p><pre><code>1. SQL语句可以单行或多行书写，以分号结尾2. 可以使用空格和缩进来增强语句的可持续性3. MySQL数据库的SQL语句不区分大小写，关键字建议使用大写4. 注释        · 单行注释：  -- 注释的内容                  或  # 注释的内容 （mysql特有）        · 多行注释： / * 注释的内容 * /</code></pre></li><li><p>SQL分类</p><pre><code>1. DDL(Date Definition Language) 数据定义语言    用来定义数据库对象：数据库、表、列等               关键字：crate drop alter2. DML(Date Manipulation Language) 数据操作语言    用来对数据库中表的数据进行增删改              关键字：insert delete update3. DQL(Date Query Language) 数据库查询语言    用来查询数据库表的记录(数据)             关键字：select where4. DCL(Date Control Language) 数据库控制语言    用来定义数据库的访问权限和安全级别及创建用户             关键字： GRANT REVOKE等</code></pre><h2 id="DDL：操作数据库、表"><a href="#DDL：操作数据库、表" class="headerlink" title="DDL：操作数据库、表"></a>DDL：操作数据库、表</h2></li></ol><h3 id="1-操作数据库：CRUD"><a href="#1-操作数据库：CRUD" class="headerlink" title="1.操作数据库：CRUD"></a>1.操作数据库：CRUD</h3><h4 id="1-C-Creat-创建"><a href="#1-C-Creat-创建" class="headerlink" title="1.C(Creat):创建"></a>1.C(Creat):创建</h4><pre><code>* 创建数据库：CRUD        create database 数据库名称* 创建数据库 判断不存在 再进行创建        create database if not exists  ···名称* 创建数据库，并指定字符集        create database 数据库名称 character set 字符集合</code></pre><h4 id="2-R-Rrtrieve-查询"><a href="#2-R-Rrtrieve-查询" class="headerlink" title="2.R(Rrtrieve):查询"></a>2.R(Rrtrieve):查询</h4><pre><code>* 查询所有数据库的名称:        show databases;* 查询某个数据库的字符集:查询某个数据库的创建语句        show create database 数据库名称;</code></pre><h4 id="3-U-Update-修改"><a href="#3-U-Update-修改" class="headerlink" title="3.U(Update):修改"></a>3.U(Update):修改</h4><pre><code>* 修改数据库的字符集        alter database 数据库名称 character set 字符集名称;</code></pre><h4 id="4-D-Delete-删除"><a href="#4-D-Delete-删除" class="headerlink" title="4.D(Delete):删除"></a>4.D(Delete):删除</h4><pre><code>* 删除数据库        drop database 数据库名称;* 判断数据库存在，存在再删除        drop database if exists 数据库名称;</code></pre><h4 id="5-使用数据库"><a href="#5-使用数据库" class="headerlink" title="5.使用数据库"></a>5.使用数据库</h4><pre><code>* 查询当前正在使用的数据库名称        select database();* 使用数据库        use 数据库名称;</code></pre><h3 id="2-操作表"><a href="#2-操作表" class="headerlink" title="2.操作表"></a>2.操作表</h3><h4 id="1-C-Create-创建"><a href="#1-C-Create-创建" class="headerlink" title="1.C(Create):创建"></a>1.C(Create):创建</h4><h5 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h5><pre><code>create table 表名(    列名1 数据类型1,    列名2 数据类型2,    ....    列名n 数据类型n);* 注意：最后一列，不需要加逗号(,)</code></pre><h5 id="2-R-Retrieve-：查询"><a href="#2-R-Retrieve-：查询" class="headerlink" title="2. R(Retrieve)：查询"></a>2. R(Retrieve)：查询</h5><pre><code>* 查询某个数据库中所有的表名称     show tables;* 查询表结构      desc 表名;</code></pre><h5 id="3-U-Update-修改-1"><a href="#3-U-Update-修改-1" class="headerlink" title="3. U(Update):修改"></a>3. U(Update):修改</h5><pre><code>1. 修改表名    alter table 表名 rename to 新的表名;2. 修改表的字符集    alter table 表名 character set 字符集名称;3. 添加一列    alter table 表名 add 列名 数据类型;4. 修改列名称 类型    alter table 表名 change 列名 新列别 新数据类型;    alter table 表名 modify 列名 新数据类型;5. 删除列    alter table 表名 drop 列名;</code></pre><h5 id="4-D-Delete-删除-1"><a href="#4-D-Delete-删除-1" class="headerlink" title="4. D(Delete):删除"></a>4. D(Delete):删除</h5><pre><code>* drop table 表名;* drop table  if exists 表名 ;</code></pre><h5 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h5><pre><code>1. int：整数类型2. double:小数类型3. date:日期，只包含年月日，yyyy-MM-dd4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss        * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值6. varchar：字符串    * name varchar(20):姓名最大20个字符    * zhangsan 8个字符  张三 2个字符</code></pre><h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><h4 id="1-添加数据："><a href="#1-添加数据：" class="headerlink" title="1. 添加数据："></a>1. 添加数据：</h4><pre><code>* 语法：    * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);* 注意：    1. 列名和值要一一对应。    2. 如果表名后，不定义列名，则默认给所有列添加值        insert into 表名 values(值1,值2,...值n);    3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来</code></pre><h4 id="2-删除数据："><a href="#2-删除数据：" class="headerlink" title="2. 删除数据："></a>2. 删除数据：</h4><pre><code>* 语法：    * delete from 表名 [where 条件]* 注意：    1. 如果不加条件，则删除表中所有记录。    2. 如果要删除所有记录        1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作        2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</code></pre><h4 id="3-修改数据："><a href="#3-修改数据：" class="headerlink" title="3. 修改数据："></a>3. 修改数据：</h4><pre><code>* 语法：    * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];* 注意：    1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;</code></pre><h4 id="1-语法："><a href="#1-语法：" class="headerlink" title="1. 语法："></a>1. 语法：</h4><pre><code>select    字段列表from    表名列表where    条件列表group by    分组字段having    分组之后的条件order by    排序limit    分页限定</code></pre><h4 id="2-基础查询"><a href="#2-基础查询" class="headerlink" title="2. 基础查询"></a>2. 基础查询</h4><pre><code>1. 多个字段的查询    select 字段名1，字段名2... from 表名；    * 注意：        * 如果查询所有字段，则可以使用*来替代字段列表。2. 去除重复：    * distinct3. 计算列    * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）    * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null        * 表达式1：哪个字段需要判断是否为null        * 如果该字段为null后的替换值。4. 起别名：    * as：as也可以省略</code></pre><h4 id="3-条件查询"><a href="#3-条件查询" class="headerlink" title="3. 条件查询"></a>3. 条件查询</h4><pre><code>1. where子句后跟条件2. 运算符    * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;    * BETWEEN...AND      * IN( 集合)     * LIKE：模糊查询        * 占位符：            * _:单个任意字符            * %：多个任意字符    * IS NULL      * and  或 &amp;&amp;    * or  或 ||     * not  或 !</code></pre>]]></content>
     
@@ -58,9 +83,9 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
       <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   
@@ -83,9 +108,9 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
       <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   
@@ -108,11 +133,11 @@
       <category term="JDBC" scheme="http://yoursite.com/categories/JDBC/"/>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
-    
       <category term="javaweb" scheme="http://yoursite.com/tags/javaweb/"/>
     
       <category term="JDBC" scheme="http://yoursite.com/tags/JDBC/"/>
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
     
   </entry>
   
@@ -135,9 +160,9 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
       <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   
@@ -160,9 +185,9 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
       <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   
@@ -171,9 +196,9 @@
     <link href="http://yoursite.com/2019/09/24/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day01/"/>
     <id>http://yoursite.com/2019/09/24/Java重点知识总结-day01/</id>
     <published>2019-09-24T08:36:27.000Z</published>
-    <updated>2019-10-07T11:42:14.287Z</updated>
+    <updated>2019-10-09T05:17:39.915Z</updated>
     
-    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第一天</p><a id="more"></a><h1 id="一、java中的基本数据类型"><a href="#一、java中的基本数据类型" class="headerlink" title="一、java中的基本数据类型"></a>一、java中的基本数据类型</h1><pre><code>1. 基本数据类型： 四种 八类    byte(4)  boolean(1)  short(2)  char(2)  int(4)      float(4)  long(8)  double(8)2. 引用数据类型    String  数组  集合  ArrayList  Scanner  Random  自定义类型  </code></pre><h1 id="二、引用数据类型中的String中的方法"><a href="#二、引用数据类型中的String中的方法" class="headerlink" title="二、引用数据类型中的String中的方法"></a>二、引用数据类型中的String中的方法</h1><pre><code>第一种：判断方法        boolean equals(String str):比较两个字符串中的内容是否相等        boolean equalsIgnore(String str):比较两个字符串中的内容是否相等(忽略大小写)        boolean startsWish(String subStr):判断某个字符串是否以指定子串开头        boolean endWish(String subStr):判断某个字符串是否以指定子串结尾第二种：获取方法        int length():获取字符串中字符个数        char charAt(int index):获取字符串中某一个字符        String substring(int startIndex,int endIndex):已制定下标开始截取字符串，到指定下标结束(包括开头，不包括结尾)        int indexof(String substr):获取子串第一次出现的下标第三种：转换方法        String toLowerCase():转成小写串        String toUpperCase():转成大写串        char[] toCharArray():变成字符数组第四种：其他方法        String trim():去掉字符串两端的空格        String[] split(String str):切割字符串  </code></pre><h1 id="三、流-读写文件"><a href="#三、流-读写文件" class="headerlink" title="三、流_读写文件"></a>三、流_读写文件</h1><pre><code>输出流：数据从java程序到文件中FileWriter:文件的字符输出流，写数据(一个字符、一个字符串、一个字符数组)        write(int ch):写一个字符（可以写字符的ASCII码值）        write(char[] chs):写一个字符数组        write(String s):写一个字符串        write(char[] chs,int startIndex,int len):写一个字符数组的一部分        write(String s,int startIndex,int len):写一个字符串的一部分输入流：数据从文件到java程序FilerReader:文件的字符输入流，读数据(一个字符、一个字符数组)        int read():读取一个字符        int read(char[] chs):一个读取一个字符数组                            返回值表示实际读到的字符个数</code></pre><h2 id="文件的路径分为两种："><a href="#文件的路径分为两种：" class="headerlink" title="文件的路径分为两种："></a>文件的路径分为两种：</h2><pre><code>1. 相对路径：相对当前项目而言2. 绝对路径：以盘符开头</code></pre><h2 id="对象的内存图"><a href="#对象的内存图" class="headerlink" title="对象的内存图"></a>对象的内存图</h2><pre><code>Dog d = new Dog();d是引用数据类型，保存到栈(stack)中new Dog():创建对象，保存到堆(heap)中</code></pre><p><img src="/images/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE.jpg" alt="内存图">  </p><h1 id="四、回顾面向对象"><a href="#四、回顾面向对象" class="headerlink" title="四、回顾面向对象"></a>四、回顾面向对象</h1><ol><li><p>什么叫做面向对象</p><pre><code>是一种编程思想，面向对象是相对面向过程而言的。</code></pre><ul><li>面向过程<pre><code>遇到一个问题，自己亲力亲为的一步步去解决。典型代表语言：C语言  </code></pre></li></ul></li><li><p>java中先有类还是先有对象</p><pre><code>类的格式：    public  class  类名{            //成员变量            //成员方法            //构造方法                    }一个标准的类：    1. 封装 (隐藏式线细节，对外暴露公共方式)    2. 构造            无参构造（必须要有）            全参构造（最好有）    3. 引用类型变量的内存  </code></pre></li></ol><h1 id="五、匿名对象"><a href="#五、匿名对象" class="headerlink" title="五、匿名对象"></a>五、匿名对象</h1><pre><code>匿名对象：没有名字的对象语法上：只能创建对象，但不用变量来接收匿名对象的使用：    1. 匿名对象也是对象，具有对象所有的功能    2. 匿名对象的特点：        每一次使用匿名对象是，都是一个新对象    结论：        一个匿名对象只能使用一次  </code></pre><h1 id="六、继承"><a href="#六、继承" class="headerlink" title="六、继承"></a>六、继承</h1><ul><li><p>面向对象三大特点：封装、继承、多态  </p><pre><code>1. java中的继承：两个类之间的关系    一个类（子类/派生类/sub）可以继承另一个类（父类/超类/基类/super）这个过程我们称为java中的继承  2. 继承怎么写    public class 子类 extends 父类{             }3. 如果子类继承了父类，南无子类会自动拥有弗雷中所有成员。（但是private除外，父类中用private修饰的成员，子类不能直接拿过来用）4. 继承的作用：提高代码的复用性</code></pre></li><li><p>继承中子父类的成员变量的特点：  </p><pre><code>1. 字符类的成员变量，不同名时不存在任何问题2. 子父类的成员变量同名时，使用子类的对象访问该成员变量时，优先访问子类自己的</code></pre></li><li><p>继承中子父类成员方法的特点：</p><pre><code>1. 子父类的成员方法不同名时，没有任何问题2. 子父类的成员方法同名时，使用子类的对象调用该成员方法是，优先使用子类自己的</code></pre></li><li><p>结论</p><pre><code>无论是调用成员方法还是访问成员变量，优先访问子类自己的，如果子类没有，再去访问父类的，若父类没有，则报错。</code></pre></li></ul><h1 id="七、java的设计思想"><a href="#七、java的设计思想" class="headerlink" title="七、java的设计思想"></a>七、java的设计思想</h1><pre><code>1.算法2.设计模式3.设计原则</code></pre><ul><li><p>java的一个设计原则：向上抽取原则</p><pre><code>把子类中共有的成员向上抽取一个父类，把这些共有的成员写在父类中。</code></pre></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第一天</p><a id="more"></a><h1 id="一、java中的基本数据类型"><a href="#一、java中的基本数据类型" class="headerlink" title="一、java中的基本数据类型"></a>一、java中的基本数据类型</h1><pre><code>1. 基本数据类型： 四种 八类    byte(4)  boolean(1)  short(2)  char(2)  int(4)      float(4)  long(8)  double(8)2. 引用数据类型    String  数组  集合  ArrayList  Scanner  Random  自定义类型  </code></pre><h1 id="二、引用数据类型中的String中的方法"><a href="#二、引用数据类型中的String中的方法" class="headerlink" title="二、引用数据类型中的String中的方法"></a>二、引用数据类型中的String中的方法</h1><pre><code>第一种：判断方法        boolean equals(String str):比较两个字符串中的内容是否相等        boolean equalsIgnore(String str):比较两个字符串中的内容是否相等(忽略大小写)        boolean startsWish(String subStr):判断某个字符串是否以指定子串开头        boolean endWish(String subStr):判断某个字符串是否以指定子串结尾第二种：获取方法        int length():获取字符串中字符个数        char charAt(int index):获取字符串中某一个字符        String substring(int startIndex,int endIndex):已制定下标开始截取字符串，到指定下标结束(包括开头，不包括结尾)        int indexof(String substr):获取子串第一次出现的下标第三种：转换方法        String toLowerCase():转成小写串        String toUpperCase():转成大写串        char[] toCharArray():变成字符数组第四种：其他方法        String trim():去掉字符串两端的空格        String[] split(String str):切割字符串  </code></pre><h1 id="三、流-读写文件"><a href="#三、流-读写文件" class="headerlink" title="三、流_读写文件"></a>三、流_读写文件</h1><pre><code>输出流：数据从java程序到文件中FileWriter:文件的字符输出流，写数据(一个字符、一个字符串、一个字符数组)        write(int ch):写一个字符（可以写字符的ASCII码值）        write(char[] chs):写一个字符数组        write(String s):写一个字符串        write(char[] chs,int startIndex,int len):写一个字符数组的一部分        write(String s,int startIndex,int len):写一个字符串的一部分输入流：数据从文件到java程序FilerReader:文件的字符输入流，读数据(一个字符、一个字符数组)        int read():读取一个字符        int read(char[] chs):一个读取一个字符数组                            返回值表示实际读到的字符个数</code></pre><h2 id="文件的路径分为两种："><a href="#文件的路径分为两种：" class="headerlink" title="文件的路径分为两种："></a>文件的路径分为两种：</h2><pre><code>1. 相对路径：相对当前项目而言2. 绝对路径：以盘符开头</code></pre><h2 id="对象的内存图"><a href="#对象的内存图" class="headerlink" title="对象的内存图"></a>对象的内存图</h2><pre><code>Dog d = new Dog();d是引用数据类型，保存到栈(stack)中new Dog():创建对象，保存到堆(heap)中</code></pre><p><img src="/images/picture/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE.jpg" alt="内存图">  </p><h1 id="四、回顾面向对象"><a href="#四、回顾面向对象" class="headerlink" title="四、回顾面向对象"></a>四、回顾面向对象</h1><ol><li><p>什么叫做面向对象</p><pre><code>是一种编程思想，面向对象是相对面向过程而言的。</code></pre><ul><li>面向过程<pre><code>遇到一个问题，自己亲力亲为的一步步去解决。典型代表语言：C语言  </code></pre></li></ul></li><li><p>java中先有类还是先有对象</p><pre><code>类的格式：    public  class  类名{            //成员变量            //成员方法            //构造方法                    }一个标准的类：    1. 封装 (隐藏式线细节，对外暴露公共方式)    2. 构造            无参构造（必须要有）            全参构造（最好有）    3. 引用类型变量的内存  </code></pre></li></ol><h1 id="五、匿名对象"><a href="#五、匿名对象" class="headerlink" title="五、匿名对象"></a>五、匿名对象</h1><pre><code>匿名对象：没有名字的对象语法上：只能创建对象，但不用变量来接收匿名对象的使用：    1. 匿名对象也是对象，具有对象所有的功能    2. 匿名对象的特点：        每一次使用匿名对象是，都是一个新对象    结论：        一个匿名对象只能使用一次  </code></pre><h1 id="六、继承"><a href="#六、继承" class="headerlink" title="六、继承"></a>六、继承</h1><ul><li><p>面向对象三大特点：封装、继承、多态  </p><pre><code>1. java中的继承：两个类之间的关系    一个类（子类/派生类/sub）可以继承另一个类（父类/超类/基类/super）这个过程我们称为java中的继承  2. 继承怎么写    public class 子类 extends 父类{             }3. 如果子类继承了父类，南无子类会自动拥有弗雷中所有成员。（但是private除外，父类中用private修饰的成员，子类不能直接拿过来用）4. 继承的作用：提高代码的复用性</code></pre></li><li><p>继承中子父类的成员变量的特点：  </p><pre><code>1. 字符类的成员变量，不同名时不存在任何问题2. 子父类的成员变量同名时，使用子类的对象访问该成员变量时，优先访问子类自己的</code></pre></li><li><p>继承中子父类成员方法的特点：</p><pre><code>1. 子父类的成员方法不同名时，没有任何问题2. 子父类的成员方法同名时，使用子类的对象调用该成员方法是，优先使用子类自己的</code></pre></li><li><p>结论</p><pre><code>无论是调用成员方法还是访问成员变量，优先访问子类自己的，如果子类没有，再去访问父类的，若父类没有，则报错。</code></pre></li></ul><h1 id="七、java的设计思想"><a href="#七、java的设计思想" class="headerlink" title="七、java的设计思想"></a>七、java的设计思想</h1><pre><code>1.算法2.设计模式3.设计原则</code></pre><ul><li><p>java的一个设计原则：向上抽取原则</p><pre><code>把子类中共有的成员向上抽取一个父类，把这些共有的成员写在父类中。</code></pre></li></ul>]]></content>
     
     <summary type="html">
     
@@ -185,9 +210,9 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
       <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   
