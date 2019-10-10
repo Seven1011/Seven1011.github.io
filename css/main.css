@@ -1678,7 +1678,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8891a6;
+  background: #6b6f8b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2959,15 +2959,13 @@ pre,
 /*background: url(../images/scrollbar_arrow.png) no-repeat 0 0;*/
 /*可以添加滚动条样式*/
 }
-/*
-  给博客添加背景图片
-  body {
-  background:url(https://i.loli.net/2019/10/05/sYSDEbU2C6A3JuZ.png);
+/*给博客添加背景图片*/
+body {
+  background: url("https://sm.ms/image/LpKWdoO1GESjsv2");
   background-repeat: repeat;
-  background-attachment:fixed;
-  background-position:50% 50%;
-  }
-*/
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
 .footer {
   color: #c18;
   font-size: 0.875em;
