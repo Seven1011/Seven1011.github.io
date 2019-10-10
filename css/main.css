@@ -1678,7 +1678,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6b6f8b;
+  background: #4e5212;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2961,7 +2961,7 @@ pre,
 }
 /*给博客添加背景图片*/
 body {
-  background: url("https://sm.ms/image/LpKWdoO1GESjsv2");
+  background: url("https://i.loli.net/2019/10/10/fTaJ5OvlNSHEprX.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
