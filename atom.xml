@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-10-11T04:27:37.967Z</updated>
+  <updated>2019-10-11T06:13:41.822Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://seven1011.github.io/2019/10/10/MySQL%E7%BA%A6%E6%9D%9F%E9%87%8D%E7%82%B9/"/>
     <id>https://seven1011.github.io/2019/10/10/MySQL约束重点/</id>
     <published>2019-10-10T14:20:46.000Z</published>
-    <updated>2019-10-11T04:27:37.967Z</updated>
+    <updated>2019-10-11T06:13:41.822Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】MySQL约束知识点总结</p><a id="more"></a><h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. DQL：查询语句    排序查询    聚合函数    分组查询    分页查询2. 约束3. 多表之间的关系4. 范式5. 数据库的备份和还原</code></pre><h1 id="DQL：查询语句"><a href="#DQL：查询语句" class="headerlink" title="DQL：查询语句"></a>DQL：查询语句</h1><pre><code>1. 排序查询    * 语法：order by 子句        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...    * 排序方式：        * ASC：升序，默认的。        * DESC：降序。    * 注意：        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。2. 聚合函数：  将一列数据作为一个整体，进行纵向的计算    1.count：计算个数        1.一般选择非空的列：主键        2.count(*)    2.max：计算最大值    3.min：计算最小值    4.sum：计算和    5.avg：计算平均值    *注意：聚合函数的计算，排除null值       解决方案：           1.选择不包含非空的列进行计算           2.IFNULL函数3.分组查询    1.语法： group by  分组字段    2.注意：        1.分组之后查询的字段：分组查询、聚合函数        2.where和having的区别            (1) where在分组之前进行限定，如不满足条件，则不能参与分组                having在分组之后进行限定，如不满足，则不会被查询出来            (2) where后不可以根据核函数，having可进行聚合函数判断  4.分页查询    1.语法：limit开始的索引，每页查询的条数    2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数    --每页显示3条记录            SELECT*FROM student LIMIT 0,3  --第1页            SELECT*FROM student LIMIT 3,3  --第2页            SELECT*FROM student LIMIT 6,3  --第3页    3.limit是一个MySql的&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性* 分类：    1.主键约束    2.非空约束    3.唯一约束    4.外键约束   *非空约束：not null 值不能为null       1.创建表示添加约束           2.CREATE TABLE Stu(               id TNT;               NAME VARCHAR(20) NOT NULL --name为非空               )        2.创建表完后添加非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20) NOT NULL;        3.删除name的非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20);    *唯一约束：unique， 只不能重复        1.创建表示，添加唯一约束            CREATE TABLE stu(            id INT,            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束            );        * 注意mysql中，唯一约束限定的列的值可以有多个null        2.删除唯一约束            ALTER TABLE stu DROP INDEX phone_number;        3.再创建表之后添加唯一约束            ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;    *主键约束：primary key        1.注意：            1.含义：非空且唯一            2.一张表只能有一个字段为主键            3.主键就是表中记录的唯一标识        2.在创建表时，添加主键约束            creat table stu(            id int primary key auto_increment, --给id添加主键约束            name varchar(20)            )        3.删除自动增长            ALTER TABLE stu MODIFY id INT;        4.添加自动增长            ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;</code></pre>]]></content>
     
