@@ -58,17 +58,19 @@
   };
 </script>
 
-  <meta name="description" content="于无声处听惊雷,于无色处见繁花">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sevenの博客">
-<meta property="og:url" content="https://seven1011.github.io/archives/2019/09/index.html">
+  <meta name="description" content="【介绍】MySQL约束知识点总结">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL约束重点">
+<meta property="og:url" content="https://seven1011.github.io/2019/10/10/MySQL约束重点/index.html">
 <meta property="og:site_name" content="Sevenの博客">
-<meta property="og:description" content="于无声处听惊雷,于无色处见繁花">
+<meta property="og:description" content="【介绍】MySQL约束知识点总结">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-11T04:27:37.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sevenの博客">
-<meta name="twitter:description" content="于无声处听惊雷,于无色处见繁花">
-  <link rel="canonical" href="https://seven1011.github.io/archives/2019/09/">
+<meta name="twitter:title" content="MySQL约束重点">
+<meta name="twitter:description" content="【介绍】MySQL约束知识点总结">
+  <link rel="canonical" href="https://seven1011.github.io/2019/10/10/MySQL约束重点/">
 
 
 <script id="page-configurations">
@@ -76,13 +78,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | Sevenの博客</title>
+  <title>MySQL约束重点 | Sevenの博客</title>
   
 
 
@@ -214,227 +216,277 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        
-        
-        
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://seven1011.github.io/2019/10/10/MySQL约束重点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Seven">
+      <meta itemprop="description" content="于无声处听惊雷,于无色处见繁花">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sevenの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">MySQL约束重点
+
           
-        
-        <span class="collection-header">嗯..! 目前共计 10 篇日志。 继续努力。</span>
-      </div>
-      
+        </h1>
 
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-  
-  
+              
+                
+              
 
+              <time title="创建时间：2019-10-10 14:20:46" itemprop="dateCreated datePublished" datetime="2019-10-10T14:20:46Z">2019-10-10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-11 04:27:37" itemprop="dateModified" datetime="2019-10-11T04:27:37Z">2019-10-11</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
   
+  <span class="post-meta-item">
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/10/MySQL约束重点/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/10/10/MySQL约束重点/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>【介绍】MySQL约束知识点总结</p>
+<a id="more"></a>
+<h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. DQL：查询语句
+    排序查询
+    聚合函数
+    分组查询
+    分页查询
+2. 约束
+3. 多表之间的关系
+4. 范式
+5. 数据库的备份和还原</code></pre><h1 id="DQL：查询语句"><a href="#DQL：查询语句" class="headerlink" title="DQL：查询语句"></a>DQL：查询语句</h1><pre><code>1. 排序查询
+    * 语法：order by 子句
+        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...
+
+    * 排序方式：
+        * ASC：升序，默认的。
+        * DESC：降序。
+
+    * 注意：
+        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。
+2. 聚合函数：  将一列数据作为一个整体，进行纵向的计算
+    1.count：计算个数
+        1.一般选择非空的列：主键
+        2.count(*)
+    2.max：计算最大值
+    3.min：计算最小值
+    4.sum：计算和
+    5.avg：计算平均值
+
+    *注意：聚合函数的计算，排除null值
+       解决方案：
+           1.选择不包含非空的列进行计算
+           2.IFNULL函数
+3.分组查询
+    1.语法： group by  分组字段
+    2.注意：
+        1.分组之后查询的字段：分组查询、聚合函数
+        2.where和having的区别
+            (1) where在分组之前进行限定，如不满足条件，则不能参与分组
+                having在分组之后进行限定，如不满足，则不会被查询出来
+            (2) where后不可以根据核函数，having可进行聚合函数判断  
+4.分页查询
+    1.语法：limit开始的索引，每页查询的条数
+    2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数
+
+    --每页显示3条记录
+            SELECT*FROM student LIMIT 0,3  --第1页
+            SELECT*FROM student LIMIT 3,3  --第2页
+            SELECT*FROM student LIMIT 6,3  --第3页
+    3.limit是一个MySql的&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性
+* 分类：
+    1.主键约束
+    2.非空约束
+    3.唯一约束
+    4.外键约束
+
+   *非空约束：not null 值不能为null
+       1.创建表示添加约束
+           2.CREATE TABLE Stu(
+               id TNT;
+               NAME VARCHAR(20) NOT NULL --name为非空
+               )
+        2.创建表完后添加非空约束
+            ALTER TABLE Stu MODIFY NAME VARCHAR(20) NOT NULL;
+        3.删除name的非空约束
+            ALTER TABLE Stu MODIFY NAME VARCHAR(20);
+    *唯一约束：unique， 只不能重复
+        1.创建表示，添加唯一约束
+            CREATE TABLE stu(
+            id INT,
+            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束
+            );
+        * 注意mysql中，唯一约束限定的列的值可以有多个null
+        2.删除唯一约束
+            ALTER TABLE stu DROP INDEX phone_number;
+        3.再创建表之后添加唯一约束
+            ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;
+    *主键约束：primary key
+        1.注意：
+            1.含义：非空且唯一
+            2.一张表只能有一个字段为主键
+            3.主键就是表中记录的唯一标识
+        2.在创建表时，添加主键约束
+            creat table stu(
+            id int primary key auto_increment, --给id添加主键约束
+            name varchar(20)
+            )
+        3.删除自动增长
+            ALTER TABLE stu MODIFY id INT;
+        4.添加自动增长
+            ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;</code></pre>
     </div>
-  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
 
-      <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/09/28/Java重点知识总结-day04/" itemprop="url">
-            <span itemprop="name">Java重点知识总结-day04</span>
-          </a>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-27T16:34:44Z"
-              content="2019-09-27">
-          09-27
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Seven</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://seven1011.github.io/2019/10/10/MySQL约束重点/" title="MySQL约束重点">https://seven1011.github.io/2019/10/10/MySQL约束重点/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
 
-    </header>
-  </article>
+      
 
+        <div>
+          
+            <div>
+    
+        <div style="text-align:center;color: #DB5;font-size:14px;">-------------　　　　本文结束　<i class="fa fa-heart"></i>　感谢您的阅读　　　　-------------</div>
+    
+</div>
+          
+        </div>
 
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i>MySQL</a>
+            
+          </div>
         
-          <a class="post-title-link" href="/2019/09/27/JDBC基础学习篇-day1/" itemprop="url">
-            <span itemprop="name">JDBC基础学习篇--day1</span>
-          </a>
+
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-27T09:25:27Z"
-              content="2019-09-27">
-          09-27
-        </time>
-      </div>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/09/hexo博客next主题-不蒜子计数不显示问题解决办法/" rel="next" title="hexo博客next主题--不蒜子计数不显示问题解决办法">
+                  <i class="fa fa-chevron-left"></i> hexo博客next主题--不蒜子计数不显示问题解决办法
+                </a>
+              
+            </div>
 
-    </header>
-  </article>
+            <span class="post-nav-divider"></span>
 
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
-          <a class="post-title-link" href="/2019/09/26/Java重点知识总结-day03/" itemprop="url">
-            <span itemprop="name">Java重点知识总结-day03</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-26T15:24:51Z"
-              content="2019-09-26">
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/25/Java重点知识总结-day02/" itemprop="url">
-            <span itemprop="name">Java重点知识总结-day02</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-25T09:13:51Z"
-              content="2019-09-25">
-          09-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/24/Java重点知识总结-day01/" itemprop="url">
-            <span itemprop="name">Java重点知识总结-day01</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-24T08:36:27Z"
-              content="2019-09-24">
-          09-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/20/Windows-常用工具总结/" itemprop="url">
-            <span itemprop="name">Windows 常用工具总结</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-20T13:16:28Z"
-              content="2019-09-20">
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-
-    </div>
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -449,6 +501,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -461,6 +518,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主要内容"><span class="nav-number">1.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DQL：查询语句"><span class="nav-number">2.</span> <span class="nav-text">DQL：查询语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#约束"><span class="nav-number">3.</span> <span class="nav-text">约束</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -621,6 +680,56 @@
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   

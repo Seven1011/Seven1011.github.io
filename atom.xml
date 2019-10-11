@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-10-09T05:48:52.571Z</updated>
+  <updated>2019-10-11T04:27:37.967Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL约束重点</title>
+    <link href="https://seven1011.github.io/2019/10/10/MySQL%E7%BA%A6%E6%9D%9F%E9%87%8D%E7%82%B9/"/>
+    <id>https://seven1011.github.io/2019/10/10/MySQL约束重点/</id>
+    <published>2019-10-10T14:20:46.000Z</published>
+    <updated>2019-10-11T04:27:37.967Z</updated>
+    
+    <content type="html"><![CDATA[<p>【介绍】MySQL约束知识点总结</p><a id="more"></a><h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. DQL：查询语句    排序查询    聚合函数    分组查询    分页查询2. 约束3. 多表之间的关系4. 范式5. 数据库的备份和还原</code></pre><h1 id="DQL：查询语句"><a href="#DQL：查询语句" class="headerlink" title="DQL：查询语句"></a>DQL：查询语句</h1><pre><code>1. 排序查询    * 语法：order by 子句        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...    * 排序方式：        * ASC：升序，默认的。        * DESC：降序。    * 注意：        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。2. 聚合函数：  将一列数据作为一个整体，进行纵向的计算    1.count：计算个数        1.一般选择非空的列：主键        2.count(*)    2.max：计算最大值    3.min：计算最小值    4.sum：计算和    5.avg：计算平均值    *注意：聚合函数的计算，排除null值       解决方案：           1.选择不包含非空的列进行计算           2.IFNULL函数3.分组查询    1.语法： group by  分组字段    2.注意：        1.分组之后查询的字段：分组查询、聚合函数        2.where和having的区别            (1) where在分组之前进行限定，如不满足条件，则不能参与分组                having在分组之后进行限定，如不满足，则不会被查询出来            (2) where后不可以根据核函数，having可进行聚合函数判断  4.分页查询    1.语法：limit开始的索引，每页查询的条数    2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数    --每页显示3条记录            SELECT*FROM student LIMIT 0,3  --第1页            SELECT*FROM student LIMIT 3,3  --第2页            SELECT*FROM student LIMIT 6,3  --第3页    3.limit是一个MySql的&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性* 分类：    1.主键约束    2.非空约束    3.唯一约束    4.外键约束   *非空约束：not null 值不能为null       1.创建表示添加约束           2.CREATE TABLE Stu(               id TNT;               NAME VARCHAR(20) NOT NULL --name为非空               )        2.创建表完后添加非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20) NOT NULL;        3.删除name的非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20);    *唯一约束：unique， 只不能重复        1.创建表示，添加唯一约束            CREATE TABLE stu(            id INT,            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束            );        * 注意mysql中，唯一约束限定的列的值可以有多个null        2.删除唯一约束            ALTER TABLE stu DROP INDEX phone_number;        3.再创建表之后添加唯一约束            ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;    *主键约束：primary key        1.注意：            1.含义：非空且唯一            2.一张表只能有一个字段为主键            3.主键就是表中记录的唯一标识        2.在创建表时，添加主键约束            creat table stu(            id int primary key auto_increment, --给id添加主键约束            name varchar(20)            )        3.删除自动增长            ALTER TABLE stu MODIFY id INT;        4.添加自动增长            ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;【介绍】MySQL约束知识点总结&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="https://seven1011.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://seven1011.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客next主题--不蒜子计数不显示问题解决办法</title>
@@ -42,11 +65,11 @@
   </entry>
   
   <entry>
-    <title>MySQL重点知识总结</title>
-    <link href="https://seven1011.github.io/2019/10/08/MySQL%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    <id>https://seven1011.github.io/2019/10/08/MySQL重点知识总结/</id>
+    <title>MySQL基础知识总结</title>
+    <link href="https://seven1011.github.io/2019/10/08/MySQL%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>https://seven1011.github.io/2019/10/08/MySQL基础知识总结/</id>
     <published>2019-10-07T19:39:35.000Z</published>
-    <updated>2019-10-08T10:44:11.951Z</updated>
+    <updated>2019-10-10T06:23:28.560Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】MySQL基础知识的总结</p><a id="more"></a><h1 id="1、数据库的基本概念"><a href="#1、数据库的基本概念" class="headerlink" title="1、数据库的基本概念"></a>1、数据库的基本概念</h1><ul><li>维基百科定义<blockquote><p>所谓“数据库”系以一定方式储存在一起、能予多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。一个数据库由多个表空间（Tablespace）构成。</p></blockquote></li></ul><ol><li><p>数据库的英文单词：</p><pre><code>DateBase  简称  DB</code></pre></li><li><p>什么是数据库</p><pre><code>用于存储和管理数据的仓库</code></pre></li><li><p>数据库的特点  </p><pre><code>1. 持久化存储数据的，其实数据库就是一个文件系统2. 方便存储和管理数据的3. 使用统一的方式操作数据库  --SQL</code></pre></li></ol><h1 id="2、MySQL数据库软件"><a href="#2、MySQL数据库软件" class="headerlink" title="2、MySQL数据库软件"></a>2、MySQL数据库软件</h1><ul><li>常见的数据库软件  mysql、oracle、sqlserver、sqlite、postgreSQL等  </li><li>安装–卸载–配置</li></ul><h1 id="3、SQL"><a href="#3、SQL" class="headerlink" title="3、SQL"></a>3、SQL</h1><ol><li><p>什么是SQL</p><pre><code>Structured  Query  Language: 结构化查询语言其实就是定义了操作类型数据库的规则，每一种数据库操作的方式存在不一样的地方，被称为“方言”。</code></pre></li><li><p>SQL通用语法</p><pre><code>1. SQL语句可以单行或多行书写，以分号结尾2. 可以使用空格和缩进来增强语句的可持续性3. MySQL数据库的SQL语句不区分大小写，关键字建议使用大写4. 注释        · 单行注释：  -- 注释的内容                  或  # 注释的内容 （mysql特有）        · 多行注释： / * 注释的内容 * /</code></pre></li><li><p>SQL分类</p><pre><code>1. DDL(Date Definition Language) 数据定义语言    用来定义数据库对象：数据库、表、列等               关键字：crate drop alter2. DML(Date Manipulation Language) 数据操作语言    用来对数据库中表的数据进行增删改              关键字：insert delete update3. DQL(Date Query Language) 数据库查询语言    用来查询数据库表的记录(数据)             关键字：select where4. DCL(Date Control Language) 数据库控制语言    用来定义数据库的访问权限和安全级别及创建用户             关键字： GRANT REVOKE等</code></pre><h2 id="DDL：操作数据库、表"><a href="#DDL：操作数据库、表" class="headerlink" title="DDL：操作数据库、表"></a>DDL：操作数据库、表</h2></li></ol><h3 id="1-操作数据库：CRUD"><a href="#1-操作数据库：CRUD" class="headerlink" title="1.操作数据库：CRUD"></a>1.操作数据库：CRUD</h3><h4 id="1-C-Creat-创建"><a href="#1-C-Creat-创建" class="headerlink" title="1.C(Creat):创建"></a>1.C(Creat):创建</h4><pre><code>* 创建数据库：CRUD        create database 数据库名称* 创建数据库 判断不存在 再进行创建        create database if not exists  ···名称* 创建数据库，并指定字符集        create database 数据库名称 character set 字符集合</code></pre><h4 id="2-R-Rrtrieve-查询"><a href="#2-R-Rrtrieve-查询" class="headerlink" title="2.R(Rrtrieve):查询"></a>2.R(Rrtrieve):查询</h4><pre><code>* 查询所有数据库的名称:        show databases;* 查询某个数据库的字符集:查询某个数据库的创建语句        show create database 数据库名称;</code></pre><h4 id="3-U-Update-修改"><a href="#3-U-Update-修改" class="headerlink" title="3.U(Update):修改"></a>3.U(Update):修改</h4><pre><code>* 修改数据库的字符集        alter database 数据库名称 character set 字符集名称;</code></pre><h4 id="4-D-Delete-删除"><a href="#4-D-Delete-删除" class="headerlink" title="4.D(Delete):删除"></a>4.D(Delete):删除</h4><pre><code>* 删除数据库        drop database 数据库名称;* 判断数据库存在，存在再删除        drop database if exists 数据库名称;</code></pre><h4 id="5-使用数据库"><a href="#5-使用数据库" class="headerlink" title="5.使用数据库"></a>5.使用数据库</h4><pre><code>* 查询当前正在使用的数据库名称        select database();* 使用数据库        use 数据库名称;</code></pre><h3 id="2-操作表"><a href="#2-操作表" class="headerlink" title="2.操作表"></a>2.操作表</h3><h4 id="1-C-Create-创建"><a href="#1-C-Create-创建" class="headerlink" title="1.C(Create):创建"></a>1.C(Create):创建</h4><h5 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h5><pre><code>create table 表名(    列名1 数据类型1,    列名2 数据类型2,    ....    列名n 数据类型n);* 注意：最后一列，不需要加逗号(,)</code></pre><h5 id="2-R-Retrieve-：查询"><a href="#2-R-Retrieve-：查询" class="headerlink" title="2. R(Retrieve)：查询"></a>2. R(Retrieve)：查询</h5><pre><code>* 查询某个数据库中所有的表名称     show tables;* 查询表结构      desc 表名;</code></pre><h5 id="3-U-Update-修改-1"><a href="#3-U-Update-修改-1" class="headerlink" title="3. U(Update):修改"></a>3. U(Update):修改</h5><pre><code>1. 修改表名    alter table 表名 rename to 新的表名;2. 修改表的字符集    alter table 表名 character set 字符集名称;3. 添加一列    alter table 表名 add 列名 数据类型;4. 修改列名称 类型    alter table 表名 change 列名 新列别 新数据类型;    alter table 表名 modify 列名 新数据类型;5. 删除列    alter table 表名 drop 列名;</code></pre><h5 id="4-D-Delete-删除-1"><a href="#4-D-Delete-删除-1" class="headerlink" title="4. D(Delete):删除"></a>4. D(Delete):删除</h5><pre><code>* drop table 表名;* drop table  if exists 表名 ;</code></pre><h5 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h5><pre><code>1. int：整数类型2. double:小数类型3. date:日期，只包含年月日，yyyy-MM-dd4. datetime:日期，包含年月日时分秒     yyyy-MM-dd HH:mm:ss5. timestamp:时间错类型    包含年月日时分秒     yyyy-MM-dd HH:mm:ss        * 如果将来不给这个字段赋值，或赋值为null，则默认使用当前的系统时间，来自动赋值6. varchar：字符串    * name varchar(20):姓名最大20个字符    * zhangsan 8个字符  张三 2个字符</code></pre><h2 id="DML：增删改表中数据"><a href="#DML：增删改表中数据" class="headerlink" title="DML：增删改表中数据"></a>DML：增删改表中数据</h2><h4 id="1-添加数据："><a href="#1-添加数据：" class="headerlink" title="1. 添加数据："></a>1. 添加数据：</h4><pre><code>* 语法：    * insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n);* 注意：    1. 列名和值要一一对应。    2. 如果表名后，不定义列名，则默认给所有列添加值        insert into 表名 values(值1,值2,...值n);    3. 除了数字类型，其他类型需要使用引号(单双都可以)引起来</code></pre><h4 id="2-删除数据："><a href="#2-删除数据：" class="headerlink" title="2. 删除数据："></a>2. 删除数据：</h4><pre><code>* 语法：    * delete from 表名 [where 条件]* 注意：    1. 如果不加条件，则删除表中所有记录。    2. 如果要删除所有记录        1. delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作        2. TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</code></pre><h4 id="3-修改数据："><a href="#3-修改数据：" class="headerlink" title="3. 修改数据："></a>3. 修改数据：</h4><pre><code>* 语法：    * update 表名 set 列名1 = 值1, 列名2 = 值2,... [where 条件];* 注意：    1. 如果不加任何条件，则会将表中所有记录全部修改。</code></pre><h2 id="DQL：查询表中的记录"><a href="#DQL：查询表中的记录" class="headerlink" title="DQL：查询表中的记录"></a>DQL：查询表中的记录</h2><pre><code>* select * from 表名;</code></pre><h4 id="1-语法："><a href="#1-语法：" class="headerlink" title="1. 语法："></a>1. 语法：</h4><pre><code>select    字段列表from    表名列表where    条件列表group by    分组字段having    分组之后的条件order by    排序limit    分页限定</code></pre><h4 id="2-基础查询"><a href="#2-基础查询" class="headerlink" title="2. 基础查询"></a>2. 基础查询</h4><pre><code>1. 多个字段的查询    select 字段名1，字段名2... from 表名；    * 注意：        * 如果查询所有字段，则可以使用*来替代字段列表。2. 去除重复：    * distinct3. 计算列    * 一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）    * ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null        * 表达式1：哪个字段需要判断是否为null        * 如果该字段为null后的替换值。4. 起别名：    * as：as也可以省略</code></pre><h4 id="3-条件查询"><a href="#3-条件查询" class="headerlink" title="3. 条件查询"></a>3. 条件查询</h4><pre><code>1. where子句后跟条件2. 运算符    * &gt; 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;    * BETWEEN...AND      * IN( 集合)     * LIKE：模糊查询        * 占位符：            * _:单个任意字符            * %：多个任意字符    * IS NULL      * and  或 &amp;&amp;    * or  或 ||     * not  或 !</code></pre>]]></content>
     
