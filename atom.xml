@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-10-11T06:13:41.822Z</updated>
+  <updated>2019-10-12T05:38:11.264Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://seven1011.github.io/2019/10/10/MySQL%E7%BA%A6%E6%9D%9F%E9%87%8D%E7%82%B9/"/>
     <id>https://seven1011.github.io/2019/10/10/MySQL约束重点/</id>
     <published>2019-10-10T14:20:46.000Z</published>
-    <updated>2019-10-11T06:13:41.822Z</updated>
+    <updated>2019-10-12T05:38:11.264Z</updated>
     
-    <content type="html"><![CDATA[<p>【介绍】MySQL约束知识点总结</p><a id="more"></a><h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. DQL：查询语句    排序查询    聚合函数    分组查询    分页查询2. 约束3. 多表之间的关系4. 范式5. 数据库的备份和还原</code></pre><h1 id="DQL：查询语句"><a href="#DQL：查询语句" class="headerlink" title="DQL：查询语句"></a>DQL：查询语句</h1><pre><code>1. 排序查询    * 语法：order by 子句        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...    * 排序方式：        * ASC：升序，默认的。        * DESC：降序。    * 注意：        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。2. 聚合函数：  将一列数据作为一个整体，进行纵向的计算    1.count：计算个数        1.一般选择非空的列：主键        2.count(*)    2.max：计算最大值    3.min：计算最小值    4.sum：计算和    5.avg：计算平均值    *注意：聚合函数的计算，排除null值       解决方案：           1.选择不包含非空的列进行计算           2.IFNULL函数3.分组查询    1.语法： group by  分组字段    2.注意：        1.分组之后查询的字段：分组查询、聚合函数        2.where和having的区别            (1) where在分组之前进行限定，如不满足条件，则不能参与分组                having在分组之后进行限定，如不满足，则不会被查询出来            (2) where后不可以根据核函数，having可进行聚合函数判断  4.分页查询    1.语法：limit开始的索引，每页查询的条数    2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数    --每页显示3条记录            SELECT*FROM student LIMIT 0,3  --第1页            SELECT*FROM student LIMIT 3,3  --第2页            SELECT*FROM student LIMIT 6,3  --第3页    3.limit是一个MySql的&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性* 分类：    1.主键约束    2.非空约束    3.唯一约束    4.外键约束   *非空约束：not null 值不能为null       1.创建表示添加约束           2.CREATE TABLE Stu(               id TNT;               NAME VARCHAR(20) NOT NULL --name为非空               )        2.创建表完后添加非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20) NOT NULL;        3.删除name的非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20);    *唯一约束：unique， 只不能重复        1.创建表示，添加唯一约束            CREATE TABLE stu(            id INT,            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束            );        * 注意mysql中，唯一约束限定的列的值可以有多个null        2.删除唯一约束            ALTER TABLE stu DROP INDEX phone_number;        3.再创建表之后添加唯一约束            ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;    *主键约束：primary key        1.注意：            1.含义：非空且唯一            2.一张表只能有一个字段为主键            3.主键就是表中记录的唯一标识        2.在创建表时，添加主键约束            creat table stu(            id int primary key auto_increment, --给id添加主键约束            name varchar(20)            )        3.删除自动增长            ALTER TABLE stu MODIFY id INT;        4.添加自动增长            ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>【介绍】MySQL约束知识点总结</p><a id="more"></a><h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. DQL：查询语句    排序查询    聚合函数    分组查询    分页查询2. 约束3. 多表之间的关系4. 范式5. 数据库的备份和还原</code></pre><h1 id="DQL：查询语句"><a href="#DQL：查询语句" class="headerlink" title="DQL：查询语句"></a>DQL：查询语句</h1><pre><code>1. 排序查询    * 语法：order by 子句        * order by 排序字段1 排序方式1 ，  排序字段2 排序方式2...    * 排序方式：        * ASC：升序，默认的。        * DESC：降序。    * 注意：        * 如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。2. 聚合函数：  将一列数据作为一个整体，进行纵向的计算    1.count：计算个数        1.一般选择非空的列：主键        2.count(*)    2.max：计算最大值    3.min：计算最小值    4.sum：计算和    5.avg：计算平均值    *注意：聚合函数的计算，排除null值       解决方案：           1.选择不包含非空的列进行计算           2.IFNULL函数3.分组查询    1.语法： group by  分组字段    2.注意：        1.分组之后查询的字段：分组查询、聚合函数        2.where和having的区别            (1) where在分组之前进行限定，如不满足条件，则不能参与分组                having在分组之后进行限定，如不满足，则不会被查询出来            (2) where后不可以根据核函数，having可进行聚合函数判断  4.分页查询    1.语法：limit开始的索引，每页查询的条数    2.公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数    --每页显示3条记录            SELECT*FROM student LIMIT 0,3  --第1页            SELECT*FROM student LIMIT 3,3  --第2页            SELECT*FROM student LIMIT 6,3  --第3页    3.limit是一个MySql的&quot;方言&quot;</code></pre><h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><pre><code>* 概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性* 分类：    1.主键约束    2.非空约束    3.唯一约束    4.外键约束   *非空约束：not null 值不能为null       1.创建表示添加约束           2.CREATE TABLE Stu(               id TNT;               NAME VARCHAR(20) NOT NULL --name为非空               )        2.创建表完后添加非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20) NOT NULL;        3.删除name的非空约束            ALTER TABLE Stu MODIFY NAME VARCHAR(20);    *唯一约束：unique， 只不能重复        1.创建表示，添加唯一约束            CREATE TABLE stu(            id INT,            phone_number VARCHAR(20) UNIQUE -- 添加了唯一约束            );        * 注意mysql中，唯一约束限定的列的值可以有多个null        2.删除唯一约束            ALTER TABLE stu DROP INDEX phone_number;        3.再创建表之后添加唯一约束            ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;    *主键约束：primary key        1.注意：            1.含义：非空且唯一            2.一张表只能有一个字段为主键            3.主键就是表中记录的唯一标识        2.在创建表时，添加主键约束            creat table stu(            id int primary key auto_increment, --给id添加主键约束            name varchar(20)            )        3.删除主键            ALTER TABLE stu DROP PRIMARY KEY;        4.自动增长            1.概念：如果某一列是数值类型的，使用auto_increment 可以来完成值得自动增长            2.在创建表时，添加主键约束，并且完成主键自增长                    create table stu(                        id int primary key auto_increment,-- 给id添加主键约束                        name varchar(20)                    );            3. 删除自动增长                ALTER TABLE stu MODIFY id INT;            4. 添加自动增长                ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;        *外键约束：foregin key，让表与表产生关系，从而保证数据的正确性。            1.在创建表时，可以添加外键                *语法                    create table 表名(                        ...                        外键列                        constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称                        );            2.删除外键                ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;            3.创建表之后，添加外键                ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称);            4.级联操作                1.添加级联操作：                    语法：ALTER TABLE 表名 ADD CONSTRAINT 外键名称                                     FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称) ON UPDATE CASCADE ON DELETE CASCADE  ;                2.分类                    1.级联更新：ON UPDATE CASCADE                    2.级联删除：ON DELETE CASCADE</code></pre><h1 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h1><pre><code>1.多表之间的关系    1.分类        1.一对一：        2.一对多        3.多对多    2.实现关系：        1.一对多（多对一）            实现方式：在多的一方建立外键，指向一的一方的主键        2.多对多            实现方式：多对多关系实现需要借助第三张中间表。中间表至少包含两个字段，这两个字段作为第三张表的外键，分别指向两张表的主键        3. 一对一(了解)：            实现方式：一对一关系实现，可以在任意一方添加唯一外键指向另一方的主键。2.数据库设计的范式    *概念：设计数据库时，需要遵循的一些规范。要遵循后边的范式要求，必须先遵循前边的所有范式要求    设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。    目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式(4NF）和第五范式（5NF，又称完美范式）。    * 几个概念：                1. 函数依赖：A--&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A                    例如：学号--&gt;姓名。  （学号，课程名称） --&gt; 分数                2. 完全函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。                    例如：（学号，课程名称） --&gt; 分数                3. 部分函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。                    例如：（学号，课程名称） -- &gt; 姓名                4. 传递函数依赖：A--&gt;B, B -- &gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称 C 传递函数依赖于A                    例如：学号--&gt;系名，系名--&gt;系主任                5. 码：如果在一张表中，一个属性或属性组，被其他所有属性所完全依赖，则称这个属性(属性组)为该表的码                    * 主属性：码属性组中的所有属性                    * 非主属性：除过码属性组的属性    * 分类：            1.第一范式（1NF）：每一列都是不可分割的原子数据项            2.第二范式（2NF）：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）                3.第三范式（3NF）：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</code></pre><h1 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h1><pre><code>1.命令行：    *语法：        · 备份： mysqldumo -u用户名 -p密码数据库名称 &gt; 保存的路径        · 还原：            1. 登录数据库            2. 创建数据库            3. 使用数据库            4. 执行文件。source 文件路径2.图形化工具</code></pre>]]></content>
     
     <summary type="html">
     
@@ -106,9 +106,9 @@
       <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
     
     
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
       <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
+    
+      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
     
   </entry>
   
@@ -131,9 +131,9 @@
       <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
     
     
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
       <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
+    
+      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
     
   </entry>
   
@@ -142,7 +142,7 @@
     <link href="https://seven1011.github.io/2019/09/27/JDBC%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87-day1/"/>
     <id>https://seven1011.github.io/2019/09/27/JDBC基础学习篇-day1/</id>
     <published>2019-09-27T09:25:27.000Z</published>
-    <updated>2019-10-07T07:56:52.463Z</updated>
+    <updated>2019-10-12T07:14:01.705Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】JDBC基础学习，主要包括JDBC的基本概念、JDBC快速入门以及JDBC中各种接口和类的详解  </p><a id="more"></a><h2 id="主要学习内容："><a href="#主要学习内容：" class="headerlink" title="主要学习内容："></a>主要学习内容：</h2><p>&#160;&#160;1. JDBC基本概念<br>&#160;&#160;2. 快速入门<br>&#160;&#160;3. 对JDBC中各个接口和类详解  </p><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><p>基本概念：Java DateBase Connectivity Java 数据库连接，用Java语言操作数据库。JDBC的实质是由sun公司定义的一套操作数据库的接口，我们使用这套接口（JDBC编程），执行驱动jar包中的实现类。  </p><h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ul><li>步骤  <blockquote><ol><li>导入驱动jar包：mysql-connector-java-5.1.37-bin.jar  <ol><li>复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下  </li><li>右键–&gt;Add As Library  </li></ol></li><li>注册驱动</li><li>获取数据库连接对象</li><li>定义sql</li><li>执行sql，接受返回结果</li><li>处理结果</li><li>释放资源</li></ol></blockquote></li><li>代码    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">    //1.导入驱动jar包</span><br><span class="line">    //2.注册驱动</span><br><span class="line">    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">    //3.获取数据库的连接对象</span><br><span class="line">    Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/stu&quot;, &quot;root&quot;, &quot;root0809&quot;);</span><br><span class="line">    //4.定义sql语句</span><br><span class="line">    String sql = &quot;update account set balance =   100 where id    =   1&quot;;</span><br><span class="line">    //5.获取执行sql的对象 Statement</span><br><span class="line">    Statement stmt = conn.createStatement();</span><br><span class="line">    //6.执行sql</span><br><span class="line">    int count = stmt.executeUpdate(sql);</span><br><span class="line">    //7.处理结果</span><br><span class="line">    System.out.println(count);</span><br><span class="line">    //8.释放资源</span><br><span class="line">    stmt.close();</span><br><span class="line">    conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="各个对象详解："><a href="#各个对象详解：" class="headerlink" title="各个对象详解："></a>各个对象详解：</h3><h4 id="1-驱动管理对象：DriverManager"><a href="#1-驱动管理对象：DriverManager" class="headerlink" title="1.驱动管理对象：DriverManager"></a>1.驱动管理对象：DriverManager</h4><ul><li>功能：</li></ul><blockquote><ol><li>注册驱动：告诉计算及使用哪一个数据驱动jar<br>   注册驱动DriverManager：static void registerDriver(Driver driver)  </li><li>获取数据库连接:<br>· 方法：static Connection getConnection(String url, String user, String password)<br>· 参数介绍：  <pre><code>url:指定连接的路径        语法：jdbc:mysql://ip地址(域名):端口号/数据库名称        例子：jdbc:mysql://localhost:3306/db3        细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称  user:用户名  password:密码  </code></pre></li></ol></blockquote><h4 id="2-数据库连接对象：Connection"><a href="#2-数据库连接对象：Connection" class="headerlink" title="2.数据库连接对象：Connection"></a>2.数据库连接对象：Connection</h4><ul><li>功能<br>   1.获取执行sql的对象<pre><code>· Statement creatStatement()· PreparedStatement prepareStatement(String sql)</code></pre>   2.管理事物：<pre><code>* 开启事务：setAutoCommit(boolean autoCommit):调用该方法设置参数为false，即开启事务。* 提交事务：commit()* 回滚事务：roolback()  </code></pre>  3.Statement:执行sql的对象<pre><code>· 执行sql    1.boolean execute(String sql):可以执行任意的sql    2. int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句          * 返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。    3. ResultSet executeQuery(String sql)  ：执行DQL（select)语句</code></pre>  4.ResultSet:结果及对象，封装查询结果<pre><code>* boolean next(): 游标向下移动一行，判断当前行是否是最后一行末尾(是否有数据)，如果是，则返回false，如果不是则返回true* getXxx(参数):获取数据    * Xxx：代表数据类型   如： int getInt() ,    String getString()    * 参数：        1. int：代表列的编号,从1开始   如： getString(1)        2. String：代表列名称。 如： getDouble(&quot;balance&quot;)* 注意：    * 使用步骤：        1. 游标向下移动一行        2. 判断是否有数据        3. 获取数据  </code></pre>  5.PreparedStatement：执行sql的对象  <pre><code>1. SQL注入问题：在拼接sql时，有一些sql的特殊关键字参与字符串的拼接。会造成安全性问题    1. 输入用户随便，输入密码：a&apos; or &apos;a&apos; = &apos;a    2. sql：select * from user where username = &apos;fhdsjkf&apos; and password = &apos;a&apos; or &apos;a&apos; = &apos;a&apos; 2. 解决sql注入问题：使用PreparedStatement对象来解决3. 预编译的SQL：参数使用?作为占位符4. 步骤：        1. 导入驱动jar包 mysql-connector-java-5.1.37-bin.jar        2. 注册驱动        3. 获取数据库连接对象 Connection        4. 定义sql            * 注意：sql的参数使用？作为占位符。 如：select * from user where username = ? and password = ?;        5. 获取执行sql语句的对象 PreparedStatement  Connection.prepareStatement(String sql)         6. 给？赋值：            * 方法： setXxx(参数1,参数2)                * 参数1：？的位置编号 从1 开始                * 参数2：？的值        7. 执行sql，接受返回结果，不需要传递sql语句        8. 处理结果        9. 释放资源5. 注意：后期都会使用PreparedStatement来完成增删改查的所有操作    1. 可以防止SQL注入    2. 效率更高</code></pre></li></ul>]]></content>
     
@@ -156,11 +156,9 @@
       <category term="JDBC" scheme="https://seven1011.github.io/categories/JDBC/"/>
     
     
-      <category term="javaweb" scheme="https://seven1011.github.io/tags/javaweb/"/>
-    
       <category term="JDBC" scheme="https://seven1011.github.io/tags/JDBC/"/>
     
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
+      <category term="javaweb" scheme="https://seven1011.github.io/tags/javaweb/"/>
     
   </entry>
   
@@ -183,9 +181,9 @@
       <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
     
     
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
       <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
+    
+      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
     
   </entry>
   
@@ -208,9 +206,9 @@
       <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
     
     
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
       <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
+    
+      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
     
   </entry>
   
@@ -233,9 +231,9 @@
       <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
     
     
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
       <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
+    
+      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
     
   </entry>
   
