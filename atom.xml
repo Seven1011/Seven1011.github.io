@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-10-12T05:38:11.264Z</updated>
+  <updated>2019-10-17T11:25:23.031Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring Boot JDBC 连接数据库</title>
+    <link href="https://seven1011.github.io/2019/10/18/Spring-Boot-JDBC-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>https://seven1011.github.io/2019/10/18/Spring-Boot-JDBC-连接数据库/</id>
+    <published>2019-10-17T19:16:55.000Z</published>
+    <updated>2019-10-17T11:25:23.031Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h1 id="Spring-Boot-JDBC-连接数据库"><a href="#Spring-Boot-JDBC-连接数据库" class="headerlink" title="Spring Boot JDBC 连接数据库"></a>Spring Boot JDBC 连接数据库</h1><p>springboot jdbc连接数据库的具体操作步骤以及在操作过程遇到的问题解决</p><ul><li>参考来源：黑马程序员教程javaEE 《Spring Boot基础课件》</li></ul><a id="more"></a><p><strong>JDBC连接数据库</strong></p><ol><li><p>pom.xml配置maven依赖</p> <!-- MYSQL --> <dependency> <groupid>mysql</groupid> <artifactid>mysql-connector-java</artifactid> </dependency> <!-- Spring Boot JDBC --> <dependency> <groupid>org.springframework.boot</groupid> <artifactid>spring-boot-starter-jdbc</artifactid> </dependency></li></ol><ol start="2"><li><p>进行属性文件的配置</p><p> <code>spring.datasource.url=jdbc:mysql://127.0.0.1:3306/test spring.datasource.username=root spring.datasource.password=root spring.datasource.driver-class-name=com.mysql.jdbc.Driver spring.datasource.max-idle=10 spring.datasource.max-wait=10000 spring.datasource.min-idle=5 spring.datasource.initial-size=5</code></p></li><li><p>项目和包</p><p> <img src="/images/picture/20191017144544.jpg" alt></p></li><li><p>java代码</p><p> 4.1 SpringbootJdbcApplication.java</p><pre><code>package com.seven;import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplication;@SpringBootApplicationpublic class SpringbootJdbcApplication {    public static void main(String[] args) {        SpringApplication.run(SpringbootJdbcApplication.class, args);    }}</code></pre><p> 4.2 OneController.java</p><pre><code>package com.seven.controller;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.jdbc.core.JdbcTemplate;import org.springframework.stereotype.Controller;import org.springframework.web.bind.annotation.RequestMapping;import org.springframework.web.bind.annotation.ResponseBody;@Controllerpublic class OneController {    @Autowired    private JdbcTemplate jdbcTemplate;    @RequestMapping(&quot;/&quot;)    @ResponseBody    public String index(){        String sql = &quot;insert into user (id,name) values (1,&apos;zhangsan&apos;)&quot;;        jdbcTemplate.execute(sql);        System.out.println(&quot;执行完成&quot;);        return &quot;hello spring boot&quot;;    }}</code></pre></li><li><p>运行项目</p><p> <code>运行SpringApplication.java中的main()方法</code></p></li><li><p>进行访问</p><p> <code>访问本地端口：[http://localhost:8080/](http://localhost:8080/)</code></p></li><li><p>报错：java.sql.SQLNonTransientConnectionException</p><p> <code>Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: The server time zone value &#39;?????????&#39; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.</code></p></li><li><p>解决办法</p><p> 在<code>application.properties</code>文件<code>url</code>后面添加<code>?serverTimezone=UTC</code></p><p> <code>spring.datasource.url=jdbc:mysql://localhost:3306/testapplication.</code></p><p> 在此运行，访问，显示成功。</p></li><li><p>未解决时可能出现的问题</p><ul><li><code>application.properties</code>文件配置的url其中：Mysql6.0需要的驱动类名为：<code>com.mysql.cj.jdbc.Driver</code>,而Mysql5需要的驱动类名为：<code>com.mysql.jdbc.Driver</code></li><li>数据库链接地址错误<code>（&quot;/&quot;的数量）spring.datasource.url=jdbc:mysql://127.0.0.1:3306/yourDB_name</code></li><li>数据库账号密码错误</li><li>数据库未启动或者无权访问，需要增加权限</li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;h1 id=&quot;Spring-Boot-JDBC-连接数据库&quot;&gt;&lt;a href=&quot;#Spring-Boot-JDBC-连接数据库&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot JDBC 连接数据库&quot;&gt;&lt;/a&gt;Spring Boot JDBC 连接数据库&lt;/h1&gt;&lt;p&gt;springboot jdbc连接数据库的具体操作步骤以及在操作过程遇到的问题解决&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;参考来源：黑马程序员教程javaEE 《Spring Boot基础课件》&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="springboot" scheme="https://seven1011.github.io/categories/springboot/"/>
+    
+      <category term="JDBC" scheme="https://seven1011.github.io/categories/springboot/JDBC/"/>
+    
+    
+      <category term="JDBC" scheme="https://seven1011.github.io/tags/JDBC/"/>
+    
+      <category term="springboot" scheme="https://seven1011.github.io/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL多表&amp;事物</title>
+    <link href="https://seven1011.github.io/2019/10/13/MySQL%E5%A4%9A%E8%A1%A8-%E4%BA%8B%E7%89%A9/"/>
+    <id>https://seven1011.github.io/2019/10/13/MySQL多表-事物/</id>
+    <published>2019-10-13T12:50:26.000Z</published>
+    <updated>2019-10-13T05:30:40.491Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h1><pre><code>1. </code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;主要内容&quot;&gt;&lt;a href=&quot;#主要内容&quot; class=&quot;headerlink&quot; title=&quot;主要内容&quot;&gt;&lt;/a&gt;主要内容&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. &lt;/code&gt;&lt;/pre&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="https://seven1011.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://seven1011.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL约束重点</title>
@@ -44,7 +99,7 @@
     <link href="https://seven1011.github.io/2019/10/09/hexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98-%E4%B8%8D%E8%92%9C%E5%AD%90%E8%AE%A1%E6%95%B0%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>https://seven1011.github.io/2019/10/09/hexo博客next主题-不蒜子计数不显示问题解决办法/</id>
     <published>2019-10-09T12:51:23.000Z</published>
-    <updated>2019-10-09T05:48:52.571Z</updated>
+    <updated>2019-10-13T05:10:08.415Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】hexo博客使用next主题时，开启不蒜子计数不显示问题解决办法</p><a id="more"></a><p>最新的next主题中支持了三方插件<code>busuanzi</code>，在主题配置文件中搜索<code>busuanzi</code>，会看到开启不蒜子的按钮。<br><img src="/images/picture/kaiqibusuanzi.jpg" alt="示意图"><br>开启之后部署三连，发现下方的统计图标并没有出现，然后找解决办法，发现网上大多数对于next主题的解决办法修改到期的域名。打开<code>/themes/next/layout/_partials/analytics/busuanzi-counter.swig</code>文件，可以观察到，在新版本next主题中的<code>不蒜子</code>域名已经进行更新:<br><code>&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br>页面却不显示。<br><img src="/images/picture/busuanzijishubuxianshi.jpg" alt><br>查看html代码<br><img src="/images/picture/busuanzicount_1.jpg" alt><br>可以看到<code>style</code>设置为none，在<code>busuanzi-counter.swig</code>将<code>style=&quot;display:none&quot;</code>删除，发现显示还是没有恢复，最后删除同文档中的id即下图红框中内容<br><img src="/images/picture/busuanzicount_2.jpg" alt><br>重新部署后，即可得到最终得结果。<br><img src="/images/picture/busuanzicount_3.jpg" alt></p>]]></content>
     
@@ -192,7 +247,7 @@
     <link href="https://seven1011.github.io/2019/09/25/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day02/"/>
     <id>https://seven1011.github.io/2019/09/25/Java重点知识总结-day02/</id>
     <published>2019-09-25T09:13:51.000Z</published>
-    <updated>2019-10-02T07:30:31.016Z</updated>
+    <updated>2019-10-13T05:14:49.379Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第二天</p><a id="more"></a><h4 id="1-this和super"><a href="#1-this和super" class="headerlink" title="1.this和super"></a>1.this和super</h4><pre><code>- 作用:    this: 区分本类的成员变量和局部变量同名情况    super:区分父类的成员变量和局部变量同名情况- 用法:    this.成员变量名;//访问本类的成员变量    this.成员方法名();//调用本类成员方法(this可以省略)    super.成员变量名;//访问父类的成员变量    super.成员方法名();//调用父类的成员方法(super不可以省略)</code></pre><h4 id="2-扩展"><a href="#2-扩展" class="headerlink" title="2.扩展:"></a>2.扩展:</h4><pre><code>this(参数);//调用本类的其他构造,具体是哪一个构造,由参数类型决定super(参数)://调用父类的构造,具体哪一个构造,由参数类型决定结论:a.子类中任何一个构造,都会无条件先调用父类的无参构造        b.我们可以通过 super(参数),调用父类中指定参数的构造</code></pre><h4 id="3-方法的重写"><a href="#3-方法的重写" class="headerlink" title="3.方法的重写:"></a>3.方法的重写:</h4><pre><code>- 在子类从 出现了和父类一模一样的方法(修饰符可以不一样) 那么子类中这个方法我们重写后的方法     a.注意事项            1: 子类和父类中重写的那个方法权限可以不一样,子类方法权限&gt;=父类方法权限            2.如果父类的方法是private修饰,子类不能重写     b.什么时候需要进行方法的重写            父类中方法,太low,不适用,不完善,那么子类需要自己重写他,自己实现他</code></pre><h4 id="4-抽象类"><a href="#4-抽象类" class="headerlink" title="4.抽象类"></a>4.抽象类</h4><pre><code>- 概念:    什么叫抽象类: 只要一个类 是abstract修饰的那么这个类就是抽象类和这个类中有没有抽象                 方法,没有必然的联系    什么叫抽象方法:                 方法由abstract修饰,并且没有方法体的方法                    一个抽象类的 是可以没有抽象方法,那么这个类的作用不允许你创建对象  - 作用:             不能创建对象,天生作为父类- 抽象类中的抽象方法有什么作用?        1.抽象类中的抽象方法不是为了调用的        2.为了强制子类去重写</code></pre>]]></content>
     
@@ -217,7 +272,7 @@
     <link href="https://seven1011.github.io/2019/09/24/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day01/"/>
     <id>https://seven1011.github.io/2019/09/24/Java重点知识总结-day01/</id>
     <published>2019-09-24T08:36:27.000Z</published>
-    <updated>2019-10-09T05:17:39.915Z</updated>
+    <updated>2019-10-13T05:09:03.023Z</updated>
     
     <content type="html"><![CDATA[<p>【介绍】java学习过程中重点知识的总结-第一天</p><a id="more"></a><h1 id="一、java中的基本数据类型"><a href="#一、java中的基本数据类型" class="headerlink" title="一、java中的基本数据类型"></a>一、java中的基本数据类型</h1><pre><code>1. 基本数据类型： 四种 八类    byte(4)  boolean(1)  short(2)  char(2)  int(4)      float(4)  long(8)  double(8)2. 引用数据类型    String  数组  集合  ArrayList  Scanner  Random  自定义类型  </code></pre><h1 id="二、引用数据类型中的String中的方法"><a href="#二、引用数据类型中的String中的方法" class="headerlink" title="二、引用数据类型中的String中的方法"></a>二、引用数据类型中的String中的方法</h1><pre><code>第一种：判断方法        boolean equals(String str):比较两个字符串中的内容是否相等        boolean equalsIgnore(String str):比较两个字符串中的内容是否相等(忽略大小写)        boolean startsWish(String subStr):判断某个字符串是否以指定子串开头        boolean endWish(String subStr):判断某个字符串是否以指定子串结尾第二种：获取方法        int length():获取字符串中字符个数        char charAt(int index):获取字符串中某一个字符        String substring(int startIndex,int endIndex):已制定下标开始截取字符串，到指定下标结束(包括开头，不包括结尾)        int indexof(String substr):获取子串第一次出现的下标第三种：转换方法        String toLowerCase():转成小写串        String toUpperCase():转成大写串        char[] toCharArray():变成字符数组第四种：其他方法        String trim():去掉字符串两端的空格        String[] split(String str):切割字符串  </code></pre><h1 id="三、流-读写文件"><a href="#三、流-读写文件" class="headerlink" title="三、流_读写文件"></a>三、流_读写文件</h1><pre><code>输出流：数据从java程序到文件中FileWriter:文件的字符输出流，写数据(一个字符、一个字符串、一个字符数组)        write(int ch):写一个字符（可以写字符的ASCII码值）        write(char[] chs):写一个字符数组        write(String s):写一个字符串        write(char[] chs,int startIndex,int len):写一个字符数组的一部分        write(String s,int startIndex,int len):写一个字符串的一部分输入流：数据从文件到java程序FilerReader:文件的字符输入流，读数据(一个字符、一个字符数组)        int read():读取一个字符        int read(char[] chs):一个读取一个字符数组                            返回值表示实际读到的字符个数</code></pre><h2 id="文件的路径分为两种："><a href="#文件的路径分为两种：" class="headerlink" title="文件的路径分为两种："></a>文件的路径分为两种：</h2><pre><code>1. 相对路径：相对当前项目而言2. 绝对路径：以盘符开头</code></pre><h2 id="对象的内存图"><a href="#对象的内存图" class="headerlink" title="对象的内存图"></a>对象的内存图</h2><pre><code>Dog d = new Dog();d是引用数据类型，保存到栈(stack)中new Dog():创建对象，保存到堆(heap)中</code></pre><p><img src="/images/picture/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE.jpg" alt="内存图">  </p><h1 id="四、回顾面向对象"><a href="#四、回顾面向对象" class="headerlink" title="四、回顾面向对象"></a>四、回顾面向对象</h1><ol><li><p>什么叫做面向对象</p><pre><code>是一种编程思想，面向对象是相对面向过程而言的。</code></pre><ul><li>面向过程<pre><code>遇到一个问题，自己亲力亲为的一步步去解决。典型代表语言：C语言  </code></pre></li></ul></li><li><p>java中先有类还是先有对象</p><pre><code>类的格式：    public  class  类名{            //成员变量            //成员方法            //构造方法                    }一个标准的类：    1. 封装 (隐藏式线细节，对外暴露公共方式)    2. 构造            无参构造（必须要有）            全参构造（最好有）    3. 引用类型变量的内存  </code></pre></li></ol><h1 id="五、匿名对象"><a href="#五、匿名对象" class="headerlink" title="五、匿名对象"></a>五、匿名对象</h1><pre><code>匿名对象：没有名字的对象语法上：只能创建对象，但不用变量来接收匿名对象的使用：    1. 匿名对象也是对象，具有对象所有的功能    2. 匿名对象的特点：        每一次使用匿名对象是，都是一个新对象    结论：        一个匿名对象只能使用一次  </code></pre><h1 id="六、继承"><a href="#六、继承" class="headerlink" title="六、继承"></a>六、继承</h1><ul><li><p>面向对象三大特点：封装、继承、多态  </p><pre><code>1. java中的继承：两个类之间的关系    一个类（子类/派生类/sub）可以继承另一个类（父类/超类/基类/super）这个过程我们称为java中的继承  2. 继承怎么写    public class 子类 extends 父类{             }3. 如果子类继承了父类，南无子类会自动拥有弗雷中所有成员。（但是private除外，父类中用private修饰的成员，子类不能直接拿过来用）4. 继承的作用：提高代码的复用性</code></pre></li><li><p>继承中子父类的成员变量的特点：  </p><pre><code>1. 字符类的成员变量，不同名时不存在任何问题2. 子父类的成员变量同名时，使用子类的对象访问该成员变量时，优先访问子类自己的</code></pre></li><li><p>继承中子父类成员方法的特点：</p><pre><code>1. 子父类的成员方法不同名时，没有任何问题2. 子父类的成员方法同名时，使用子类的对象调用该成员方法是，优先使用子类自己的</code></pre></li><li><p>结论</p><pre><code>无论是调用成员方法还是访问成员变量，优先访问子类自己的，如果子类没有，再去访问父类的，若父类没有，则报错。</code></pre></li></ul><h1 id="七、java的设计思想"><a href="#七、java的设计思想" class="headerlink" title="七、java的设计思想"></a>七、java的设计思想</h1><pre><code>1.算法2.设计模式3.设计原则</code></pre><ul><li><p>java的一个设计原则：向上抽取原则</p><pre><code>把子类中共有的成员向上抽取一个父类，把这些共有的成员写在父类中。</code></pre></li></ul>]]></content>
     
