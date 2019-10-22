@@ -1678,7 +1678,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffeb0b;
+  background: #73410d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2960,12 +2960,6 @@ pre,
 /*可以添加滚动条样式*/
 }
 /*给博客添加背景图片*/
-body {
-  background: url("https://i.loli.net/2019/10/10/fTaJ5OvlNSHEprX.jpg");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-}
 .footer {
   color: #c18;
   font-size: 0.875em;
@@ -3104,3 +3098,10 @@ div.post-block.tag .collection-title h2 {
   transition-duration: 0.15s;
 }
 /* 归档页样式 end */
+/* 鼠标样式 */
+* {
+  cursor: url("/images/default.cur"), auto;
+}
+:link {
+  cursor: url("/images/pointer.cur"), auto;
+}
