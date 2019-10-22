@@ -1681,7 +1681,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff177e;
+  background: #5711a8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3124,7 +3124,7 @@ div.post-block.tag .collection-title h2 {
   -webkit-background-clip: text;
 }
 .site-meta {
-  background: #ddd;
+  background: rgba(245,17,185,0.231);
 }
 @media (max-width: 767px) {
   .site-meta {
