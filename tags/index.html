@@ -28,7 +28,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '7.4.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -424,7 +424,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
-      src="/images/touxiang.jpg"
+      src="/images/qiaoba1.png"
       alt="Seven">
   <p class="site-author-name" itemprop="name">Seven</p>
   <div class="site-description" itemprop="description">于无声处听惊雷,于无色处见繁花</div>
@@ -480,35 +480,7 @@
 
 
       </div>
-      <div id="days"></div>
-</script>
-<script language="javascript">
-function show_date_time(){
-window.setTimeout("show_date_time()", 1000);
-BirthDay=new Date("08/07/2019 20:00:00");
-today=new Date();
-timeold=(today.getTime()-BirthDay.getTime());
-sectimeold=timeold/1000
-secondsold=Math.floor(sectimeold);
-msPerDay=24*60*60*1000
-e_daysold=timeold/msPerDay
-daysold=Math.floor(e_daysold);
-e_hrsold=(e_daysold-daysold)*24;
-hrsold=setzero(Math.floor(e_hrsold));
-e_minsold=(e_hrsold-hrsold)*60;
-minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
-seconds=setzero(Math.floor((e_minsold-minsold)*60));
-document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
-}
-function setzero(i){
-if (i<10)
-{i="0" + i};
-return i;
-}
-show_date_time();
-</script>
-
-      <!-- canvas粒子时钟 https://www.cnblogs.com/xiaohuochai/p/6368039.html
+       <!-- canvas粒子时钟 https://www.cnblogs.com/xiaohuochai/p/6368039.html
   https://www.html5tricks.com/html5-canvas-dance-time.html
  -->
 <div id="">
@@ -882,7 +854,6 @@ show_date_time();
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
 <script src="/js/schemes/pisces.js?v=7.4.0"></script>
-
 <script src="/js/next-boot.js?v=7.4.0"></script>
 
 
