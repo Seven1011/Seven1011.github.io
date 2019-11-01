@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-10-25T10:27:37.725Z</updated>
+  <updated>2019-11-01T14:32:47.025Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bash-yarn-command-not-found</title>
+    <link href="https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/"/>
+    <id>https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/</id>
+    <published>2019-11-01T22:27:58.000Z</published>
+    <updated>2019-11-01T14:32:47.025Z</updated>
+    
+    <content type="html"><![CDATA[<br><a id="more"></a><h2 id="错误介绍"><a href="#错误介绍" class="headerlink" title="错误介绍"></a>错误介绍</h2><p>在bash中安装依赖   </p><p><code>yarn install</code></p><p>出现如下错误</p><p><code>bash: yarn: command not found</code></p><p>这是因为npm没有安装yarn，使用npm进行安装</p><p><code>npm install -g yarn</code></p><p><strong>解释：</strong><code>-g(-global)</code> 该命令就是以全局模式安装yarn</p><blockquote><p><strong>注意：</strong>通常情况下不建议通过npm进行安装。npm安装是非确定性的，程序包没有签名，并且npm除了做了基本的SHA1哈希之外不执行任何完整性检查，这给安装系统程序带来了安全风险。</p></blockquote><p>除此之外，还有通过适合自己操作系统的安装方法来安装yarn</p><p><strong>windows：</strong></p><ol><li><p>进入<a href="https://yarnpkg.com/en/docs/install#windows-stable" target="_blank" rel="noopener">官网下载页面</a>安装(按照引导操作完成)</p></li><li><p>安装完成之后查看yarn版本</p><p> <code>yarn --version</code></p><p> <img src="20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png" alt></p></li></ol><p>Yarn 的全称是 ** Yet Another Resource Negotiator**，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="yarn" scheme="https://seven1011.github.io/categories/yarn/"/>
+    
+    
+      <category term="yarn" scheme="https://seven1011.github.io/tags/yarn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>少年的你已然成年</title>
+    <link href="https://seven1011.github.io/2019/10/26/%E5%B0%91%E5%B9%B4%E7%9A%84%E4%BD%A0%E5%B7%B2%E7%84%B6%E6%88%90%E5%B9%B4/"/>
+    <id>https://seven1011.github.io/2019/10/26/少年的你已然成年/</id>
+    <published>2019-10-26T10:00:44.000Z</published>
+    <updated>2019-10-27T05:08:56.969Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/picture/%E5%B0%91%E5%B9%B4%E7%9A%84%E4%BD%A0.jpg" alt></p><a id="more"></a><hr><p><strong>写在前面的话</strong>：有剧透，仅仅从自己的角度来谈谈《少年的你》。</p><hr><p>电影中的人物大致有这么几类。</p><h1 id="一、魏莱"><a href="#一、魏莱" class="headerlink" title="一、魏莱"></a>一、魏莱</h1><br><p><strong>好看皮囊下扭曲的灵魂。</strong>魏莱在警局接受调查，得知通知魏母之后，露出丑恶的面目。本以为会就此忏悔，结果在郑警官到家进行调查时，家中的豪华的装饰和英文奖杯以及魏母的态度，让平凡的郑警官感到无力感，凸显以陈念为代表的底层大众维护自身权利的艰辛。<br><br></p><p><strong>暴力是可以上瘾的。</strong>在受到退学处分以及小北的恐吓之后。魏反而变本加厉。是因为保利会上瘾的，所以他会在胡小蝶自杀之后，找到陈念，找到她昔日的同伴，对他们进行施暴。</p><h1 id="二、郑易"><a href="#二、郑易" class="headerlink" title="二、郑易"></a>二、郑易</h1><br>最开始在屏幕上出现的郑警官是一个血气方刚、一腔正义的年轻人。他对胡小蝶的自杀、陈念的知情不说而大声呵斥。后来有位陈念受到校园暴力而尽力地维护他。<br><p><strong>“成年后好多事情都可以忘记”</strong>后来他这样安慰陈念，成年之后确实会看淡很多事情，人随之变得大度，没有更多的空闲的时间去想一些无关紧要的事情。但是，少年时期受到的创伤确实无法弥补的，心里的阴影更是一辈子的烙印。<br><br></p><p>郑易从陈念是犯罪嫌疑人却坚持维护他去高考，<br><br></p><p>到    <strong>“你觉得会有这样的人会了对方做几十年的牢吗？”</strong><br><br></p><p><strong>“你和我不会，可是他们是少年”</strong>这样同事之间的对话。<br><br></p><p>  再到后来老杨对他说  一个好学生，一个小混混，都被你拉下水，夸赞他成熟了。<br><br></p><p>郑易也得到了成长，而他所做的是为了守护两个孩子的未来。<br><br></p><p>小北守护的是陈念的那份善良，陈年坚守的是终有一天他们可以光明正大肩并肩的周在大家上的信念。</p><h1 id="三、小北"><a href="#三、小北" class="headerlink" title="三、小北"></a>三、小北</h1><br>生活在底层的泥泞之中，原生家庭对他造成了巨大的影响。<br><p><strong>世界上有两种人，一种是挨打的，一种是打人的。</strong>他有自己对世界的见解，直到他碰到陈念。<br><br></p><p><strong>即使身处阴沟，也要仰望星空。</strong><br><br></p><p>陈年是他的逃生口。从此，他的生活才有了光和希望。所以它潜行在黑暗之中，不顾一切的想要保护陈念。<br><br></p><p><strong>“你保护世界，我保护你”</strong>陈念太干净纯洁了，即使遭受校园霸凌，她依然可以这样说。就像他在警局接受审讯时所讲：<br><br></p><p><strong>如果世界是这个样子，你还敢把你的孩子生下来吗？</strong><br><br></p><p>小贝儿守护的酒是陈念心中的那份善良。</p><h1 id="四、陈念"><a href="#四、陈念" class="headerlink" title="四、陈念"></a>四、陈念</h1><br><p>校园霸凌受害者。他一直坚信高考之后一切都会好起来，可以保妥魏莱的欺辱，帮助母亲还清债务，和小北光明正大的肩并肩走在大街上。<br><br></p><p>他和小北彼此珍惜，彼此珍重，两个人组成“共生体”，在黑暗的世界里寻找光明。<br><br></p><p>努力学习，通过高考走出小镇，是陈念的唯一念头，也是现实世界中多少学子的梦想，把希望孤注一掷的寄于高考。<br><br></p><p>陈念身上反映的不仅仅是校园暴力问题，还有教育方面的问题。<br><br></p><p>在胡晓蝶自杀之后，郑易问她你有什么朋友，他当时回答 <strong>“在这里不需要朋友。”</strong><br><br></p><p>之后的镜头更是显示高楼层走廊外面安装上的防盗窗，为了防止学生跳楼安装防盗窗的学校不在少数，这样只堵不疏的方式意义又在哪里？</p><h1 id="五、另一类就是目睹校园暴力受害者身陷沼泽之中却无动于衷的冷漠旁观者"><a href="#五、另一类就是目睹校园暴力受害者身陷沼泽之中却无动于衷的冷漠旁观者" class="headerlink" title="五、另一类就是目睹校园暴力受害者身陷沼泽之中却无动于衷的冷漠旁观者"></a>五、另一类就是目睹校园暴力受害者身陷沼泽之中却无动于衷的冷漠旁观者</h1><br><p><strong>最后，人生苦短，请你善良！希望大家都能有一美好安静又难忘的岁月…</strong><br><br></p><p>  真的很喜欢电影中人物的台词，很耐人寻味（周冬雨和易烊千玺的演技都挺赞~）</p><br><br>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/picture/%E5%B0%91%E5%B9%B4%E7%9A%84%E4%BD%A0.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="电影" scheme="https://seven1011.github.io/categories/%E7%94%B5%E5%BD%B1/"/>
+    
+    
+      <category term="电影，感想" scheme="https://seven1011.github.io/tags/%E7%94%B5%E5%BD%B1%EF%BC%8C%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>于宙：我们这一代人的困惑</title>
