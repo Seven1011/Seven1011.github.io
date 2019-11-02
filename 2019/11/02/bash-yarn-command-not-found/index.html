@@ -58,17 +58,18 @@
   };
 </script>
 
-  <meta name="keywords" content="yarn">
+  <meta name="description" content="【运行报错】：bash: yarn command not found">
+<meta name="keywords" content="yarn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bash-yarn-command-not-found">
 <meta property="og:url" content="https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/index.html">
 <meta property="og:site_name" content="Sevenの博客">
+<meta property="og:description" content="【运行报错】：bash: yarn command not found">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png">
-<meta property="og:updated_time" content="2019-11-01T14:32:47.025Z">
+<meta property="og:updated_time" content="2019-11-02T02:22:35.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash-yarn-command-not-found">
-<meta name="twitter:image" content="https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png">
+<meta name="twitter:description" content="【运行报错】：bash: yarn command not found">
   <link rel="canonical" href="https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/">
 
 
@@ -258,7 +259,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">16</span></a>
 
   </li>
   </ul>
@@ -316,11 +317,19 @@
                 
               
 
-              <time title="创建时间：2019-11-01 22:27:58 / 修改时间：14:32:47" itemprop="dateCreated datePublished" datetime="2019-11-01T22:27:58Z">2019-11-01</time>
+              <time title="创建时间：2019-11-01 22:27:58" itemprop="dateCreated datePublished" datetime="2019-11-01T22:27:58Z">2019-11-01</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-02 02:22:35" itemprop="dateModified" datetime="2019-11-02T02:22:35Z">2019-11-02</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -368,7 +377,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>397</span>
+              <span>478</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -391,30 +400,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <br>
-<a id="more"></a>
+        <pre><code>【运行报错】：bash: yarn command not found </code></pre><a id="more"></a>
 
-<h2 id="错误介绍"><a href="#错误介绍" class="headerlink" title="错误介绍"></a>错误介绍</h2><p>在bash中安装依赖   </p>
-<p><code>yarn install</code></p>
+
+
+<h2 id="错误介绍"><a href="#错误介绍" class="headerlink" title="错误介绍"></a>错误介绍</h2><br>
+
+<p>在bash中安装依赖   </p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>yarn install</code><br><br></p>
 <p>出现如下错误</p>
-<p><code>bash: yarn: command not found</code></p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>bash: yarn: command not found</code><br><br></p>
 <p>这是因为npm没有安装yarn，使用npm进行安装</p>
-<p><code>npm install -g yarn</code></p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>npm install -g yarn</code></p>
 <p><strong>解释：</strong><code>-g(-global)</code> 该命令就是以全局模式安装yarn</p>
 <blockquote>
 <p><strong>注意：</strong>通常情况下不建议通过npm进行安装。npm安装是非确定性的，程序包没有签名，并且npm除了做了基本的SHA1哈希之外不执行任何完整性检查，这给安装系统程序带来了安全风险。</p>
 </blockquote>
-<p>除此之外，还有通过适合自己操作系统的安装方法来安装yarn</p>
-<p><strong>windows：</strong></p>
+<p>除此之外，还有通过适合自己操作系统的安装方法来安装yarn<br><br></p>
+<h3 id="windows："><a href="#windows：" class="headerlink" title="windows："></a>windows：</h3><br>
+
 <ol>
 <li><p>进入<a href="https://yarnpkg.com/en/docs/install#windows-stable" target="_blank" rel="noopener">官网下载页面</a>安装(按照引导操作完成)</p>
+<br>
 </li>
 <li><p>安装完成之后查看yarn版本</p>
-<p> <code>yarn --version</code></p>
-<p> <img src="20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png" alt></p>
-</li>
+<pre><code>yarn --version</code></pre></li>
 </ol>
-<p>Yarn 的全称是 ** Yet Another Resource Negotiator**，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。</p>
+<pre><code>![](/images/picture/20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png)</code></pre><br>
+
+
 
     </div>
 
@@ -478,6 +492,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2019/11/02/webpack-dev-server-不是内部或外部命令，也不是可运行的程序或批处理文件/" rel="prev" title="webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件">
+                  webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件 <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -528,7 +546,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误介绍"><span class="nav-number">1.</span> <span class="nav-text">错误介绍</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误介绍"><span class="nav-number">1.</span> <span class="nav-text">错误介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows："><span class="nav-number">1.1.</span> <span class="nav-text">windows：</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -546,7 +564,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -905,12 +923,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">26 分钟</span>
 </div>
 
 
