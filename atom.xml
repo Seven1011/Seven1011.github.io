@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-02T02:24:17.554Z</updated>
+  <updated>2019-11-02T03:44:44.841Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -17,21 +17,79 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件</title>
-    <link href="https://seven1011.github.io/2019/11/02/webpack-dev-server-%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4%EF%BC%8C%E4%B9%9F%E4%B8%8D%E6%98%AF%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%88%96%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/"/>
-    <id>https://seven1011.github.io/2019/11/02/webpack-dev-server-不是内部或外部命令，也不是可运行的程序或批处理文件/</id>
-    <published>2019-11-02T10:14:36.000Z</published>
-    <updated>2019-11-02T02:24:17.554Z</updated>
+    <title>HTML&amp;CSS基础知识(一) </title>
+    <link href="https://seven1011.github.io/2019/11/02/HTML-CSS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E4%B8%80/"/>
+    <id>https://seven1011.github.io/2019/11/02/HTML-CSS基础知识-一/</id>
+    <published>2019-11-02T11:02:42.000Z</published>
+    <updated>2019-11-02T03:44:44.841Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>Yarn 的全称是 <strong>Yet Another Resource Negotiator</strong>，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。</p><a id="more"></a><hr><p>运行项目显示缺少必要的插件</p><p>运行npm下载</p><p><code>npm install webpack-dev-server --save</code></p><p>安装成功之后再次运行</p><p><code>yarn install</code></p><p>结果还是报错</p><p><code>Error: Cannot find module &#39;webpack&#39;    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)    at Function.Module._load (internal/modules/cjs/loader.js:562:25)    at Module.require (internal/modules/cjs/loader.js:690:17)    at require (internal/modules/cjs/helpers.js:25:18)    at Object.&lt;anonymous&gt; (E:\code\admin\vue-antd-admin\node_modules\webpack-dev-server\lib\Server.js:22:17)    at Module._compile (internal/modules/cjs/loader.js:776:30)    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)    at Module.load (internal/modules/cjs/loader.js:653:32)    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)    at Function.Module._load (internal/modules/cjs/loader.js:585:3)</code></p><p>索性删除项目目录下的<code>node_modules</code>文件夹</p><blockquote><p>npm 的工作是把将各种各样的包拉到您的计算机上，并且进行管理，这是 Nodejs 周边生态的重要体现，而node_modules文档就是存放这些安装包的地方。</p></blockquote><p>然后重新运行</p><p><code>yarn install</code></p><p>在运行</p><p><code>yarn install</code></p><p>成功运行。</p><p>解决<code>Error: Cannot find module &#39;webpack&#39;</code>可以尝试<a href="https://juejin.im/post/5cb860445188253b454b7568" target="_blank" rel="noopener">这里</a>…</p>]]></content>
+    <content type="html"><![CDATA[<pre><code>【介绍】HTML&amp;CSS必知必会，学习笔记</code></pre><a id="more"></a><hr><p><strong>主要内容</strong></p><ol><li>web概念概述</li><li>HTML</li></ol><hr><h2 id="web概念概述"><a href="#web概念概述" class="headerlink" title="web概念概述"></a>web概念概述</h2><ul><li><p>JavaWeb：</p><ul><li>使用java语言开发基于互联网的项目</li></ul></li><li><p>软件架构：</p></li><li><ol><li><p>C/S:  Client/ Sertver 客户端/服务器端</p><p>** 优点：**</p><ol><li>用户体验好</li></ol><p>** 缺点：**</p><ol><li>开发、安装、部署、维护麻烦</li></ol></li><li><p>B/S: Browser/Server  浏览器/服务器端</p><p> 优点：</p><ol><li><p>开发、安装、部署、维护简单</p><p>缺点：</p></li><li><p>如果应用过大，用户可能受到影响</p></li><li><p>对硬件要求过高</p><p>详细介绍</p></li></ol><ul><li><p>资源分类</p><ol><li><p>静态资源：</p><p> 使用静态网页开发技术发布的资源</p><p> 特点：</p><p> 所有用户访问，得到的结果是一样的</p></li><li><p>动态资源</p><p> 使用动态网页及时发布的资源</p><p> 特点：</p><p> 所有用户访问，得到的结果可能不一样</p><p> 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，在发送给浏览器</p></li></ol></li></ul></li></ol></li></ul><p>静态资源：</p><p>HTML:用于搭建基础网页，展示页面的</p><p>CSS:用于美化页面，布局页面</p><p>JavaScript:控制页面的元素，让页面有一些动态的效果</p>]]></content>
     
     <summary type="html">
     
-      &lt;hr&gt;&lt;p&gt;Yarn 的全称是 &lt;strong&gt;Yet Another Resource Negotiator&lt;/strong&gt;，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。&lt;/p&gt;
+      &lt;pre&gt;&lt;code&gt;【介绍】HTML&amp;amp;CSS必知必会，学习笔记&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
+      <category term="HTML" scheme="https://seven1011.github.io/categories/HTML/"/>
+    
+      <category term="CSS" scheme="https://seven1011.github.io/categories/HTML/CSS/"/>
+    
+    
+      <category term="HTML" scheme="https://seven1011.github.io/tags/HTML/"/>
+    
+      <category term="CSS" scheme="https://seven1011.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>后台管理项目入门(一) </title>
+    <link href="https://seven1011.github.io/2019/11/02/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E5%85%A5%E9%97%A8-%E4%B8%80/"/>
+    <id>https://seven1011.github.io/2019/11/02/后台管理项目入门-一/</id>
+    <published>2019-11-02T10:35:32.000Z</published>
+    <updated>2019-11-02T03:08:00.068Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>入门（一）</code></pre><a id="more"></a><h3 id="1-项目克隆到本地："><a href="#1-项目克隆到本地：" class="headerlink" title="1.项目克隆到本地："></a>1.<strong>项目克隆到本地：</strong></h3><pre><code>git clone https://github.com/PanJiaChen/vue-element-admin.git</code></pre><h3 id="2-项目目录介绍："><a href="#2-项目目录介绍：" class="headerlink" title="2.项目目录介绍："></a>2.<strong>项目目录介绍：</strong></h3><pre><code>├── build                      // 构建相关  ├── config                     // 配置相关├── src                        // 源代码│   ├── api                    // 所有请求│   ├── assets                 // 主题 字体等静态资源│   ├── components             // 全局公用组件│   ├── directive              // 全局指令│   ├── filtres                // 全局 filter│   ├── icons                  // 项目所有 svg icons│   ├── lang                   // 国际化 language│   ├── mock                   // 项目mock 模拟数据│   ├── router                 // 路由│   ├── store                  // 全局 store管理│   ├── styles                 // 全局样式│   ├── utils                  // 全局公用方法│   ├── vendor                 // 公用vendor│   ├── views                   // view│   ├── App.vue                // 入口页面│   ├── main.js                // 入口 加载组件 初始化等│   └── permission.js          // 权限管理├── static                     // 第三方不打包资源│   └── Tinymce                // 富文本├── .babelrc                   // babel-loader 配置├── eslintrc.js                // eslint 配置项├── .gitignore                 // git 忽略项├── favicon.ico                // favicon图标├── index.html                 // html模板└── package.json               // package.json</code></pre><h3 id="2-1-components-："><a href="#2-1-components-：" class="headerlink" title="2.1 components ："></a>2.1 components ：</h3><p>&emsp;components 放置的都是全局公用的一些组件，如上传组件，富文本等等。一些页面级的组件建议还是放在各自views文件下，方便管理。</p><h3 id="2-2-store："><a href="#2-2-store：" class="headerlink" title="2.2 store："></a>2.2 store：</h3><p>  &emsp;不要为了用vuex而用vuex！</p><h3 id="2-3-webpack："><a href="#2-3-webpack：" class="headerlink" title="2.3 webpack："></a>2.3 webpack：</h3><blockquote><p>本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p></blockquote><p>&emsp;从 webpack v4.0.0 开始，可以不用引入一个配置文件。然而，webpack 仍然还是<a href="https://www.webpackjs.com/configuration" target="_blank" rel="noopener">高度可配置的</a>。在开始前你需要先理解四个<strong>核心概念</strong>：</p><p> &emsp;&emsp;入口(entry)<br> &emsp;&emsp;输出(output)<br> &emsp;&emsp;loader<br> &emsp;&emsp;插件(plugins)</p><h3 id="2-4-axios的封装"><a href="#2-4-axios的封装" class="headerlink" title="2.4 axios的封装"></a>2.4 axios的封装</h3><p>&emsp;<strong>目的：</strong>帮助我们简化代码和有利于后期的更新和维护。<br><br></p><p>&emsp;&emsp;&emsp;axios库经常被用在vue项目和后台交互数据方面，可以运行在浏览器端和node.js中。<br><br></p><p>&emsp;<strong>优点：</strong>拦截请求和响应、取消请求、转换json、客户端防御XSRF<br><br></p><h4 id="2-4-1-安装"><a href="#2-4-1-安装" class="headerlink" title="2.4.1 安装"></a>2.4.1 安装</h4><p>&emsp;&emsp;<code>npm install axios; // 安装axios</code></p><h4 id="2-4-2-引入"><a href="#2-4-2-引入" class="headerlink" title="2.4.2 引入"></a>2.4.2 引入</h4><p>&emsp;在src目录之中新建request文件夹，然后新建http.js和一个api.js文件。其中<br><br></p><p>&emsp;&emsp;http.js:封装我们的axios<br>&emsp;&emsp;api.js:统一管理我们的接口<br><br></p><p>&emsp;关于环境切换、设置请求超时、post请求头设置系列操作参考<a href="https://juejin.im/post/5b55c118f265da0f6f1aa354" target="_blank" rel="noopener">《vue中Axios的封装和API接口的管理》</a></p><h3 id="2-5-安装ESLint插件"><a href="#2-5-安装ESLint插件" class="headerlink" title="2.5 安装ESLint插件"></a>2.5 安装ESLint插件</h3><p>&emsp;<strong>ESLint插件+VSCode进行代码编写</strong><br><br></p><p>&emsp;对VSCode进行扩展设置  文件 &gt; 首选项 &gt; 设置 打开 VSCode 配置文件,添加如下配置：<br><br></p><pre><code>&quot;files.autoSave&quot;:&quot;off&quot;,&quot;eslint.validate&quot;: [&quot;javascript&quot;,&quot;javascriptreact&quot;,&quot;html&quot;,{ &quot;language&quot;: &quot;vue&quot;, &quot;autoFix&quot;: true }],&quot;eslint.options&quot;: {&quot;plugins&quot;: [&quot;html&quot;]}</code></pre><br>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;入门（一）&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Element" scheme="https://seven1011.github.io/categories/Element/"/>
+    
+      <category term="Vue" scheme="https://seven1011.github.io/categories/Element/Vue/"/>
+    
+    
+      <category term="Vue，Element" scheme="https://seven1011.github.io/tags/Vue%EF%BC%8CElement/"/>
+    
+      <category term="项目实战" scheme="https://seven1011.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件</title>
+    <link href="https://seven1011.github.io/2019/11/02/webpack-dev-server-%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4%EF%BC%8C%E4%B9%9F%E4%B8%8D%E6%98%AF%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%88%96%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/"/>
+    <id>https://seven1011.github.io/2019/11/02/webpack-dev-server-不是内部或外部命令，也不是可运行的程序或批处理文件/</id>
+    <published>2019-11-02T10:14:36.000Z</published>
+    <updated>2019-11-02T02:31:04.938Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>【运行报错:】webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件</code></pre><a id="more"></a><hr><p>Yarn 的全称是 <strong>Yet Another Resource Negotiator</strong>，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。</p><hr><p>运行项目显示缺少必要的插件<br><br></p><p>运行npm下载</p><pre><code>npm install webpack-dev-server --save</code></pre><br><p>安装成功之后再次运行</p><pre><code>yarn install</code></pre><br><p>结果还是报错</p><pre><code>Error: Cannot find module &apos;webpack&apos;    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)    at Function.Module._load (internal/modules/cjs/loader.js:562:25)    at Module.require (internal/modules/cjs/loader.js:690:17)    at require (internal/modules/cjs/helpers.js:25:18)    at Object.&lt;anonymous&gt; (E:\code\admin\vue-antd-admin\node_modules\webpack-dev-server\lib\Server.js:22:17)    at Module._compile (internal/modules/cjs/loader.js:776:30)    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)    at Module.load (internal/modules/cjs/loader.js:653:32)    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)    at Function.Module._load (internal/modules/cjs/loader.js:585:3)</code></pre><p>索性删除项目目录下的<code>node_modules</code>文件夹</p><blockquote><p>npm 的工作是把将各种各样的包拉到您的计算机上，并且进行管理，这是 Nodejs 周边生态的重要体现，而node_modules文档就是存放这些安装包的地方。</p></blockquote><p>然后重新运行</p><pre><code>yarn install</code></pre><p>再运行</p><pre><code>yarn install</code></pre><p>成功运行。<br><br></p><p>解决<code>Error: Cannot find module &#39;webpack&#39;</code>可以尝试<a href="https://juejin.im/post/5cb860445188253b454b7568" target="_blank" rel="noopener">这里</a>…<br><br></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;【运行报错:】webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="webpack" scheme="https://seven1011.github.io/categories/webpack/"/>
+    
+    
+      <category term="webpack" scheme="https://seven1011.github.io/tags/webpack/"/>
     
   </entry>
   
