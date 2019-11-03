@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-02T03:44:44.841Z</updated>
+  <updated>2019-11-02T10:55:52.753Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML&amp;CSS基础知识(二)</title>
+    <link href="https://seven1011.github.io/2019/11/03/HTML-CSS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E4%BA%8C/"/>
+    <id>https://seven1011.github.io/2019/11/03/HTML-CSS基础知识-二/</id>
+    <published>2019-11-02T18:06:37.000Z</published>
+    <updated>2019-11-02T10:55:52.753Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>【介绍】HTML&amp;CSS必知必会，学习笔记</code></pre><a id="more"></a><h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h2><ul><li>最基础的网页开发语言  </li></ul><ul><li>Hyper Text Markup Language 超文本标记语言  </li></ul><p>&emsp; <strong>超文本：</strong><br>&emsp;&emsp; 超文本使用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本<br>&emsp; <strong>标记语言：</strong><br>&emsp;&emsp;有标签构成的语言<br><br></p><h2 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2. 快速入门"></a>2. 快速入门</h2><ul><li><p><strong>语法：</strong>  </p><ol><li><p>html文档的后缀名是.html或者.htm   </p></li><li><p>标签分为:  </p><pre><code>1. 围堵标签：有开始标签和结束标签。如&lt;html&gt;  &lt;/html&gt;2. 自闭合标签：开始标签和结束标签在一起。如&lt;/br&gt;  </code></pre></li><li><p>标签可以嵌套</p><pre><code>需要正确嵌套，不能你中有我，我中有你</code></pre></li><li><p>在开始标签中可以定义属性。属性是由键值对构成，值需要用引号（单双都可）引起来</p></li><li><p>html的标签不区分大小写，但是建议使用小写。</p><br></li></ol></li></ul><h2 id="3-标签学习"><a href="#3-标签学习" class="headerlink" title="3. 标签学习"></a>3. 标签学习</h2><h4 id="文件标签：构成html的最基本的标签"><a href="#文件标签：构成html的最基本的标签" class="headerlink" title="文件标签：构成html的最基本的标签"></a>文件标签：构成html的最基本的标签</h4><br><pre><code>html：html文档的根标签head：头标签。用于指定html文档的一些属性。引入外部的资源。title：标题标签body：体标签&lt;!DOCTYPE html&gt;：html5定义文档类型</code></pre><br><h4 id="文本标签：和文本有关的标签"><a href="#文本标签：和文本有关的标签" class="headerlink" title="文本标签：和文本有关的标签"></a>文本标签：和文本有关的标签</h4><br><pre><code>&lt;h1&gt; to &lt;h6&gt;：标题标签 自带换行效果&lt;p&gt;：段落标签&lt;br&gt;：换行标签&lt;hr&gt;：显示一条水平线     属性（html5不建议使用）： color（颜色） width（宽度）size（高度）align（对齐方式：center、left、right)  &lt;b&gt;：字体加粗&lt;i&gt;：斜体&lt;font&gt;(已经过时)：字体标签（属性：color、size、face（字体））&lt;center&gt;(过时标签)：文本居中</code></pre><br><h4 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h4><br><pre><code>img：展示图片src：存放图片的路径，一般写相对路径：以.开头       ./：代表当前目录       ../：代表上一级目录</code></pre><br><h4 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h4><br><pre><code>无序列表    &lt;ul&gt;：项目使用粗体远点进行标记有序列表    有序列表始于 &lt;ol&gt; 标签。每个列表项始于 &lt;li&gt; 标签自定义列表    自定义列表以 &lt;dl&gt; 标签开始。每个自定义列表项以 &lt;dt&gt; 开始。每个自定义列表项的定义以 &lt;dd&gt; 开始</code></pre><br><h4 id="连接标签"><a href="#连接标签" class="headerlink" title="连接标签"></a>连接标签</h4><br><pre><code>&lt;a&gt;</code></pre><ul><li><p>样式</p><pre><code>&lt;div&gt;：定义文档中的节&lt;span&gt;：定义文档中的节</code></pre><br></li></ul><h4 id="语义化标签：html5中为了提高程序的可读性，提供了一些标签"><a href="#语义化标签：html5中为了提高程序的可读性，提供了一些标签" class="headerlink" title="语义化标签：html5中为了提高程序的可读性，提供了一些标签"></a>语义化标签：html5中为了提高程序的可读性，提供了一些标签</h4><br><pre><code>1. &lt;header&gt;2. &lt;footer&gt;</code></pre><br><h4 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h4><br><pre><code>&lt;table&gt;标签用于显示一个表格属性：    border：表格的边框    width：宽度（单位px：像素）    cellpadding：定义内容和单元格的举例    cellspacing：定义单元格之间的距离。如果指定为领，则单元格的线会合为一条    bgcolor：背景色    align：对齐方式&lt;tr&gt; 表示行&lt;th&gt;：定义表头单元格&lt;td&gt; 表示列又叫单元格    width：宽度（表示：1.px   2.百分比）    align：对齐方式    valign：单元格垂直对齐    colspan：横跨两列，水平合并    bgcolor：背景色    colspan：合并列    rowspan：合并行&lt;caption&gt;：表格标题&lt;thead&gt;：表示表格头的部分&lt;tbody&gt;：表示表格头的部分&lt;tfoot&gt;：表示表格头的部分</code></pre><br><ul><li><strong>属性定义：</strong><br></li></ul><p><strong>color:</strong></p><pre><code>1. 英文单词：red，green2. rgb(值1，值2，值3)：值的范围：0~255  如：rgb(0,0,255)3. #值1值2值3：值的范围：00~FF之间。如：#FF00FF</code></pre><br><p><strong>width:</strong></p><pre><code>1. 数值：width=&quot;20&quot;，数值的单位，默认是  px(像素)2. 百分比：占相对父元素的比例</code></pre><br>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;【介绍】HTML&amp;amp;CSS必知必会，学习笔记&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="HTML" scheme="https://seven1011.github.io/categories/HTML/"/>
+    
+      <category term="CSS" scheme="https://seven1011.github.io/categories/HTML/CSS/"/>
+    
+    
+      <category term="HTML" scheme="https://seven1011.github.io/tags/HTML/"/>
+    
+      <category term="CSS" scheme="https://seven1011.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML&amp;CSS基础知识(一) </title>
     <link href="https://seven1011.github.io/2019/11/02/HTML-CSS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E4%B8%80/"/>
     <id>https://seven1011.github.io/2019/11/02/HTML-CSS基础知识-一/</id>
     <published>2019-11-02T11:02:42.000Z</published>
-    <updated>2019-11-02T03:44:44.841Z</updated>
+    <updated>2019-11-02T09:58:35.240Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>【介绍】HTML&amp;CSS必知必会，学习笔记</code></pre><a id="more"></a><hr><p><strong>主要内容</strong></p><ol><li>web概念概述</li><li>HTML</li></ol><hr><h2 id="web概念概述"><a href="#web概念概述" class="headerlink" title="web概念概述"></a>web概念概述</h2><ul><li><p>JavaWeb：</p><ul><li>使用java语言开发基于互联网的项目</li></ul></li><li><p>软件架构：</p></li><li><ol><li><p>C/S:  Client/ Sertver 客户端/服务器端</p><p>** 优点：**</p><ol><li>用户体验好</li></ol><p>** 缺点：**</p><ol><li>开发、安装、部署、维护麻烦</li></ol></li><li><p>B/S: Browser/Server  浏览器/服务器端</p><p> 优点：</p><ol><li><p>开发、安装、部署、维护简单</p><p>缺点：</p></li><li><p>如果应用过大，用户可能受到影响</p></li><li><p>对硬件要求过高</p><p>详细介绍</p></li></ol><ul><li><p>资源分类</p><ol><li><p>静态资源：</p><p> 使用静态网页开发技术发布的资源</p><p> 特点：</p><p> 所有用户访问，得到的结果是一样的</p></li><li><p>动态资源</p><p> 使用动态网页及时发布的资源</p><p> 特点：</p><p> 所有用户访问，得到的结果可能不一样</p><p> 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，在发送给浏览器</p></li></ol></li></ul></li></ol></li></ul><p>静态资源：</p><p>HTML:用于搭建基础网页，展示页面的</p><p>CSS:用于美化页面，布局页面</p><p>JavaScript:控制页面的元素，让页面有一些动态的效果</p>]]></content>
+    <content type="html"><![CDATA[<pre><code>【介绍】HTML&amp;CSS必知必会，学习笔记</code></pre><a id="more"></a><hr><h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容:"></a>主要内容:</h2><p>&emsp;&emsp;1. web概念概述<br>&emsp;&emsp;2. HTML</p><hr><h2 id="web概念概述"><a href="#web概念概述" class="headerlink" title="web概念概述"></a>web概念概述</h2><h3 id="JavaWeb："><a href="#JavaWeb：" class="headerlink" title="JavaWeb："></a>JavaWeb：</h3><p> &emsp;&emsp; 使用java语言开发基于互联网的项目<br> <br></p><h3 id="软件架构："><a href="#软件架构：" class="headerlink" title="软件架构："></a>软件架构：</h3><h4 id="1-C-S-Client-Sertver-客户端-服务器端"><a href="#1-C-S-Client-Sertver-客户端-服务器端" class="headerlink" title="1. C/S:  Client/ Sertver 客户端/服务器端"></a>1. C/S:  Client/ Sertver 客户端/服务器端</h4><p>&emsp;<strong>优点</strong></p><p>&emsp;&emsp; 1. 用户体验好</p><p>&emsp;<strong>缺点</strong></p><p>&emsp;&emsp; 1. 开发、安装、部署、维护麻烦<br> <br></p><h4 id="2-B-S-Browser-Server-浏览器-服务器端"><a href="#2-B-S-Browser-Server-浏览器-服务器端" class="headerlink" title="2. B/S: Browser/Server  浏览器/服务器端"></a>2. B/S: Browser/Server  浏览器/服务器端</h4><p>&emsp;<strong>优点：</strong></p><p>&emsp;&emsp;   1. 开发、安装、部署、维护简单</p><p>&emsp;<strong>缺点：</strong></p><p>  &emsp;&emsp;   1. 如果应用过大，用户可能受到影响</p><p>   &emsp;&emsp;     2. 对硬件要求过高</p><p><strong>详细介绍</strong><br> <br></p><p>&emsp;<strong>资源分类</strong><br> &emsp;<strong>1. 静态资源：</strong></p><p>   &emsp;&emsp; 使用静态网页开发技术发布的资源</p><p>   &emsp; 特点：</p><p>   &emsp;&emsp; 所有用户访问，得到的结果是一样的<br> <br></p><p> &emsp;<strong>2. 动态资源</strong></p><p>&emsp;&emsp;使用动态网页及时发布的资源</p><p>&emsp; 特点：</p><p>   &emsp;&emsp; 所有用户访问，得到的结果可能不一样</p><p>   &emsp;&emsp; 如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，在发送给浏览器<br> <br></p><ul><li><strong>静态资源：</strong></li></ul><p>&emsp;&emsp; &emsp;&emsp; HTML:用于搭建基础网页，展示页面的</p><p>&emsp;&emsp; &emsp;&emsp; CSS:用于美化页面，布局页面</p><p>&emsp;&emsp; &emsp;&emsp; JavaScript:控制页面的元素，让页面有一些动态的效果<br> <br></p>]]></content>
     
     <summary type="html">
     
