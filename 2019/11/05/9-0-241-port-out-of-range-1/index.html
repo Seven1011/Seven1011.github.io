@@ -68,7 +68,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://seven1011.github.io/images/picture/TomCat1.png">
 <meta property="og:image" content="https://seven1011.github.io/images/picture/TomCat3.png">
-<meta property="og:updated_time" content="2019-11-04T13:20:03.623Z">
+<meta property="og:updated_time" content="2019-11-04T13:25:34.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Error running Tomcat 9.0.241: port out of range:-1 ">
 <meta name="twitter:description" content="运行TomCat发现报错">
@@ -320,7 +320,7 @@
                 
               
 
-              <time title="创建时间：2019-11-04 20:56:20 / 修改时间：13:20:03" itemprop="dateCreated datePublished" datetime="2019-11-04T20:56:20Z">2019-11-04</time>
+              <time title="创建时间：2019-11-04 20:56:20 / 修改时间：13:25:34" itemprop="dateCreated datePublished" datetime="2019-11-04T20:56:20Z">2019-11-04</time>
             </span>
           
             
@@ -398,11 +398,13 @@
         <pre><code>运行TomCat发现报错</code></pre><a id="more"></a>
 
 <p><img src="/images/picture/TomCat1.png" alt></p>
-<p>这种情况是因为端口号不能是-1；</p>
+<p>这种情况是因为端口号不能是-1；<br><br></p>
 <p>修改：</p>
-<p>打开TomCat配置文件<code>./confl</code>里面的server.xml检查，修改端口，一般为80，或者1-65535之间任意一个整数：</p>
+<p>打开TomCat配置文件<code>./confl</code>里面的server.xml检查，修改端口，一般为80，或者1-65535之间任意一个整数：<br><br></p>
 <p><img src="/images/picture/TomCat3.png" alt></p>
 <p>重新启动。</p>
+<br>
+
 <p>如果出现报错：<code>java.net.BindException: Address already in use: JVM_Bind</code></p>
 <p>说明端口冲突，修改后的端口已经被占用了。需要重新进行修改：</p>
 <p>或者可以打开cmd命令窗口，输入<code>netstat -ano</code>，可以查看端口被占用情况。</p>
@@ -1046,6 +1048,11 @@
 
   
 
+  
+
+  
+    <script src="/js/cursor/love.min.js"></script>
+  
 
 <script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {

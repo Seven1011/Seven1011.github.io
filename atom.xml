@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-04T13:15:29.320Z</updated>
+  <updated>2019-11-04T13:23:36.704Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://seven1011.github.io/2019/11/05/TomCat%E6%96%B0%E7%89%88%E6%9C%AC%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>https://seven1011.github.io/2019/11/05/TomCat新版本命令行乱码问题解决/</id>
     <published>2019-11-04T20:56:43.000Z</published>
-    <updated>2019-11-04T13:15:29.320Z</updated>
+    <updated>2019-11-04T13:23:36.704Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>新版本的tomcat在命令窗口中会出现乱码情况</code></pre><a id="more"></a><p><img src="/img/picture/TomCat2.png" alt></p><p>新版本之后若乱码，只需要在配置文件中<code>logging.properties</code>将对应的utf-8修改为GBK即可，如下图所示：</p><p><img src="/img/picture/TomCat4.png" alt></p><p>重新启动TomCat。</p><hr><p>参考：<a href="https://bbs.csdn.net/topics/392500916" target="_blank" rel="noopener">CSDN论坛</a></p><hr>]]></content>
+    <content type="html"><![CDATA[<pre><code>新版本的tomcat在命令窗口中会出现乱码情况</code></pre><a id="more"></a><br><p><img src="/images/picture/TomCat2.png" alt><br><br></p><p>新版本之后若乱码，只需要在配置文件中<code>logging.properties</code>将对应的utf-8修改为GBK即可，如下图所示：<br><br></p><p><img src="/images/picture/TomCat4.png" alt><br><br></p><p>重新启动TomCat。</p><hr><p>参考：<a href="https://bbs.csdn.net/topics/392500916" target="_blank" rel="noopener">CSDN论坛</a></p><hr><br>]]></content>
     
     <summary type="html">
     
@@ -44,9 +44,9 @@
     <link href="https://seven1011.github.io/2019/11/05/9-0-241-port-out-of-range-1/"/>
     <id>https://seven1011.github.io/2019/11/05/9-0-241-port-out-of-range-1/</id>
     <published>2019-11-04T20:56:20.000Z</published>
-    <updated>2019-11-04T13:20:03.623Z</updated>
+    <updated>2019-11-04T13:25:34.527Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>运行TomCat发现报错</code></pre><a id="more"></a><p><img src="/images/picture/TomCat1.png" alt></p><p>这种情况是因为端口号不能是-1；</p><p>修改：</p><p>打开TomCat配置文件<code>./confl</code>里面的server.xml检查，修改端口，一般为80，或者1-65535之间任意一个整数：</p><p><img src="/images/picture/TomCat3.png" alt></p><p>重新启动。</p><p>如果出现报错：<code>java.net.BindException: Address already in use: JVM_Bind</code></p><p>说明端口冲突，修改后的端口已经被占用了。需要重新进行修改：</p><p>或者可以打开cmd命令窗口，输入<code>netstat -ano</code>，可以查看端口被占用情况。</p><hr><p>参考：<a href="https://stackoverflow.com/questions/12737293/how-do-i-resolve-the-java-net-bindexception-address-already-in-use-jvm-bind" target="_blank" rel="noopener">How do I resolve the “java.net.BindException: Address already in use: JVM_Bind” error?</a></p><hr>]]></content>
+    <content type="html"><![CDATA[<pre><code>运行TomCat发现报错</code></pre><a id="more"></a><p><img src="/images/picture/TomCat1.png" alt></p><p>这种情况是因为端口号不能是-1；<br><br></p><p>修改：</p><p>打开TomCat配置文件<code>./confl</code>里面的server.xml检查，修改端口，一般为80，或者1-65535之间任意一个整数：<br><br></p><p><img src="/images/picture/TomCat3.png" alt></p><p>重新启动。</p><br><p>如果出现报错：<code>java.net.BindException: Address already in use: JVM_Bind</code></p><p>说明端口冲突，修改后的端口已经被占用了。需要重新进行修改：</p><p>或者可以打开cmd命令窗口，输入<code>netstat -ano</code>，可以查看端口被占用情况。</p><hr><p>参考：<a href="https://stackoverflow.com/questions/12737293/how-do-i-resolve-the-java-net-bindexception-address-already-in-use-jvm-bind" target="_blank" rel="noopener">How do I resolve the “java.net.BindException: Address already in use: JVM_Bind” error?</a></p><hr>]]></content>
     
     <summary type="html">
     
