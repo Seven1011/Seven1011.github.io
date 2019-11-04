@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-04T00:09:43.967Z</updated>
+  <updated>2019-11-04T13:15:29.320Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -17,13 +17,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title> TomCat新版本命令行乱码问题解决 </title>
+    <link href="https://seven1011.github.io/2019/11/05/TomCat%E6%96%B0%E7%89%88%E6%9C%AC%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>https://seven1011.github.io/2019/11/05/TomCat新版本命令行乱码问题解决/</id>
+    <published>2019-11-04T20:56:43.000Z</published>
+    <updated>2019-11-04T13:15:29.320Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>新版本的tomcat在命令窗口中会出现乱码情况</code></pre><a id="more"></a><p><img src="/img/picture/TomCat2.png" alt></p><p>新版本之后若乱码，只需要在配置文件中<code>logging.properties</code>将对应的utf-8修改为GBK即可，如下图所示：</p><p><img src="/img/picture/TomCat4.png" alt></p><p>重新启动TomCat。</p><hr><p>参考：<a href="https://bbs.csdn.net/topics/392500916" target="_blank" rel="noopener">CSDN论坛</a></p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;新版本的tomcat在命令窗口中会出现乱码情况&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="TomCat" scheme="https://seven1011.github.io/categories/TomCat/"/>
+    
+    
+      <category term="TomCat" scheme="https://seven1011.github.io/tags/TomCat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Error running Tomcat 9.0.241: port out of range:-1 </title>
+    <link href="https://seven1011.github.io/2019/11/05/9-0-241-port-out-of-range-1/"/>
+    <id>https://seven1011.github.io/2019/11/05/9-0-241-port-out-of-range-1/</id>
+    <published>2019-11-04T20:56:20.000Z</published>
+    <updated>2019-11-04T13:20:03.623Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>运行TomCat发现报错</code></pre><a id="more"></a><p><img src="/images/picture/TomCat1.png" alt></p><p>这种情况是因为端口号不能是-1；</p><p>修改：</p><p>打开TomCat配置文件<code>./confl</code>里面的server.xml检查，修改端口，一般为80，或者1-65535之间任意一个整数：</p><p><img src="/images/picture/TomCat3.png" alt></p><p>重新启动。</p><p>如果出现报错：<code>java.net.BindException: Address already in use: JVM_Bind</code></p><p>说明端口冲突，修改后的端口已经被占用了。需要重新进行修改：</p><p>或者可以打开cmd命令窗口，输入<code>netstat -ano</code>，可以查看端口被占用情况。</p><hr><p>参考：<a href="https://stackoverflow.com/questions/12737293/how-do-i-resolve-the-java-net-bindexception-address-already-in-use-jvm-bind" target="_blank" rel="noopener">How do I resolve the “java.net.BindException: Address already in use: JVM_Bind” error?</a></p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;运行TomCat发现报错&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="TomCat" scheme="https://seven1011.github.io/categories/TomCat/"/>
+    
+    
+      <category term="TomCat" scheme="https://seven1011.github.io/tags/TomCat/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML&amp;CSS基础知识(三) </title>
     <link href="https://seven1011.github.io/2019/11/04/HTML-CSS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E4%B8%89/"/>
     <id>https://seven1011.github.io/2019/11/04/HTML-CSS基础知识-三/</id>
     <published>2019-11-03T22:09:49.000Z</published>
-    <updated>2019-11-04T00:09:43.967Z</updated>
+    <updated>2019-11-04T00:21:55.190Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>【介绍】HTML&amp;CSS必知必会，学习笔记</code></pre><a id="more"></a><h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="css：页面美化和布局控制"><a href="#css：页面美化和布局控制" class="headerlink" title="css：页面美化和布局控制"></a>css：页面美化和布局控制</h2><h3 id="1-概念：Cascading-Style-Sheets-层叠样式表"><a href="#1-概念：Cascading-Style-Sheets-层叠样式表" class="headerlink" title="1. 概念：Cascading Style Sheets 层叠样式表"></a>1. 概念：Cascading Style Sheets 层叠样式表</h3><h3 id="2-好处："><a href="#2-好处：" class="headerlink" title="2. 好处："></a>2. 好处：</h3><p><strong>1. 功能强大</strong><br><strong>2. 将内容的展示和样式控制分离</strong><br>    - 降低耦合度。解耦<br>    - 让分工协作更容易<br>    - 提高开发效率</p><h3 id="3-css的使用：css与html的样式结合"><a href="#3-css的使用：css与html的样式结合" class="headerlink" title="3. css的使用：css与html的样式结合"></a>3. css的使用：css与html的样式结合</h3><pre><code>1. 内联样式：在标签内使用style属性指定css代码2. 内部样式：在head标签内，定义style标签，style标签的标签体就是css代码3. 外部样式：    1. 定义css资源文件    2. 在head标签内定义link标签，引入外部资源文件**注意：**1，2，3种方式 css作用范围越来越大。第一种方式不常用,后期常用后两种</code></pre><h3 id="4-css语法："><a href="#4-css语法：" class="headerlink" title="4. css语法："></a>4. css语法：</h3><pre><code>- 格式    选择器{    属性名1:属性值1;    属性名2:属性值2;    }    选择器：筛选具有相似特征的元素    注意：    每一对属性需要使用`;`隔开，最后一对属性可以不加`;`</code></pre><h3 id="5-选择器："><a href="#5-选择器：" class="headerlink" title="5. 选择器："></a>5. 选择器：</h3><pre><code>分类：1. 基础选择器：    1. id选择器：选择具体的id属性值的元素，建议在一个html页面中id值唯一        语法：#id属性值{}    2. 元素选择器：选择具有相同标签名称的元素        语法：标签名称{}        注意：id选择器优先级高于元素选择器    3. 类选择器        语法：.class属性指{}        注意：类选择器优先级高于元素选择器2. 扩展选择器：    1.  选择所有元素        语法：*{}    2. 并集选择器        选择器1，选择器2{}    3. 子选择器：筛选选择器1下的选择器2元素        语法：选择器1  选择器2{}    4. 父选择器：筛选选择器2的父元素选择器1        语法：选择器1&gt;选择器2{}    5. 属性选择器：选择元素名称，属性名=属性指的元素        语法：元素名称[属性名=“属性指”]{}    6. 为类选择器：选择一些元素具有的状态        语法：元素：状态{}        状态：        link：初始化的状态        visited：被访问过的状态        active：正在访问的状态        hover：鼠标悬浮的状态</code></pre><h3 id="6-属性"><a href="#6-属性" class="headerlink" title="6. 属性"></a>6. 属性</h3><pre><code>1. 字体、文本    font-size：字体大小    color：文本颜色    text-align：对齐方式    line-height：行高2. 背景    background3. 边框    border：设置表框、符合属性4. 尺寸    width：宽度    height：高度5. 盒子模型    margin：外边距    padding：内边距    默认情况下内边距会影响盒子的大小</code></pre><hr><p>来源：视频教程上课笔记</p><hr>]]></content>
+    <content type="html"><![CDATA[<pre><code>【介绍】HTML&amp;CSS必知必会，学习笔记</code></pre><a id="more"></a><h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="css：页面美化和布局控制"><a href="#css：页面美化和布局控制" class="headerlink" title="css：页面美化和布局控制"></a>css：页面美化和布局控制</h2><h3 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h3><pre><code>Cascading Style Sheets 层叠样式表</code></pre><h3 id="2-好处："><a href="#2-好处：" class="headerlink" title="2. 好处："></a>2. 好处：</h3><p><strong>·功能强大</strong><br><strong>·将内容的展示和样式控制分离</strong></p><pre><code>- 降低耦合度。解耦- 让分工协作更容易- 提高开发效率</code></pre><h3 id="3-css的使用：css与html的样式结合"><a href="#3-css的使用：css与html的样式结合" class="headerlink" title="3. css的使用：css与html的样式结合"></a>3. css的使用：css与html的样式结合</h3><pre><code>1. 内联样式：在标签内使用style属性指定css代码2. 内部样式：在head标签内，定义style标签，style标签的标签体就是css代码3. 外部样式：    1. 定义css资源文件    2. 在head标签内定义link标签，引入外部资源文件</code></pre><p><strong>注意：</strong>1，2，3种方式 css作用范围越来越大。第一种方式不常用,后期常用后两种</p><h3 id="4-css语法："><a href="#4-css语法：" class="headerlink" title="4. css语法："></a>4. css语法：</h3><p><strong>格式</strong></p><pre><code>选择器{属性名1:属性值1;属性名2:属性值2;}</code></pre><p><strong>选择器：</strong>筛选具有相似特征的元素</p><p>&emsp;&emsp;注意：每一对属性需要使用<code>;</code>隔开，最后一对属性可以不加<code>;</code></p><h3 id="5-选择器："><a href="#5-选择器：" class="headerlink" title="5. 选择器："></a>5. 选择器：</h3><h4 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h4><p><strong>1. 基础选择器：</strong></p><pre><code>1. id选择器：选择具体的id属性值的元素，建议在一个html页面中id值唯一    语法：#id属性值{}2. 元素选择器：选择具有相同标签名称的元素    语法：标签名称{}    注意：id选择器优先级高于元素选择器3. 类选择器    语法：.class属性指{}    注意：类选择器优先级高于元素选择器</code></pre><p><strong>2. 扩展选择器：</strong></p><pre><code>1.  选择所有元素    语法：*{}2. 并集选择器    选择器1，选择器2{}3. 子选择器：筛选选择器1下的选择器2元素    语法：选择器1  选择器2{}4. 父选择器：筛选选择器2的父元素选择器1    语法：选择器1&gt;选择器2{}5. 属性选择器：选择元素名称，属性名=属性指的元素    语法：元素名称[属性名=“属性指”]{}6. 为类选择器：选择一些元素具有的状态    语法：元素：状态{}    状态：    link：初始化的状态    visited：被访问过的状态    active：正在访问的状态    hover：鼠标悬浮的状态</code></pre><h3 id="6-属性"><a href="#6-属性" class="headerlink" title="6. 属性"></a>6. 属性</h3><p><strong>1. 字体、文本</strong></p><pre><code>font-size：字体大小color：文本颜色text-align：对齐方式line-height：行高</code></pre><p><strong>2. 背景</strong></p><pre><code>background</code></pre><p><strong>3. 边框</strong></p><pre><code>border：设置表框、符合属性</code></pre><p><strong>4. 尺寸</strong></p><pre><code>width：宽度height：高度</code></pre><p><strong>5. 盒子模型</strong></p><pre><code>margin：外边距padding：内边距默认情况下内边距会影响盒子的大小</code></pre><hr><p><strong>来源：</strong>学习笔记</p><hr>]]></content>
     
     <summary type="html">
     
@@ -459,54 +505,6 @@
       <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
     
       <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java重点知识总结-day01</title>
-    <link href="https://seven1011.github.io/2019/09/24/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day01/"/>
-    <id>https://seven1011.github.io/2019/09/24/Java重点知识总结-day01/</id>
-    <published>2019-09-24T08:36:27.000Z</published>
-    <updated>2019-10-23T13:41:24.790Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>【介绍】java学习过程中重点知识的总结-第一天</code></pre><a id="more"></a><h1 id="一、java中的基本数据类型"><a href="#一、java中的基本数据类型" class="headerlink" title="一、java中的基本数据类型"></a>一、java中的基本数据类型</h1><pre><code>1. 基本数据类型： 四种 八类    byte(4)  boolean(1)  short(2)  char(2)  int(4)      float(4)  long(8)  double(8)2. 引用数据类型    String  数组  集合  ArrayList  Scanner  Random  自定义类型  </code></pre><h1 id="二、引用数据类型中的String中的方法"><a href="#二、引用数据类型中的String中的方法" class="headerlink" title="二、引用数据类型中的String中的方法"></a>二、引用数据类型中的String中的方法</h1><pre><code>第一种：判断方法        boolean equals(String str):比较两个字符串中的内容是否相等        boolean equalsIgnore(String str):比较两个字符串中的内容是否相等(忽略大小写)        boolean startsWish(String subStr):判断某个字符串是否以指定子串开头        boolean endWish(String subStr):判断某个字符串是否以指定子串结尾第二种：获取方法        int length():获取字符串中字符个数        char charAt(int index):获取字符串中某一个字符        String substring(int startIndex,int endIndex):已制定下标开始截取字符串，到指定下标结束(包括开头，不包括结尾)        int indexof(String substr):获取子串第一次出现的下标第三种：转换方法        String toLowerCase():转成小写串        String toUpperCase():转成大写串        char[] toCharArray():变成字符数组第四种：其他方法        String trim():去掉字符串两端的空格        String[] split(String str):切割字符串  </code></pre><h1 id="三、流-读写文件"><a href="#三、流-读写文件" class="headerlink" title="三、流_读写文件"></a>三、流_读写文件</h1><pre><code>输出流：数据从java程序到文件中FileWriter:文件的字符输出流，写数据(一个字符、一个字符串、一个字符数组)        write(int ch):写一个字符（可以写字符的ASCII码值）        write(char[] chs):写一个字符数组        write(String s):写一个字符串        write(char[] chs,int startIndex,int len):写一个字符数组的一部分        write(String s,int startIndex,int len):写一个字符串的一部分输入流：数据从文件到java程序FilerReader:文件的字符输入流，读数据(一个字符、一个字符数组)        int read():读取一个字符        int read(char[] chs):一个读取一个字符数组                            返回值表示实际读到的字符个数</code></pre><h2 id="文件的路径分为两种："><a href="#文件的路径分为两种：" class="headerlink" title="文件的路径分为两种："></a>文件的路径分为两种：</h2><pre><code>1. 相对路径：相对当前项目而言2. 绝对路径：以盘符开头</code></pre><h2 id="对象的内存图"><a href="#对象的内存图" class="headerlink" title="对象的内存图"></a>对象的内存图</h2><pre><code>Dog d = new Dog();d是引用数据类型，保存到栈(stack)中new Dog():创建对象，保存到堆(heap)中</code></pre><p><img src="/images/picture/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE.jpg" alt="内存图">  </p><h1 id="四、回顾面向对象"><a href="#四、回顾面向对象" class="headerlink" title="四、回顾面向对象"></a>四、回顾面向对象</h1><ol><li><p>什么叫做面向对象</p><pre><code>是一种编程思想，面向对象是相对面向过程而言的。</code></pre><ul><li>面向过程<pre><code>遇到一个问题，自己亲力亲为的一步步去解决。典型代表语言：C语言  </code></pre></li></ul></li><li><p>java中先有类还是先有对象</p><pre><code>类的格式：    public  class  类名{            //成员变量            //成员方法            //构造方法                    }一个标准的类：    1. 封装 (隐藏式线细节，对外暴露公共方式)    2. 构造            无参构造（必须要有）            全参构造（最好有）    3. 引用类型变量的内存  </code></pre></li></ol><h1 id="五、匿名对象"><a href="#五、匿名对象" class="headerlink" title="五、匿名对象"></a>五、匿名对象</h1><pre><code>匿名对象：没有名字的对象语法上：只能创建对象，但不用变量来接收匿名对象的使用：    1. 匿名对象也是对象，具有对象所有的功能    2. 匿名对象的特点：        每一次使用匿名对象是，都是一个新对象    结论：        一个匿名对象只能使用一次  </code></pre><h1 id="六、继承"><a href="#六、继承" class="headerlink" title="六、继承"></a>六、继承</h1><ul><li><p>面向对象三大特点：封装、继承、多态  </p><pre><code>1. java中的继承：两个类之间的关系    一个类（子类/派生类/sub）可以继承另一个类（父类/超类/基类/super）这个过程我们称为java中的继承  2. 继承怎么写    public class 子类 extends 父类{             }3. 如果子类继承了父类，南无子类会自动拥有弗雷中所有成员。（但是private除外，父类中用private修饰的成员，子类不能直接拿过来用）4. 继承的作用：提高代码的复用性</code></pre></li><li><p>继承中子父类的成员变量的特点：  </p><pre><code>1. 字符类的成员变量，不同名时不存在任何问题2. 子父类的成员变量同名时，使用子类的对象访问该成员变量时，优先访问子类自己的</code></pre></li><li><p>继承中子父类成员方法的特点：</p><pre><code>1. 子父类的成员方法不同名时，没有任何问题2. 子父类的成员方法同名时，使用子类的对象调用该成员方法是，优先使用子类自己的</code></pre></li><li><p>结论</p><pre><code>无论是调用成员方法还是访问成员变量，优先访问子类自己的，如果子类没有，再去访问父类的，若父类没有，则报错。</code></pre></li></ul><h1 id="七、java的设计思想"><a href="#七、java的设计思想" class="headerlink" title="七、java的设计思想"></a>七、java的设计思想</h1><pre><code>1.算法2.设计模式3.设计原则</code></pre><ul><li><p>java的一个设计原则：向上抽取原则</p><pre><code>把子类中共有的成员向上抽取一个父类，把这些共有的成员写在父类中。</code></pre></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;【介绍】java学习过程中重点知识的总结-第一天&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
-    
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 常用工具总结</title>
-    <link href="https://seven1011.github.io/2019/09/20/Windows-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/"/>
-    <id>https://seven1011.github.io/2019/09/20/Windows-常用工具总结/</id>
-    <published>2019-09-20T13:16:28.000Z</published>
-    <updated>2019-10-23T13:42:24.560Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>【转载】主要是对于Windows常用工具的一些总结</code></pre><a id="more"></a><p>1、文本编辑器</p><pre><code>Sublime textNotepad++Visual Code010 Editor</code></pre><p>2、思维导图工具</p><pre><code>Xmindprocesson（在线）draw.io (https://www.draw.io/)mindmaster</code></pre><p>3、模拟终端</p><pre><code>MobaXtermXshell(公司开发环境需要购买)puttysecurecrtWinSCP（SFTP）mRemoteNG（推荐使用）PowershellTerminus</code></pre><p>4、代码管理</p><pre><code>gitsmartGitsourceTreeTortoiseGitgithub（代码仓库托管服务器）GitKraken (https://hk.saowen.com/a/1d3ec665c78e3ffc51efdd396acc2a062970131afe4d2539010fb19de494440b)</code></pre><p>5、云工具</p><pre><code>有道云笔记百度云</code></pre><p>6、浏览器</p><pre><code>Chrome插件：Adblock Plus（广告屏蔽）Google翻译JSON Editor（JSON数据格式化插件）JSON-handle（浏览器窗口JSON数据的查看，相当nice！）Octotree（Github or GitLab的code tree插件）PostmanAdvanced REST client（推荐使用）Bookmarks clean up（便签维护插件）EditThisCookie（Cookie编辑插件）Wappalyzer（网站实现技术解析）ElasticSearch HeadTampermonkeyWappalyzerFireFox：RESTClientHttpRequesterFirebugElegant JSON Editor</code></pre><p>7、屏幕截取工具</p><pre><code>FastStone Capture</code></pre><p>8、文件查找工具</p><pre><code>Everything</code></pre><p>9、文件数据对比工具</p><pre><code>Beyond Compare 4</code></pre><p>10、XML文件</p><pre><code>xml spy</code></pre><p>11、REST API工具</p><pre><code>Insomnia REST Client</code></pre><p>12、Java开发环境</p><pre><code>JDKMavenIDEAEclipse</code></pre><p>13、正则表达在线工具</p><pre><code>Regulex (https://jex.im/regulex/)</code></pre><p>14、抓包工具</p><pre><code>FiddlerWireshark</code></pre><p>15、文件资源管理器</p><pre><code>Q-Dirfreecommander 参考链接：http://www.appinn.com/my-love-files-explorer-final/</code></pre><p>16、Markdown文本编辑器</p><pre><code>MarkdownPad参考链接：http://www.williamlong.info/archives/4319.htmlVisual Code</code></pre><p>17、代码工具</p><pre><code>searchcode（代码库）链接地址：https://searchcode.com/Sourcegraph for GitHub（谷歌插件）</code></pre><p>18、文件同步</p><pre><code>filegee + 百度云http://www.aiwanba.net/post/985.htmlGoodSync(WRH-LCZ-CJ8-1U5)https://sharewareonsale.com/checkout/order-received/11055457?key=wc_order_5af4dd998c8f0</code></pre><p>19、系统环境变量</p><pre><code>EnvMan</code></pre><p>20、PDF工具</p><pre><code>PDFsam(https://pdfsam.org/zh/)</code></pre><p>21、系统工具</p><pre><code>EasyBCD(系统引导设置与管理的免费软件，可以用来装双系统、管理系统引导项http://neosmart.net/EasyBCD/)分区助手</code></pre><p>22、renamer lite（批量修改文件名）</p><p>23、数据库工具</p><pre><code>Navicat PremiumMySQL（SQLyog）Razorsql ETL(kettle)dbvisualizerExcel2MysqlRedis Desktop ManagerDataGrip</code></pre><p>24、任务清单</p><pre><code>Notionhttps://www.notion.so/desktopTrello       </code></pre><p>  <a href="https://lyneliu.github.io/2018/10/25/%E3%80%90Windows%E3%80%9101%E2%80%94%E2%80%94%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" target="_blank" rel="noopener">原文链接</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;【转载】主要是对于Windows常用工具的一些总结&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="实用工具" scheme="https://seven1011.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Windows" scheme="https://seven1011.github.io/tags/Windows/"/>
     
   </entry>
   
