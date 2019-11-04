@@ -1681,7 +1681,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0981cb;
+  background: #ab4777;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3011,6 +3011,9 @@ div.post-block.tag .collection-title h2 {
 /*版权声明顶部间隙*/
 .post-copyright-author {
   padding-top: 63px;
+}
+.post-body {
+  color: #333;
 }
 @-moz-keyframes sliding {
   to {
