@@ -66,12 +66,12 @@
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="Cause:org.apache.ibatis.builder.BuilderException">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/1573218036(1)-3a337457-cdd3-4599-b21b-1f4286b84abe.jpg">
-<meta property="og:updated_time" content="2019-11-08T13:22:46.949Z">
+<meta property="og:image" content="https://seven1011.github.io/images/picture/2019.11.8.png">
+<meta property="og:updated_time" content="2019-11-08T13:24:38.852Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cause:org.apache.ibatis.builder.BuilderException">
 <meta name="twitter:description" content="Cause:org.apache.ibatis.builder.BuilderException">
-<meta name="twitter:image" content="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/1573218036(1)-3a337457-cdd3-4599-b21b-1f4286b84abe.jpg">
+<meta name="twitter:image" content="https://seven1011.github.io/images/picture/2019.11.8.png">
   <link rel="canonical" href="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/">
 
 
@@ -319,7 +319,7 @@
                 
               
 
-              <time title="创建时间：2019-11-08 21:14:39 / 修改时间：13:22:46" itemprop="dateCreated datePublished" datetime="2019-11-08T21:14:39Z">2019-11-08</time>
+              <time title="创建时间：2019-11-08 21:14:39 / 修改时间：13:24:38" itemprop="dateCreated datePublished" datetime="2019-11-08T21:14:39Z">2019-11-08</time>
             </span>
           
             
@@ -398,7 +398,7 @@
 <h3 id="JavaType和ofType简单介绍："><a href="#JavaType和ofType简单介绍：" class="headerlink" title="JavaType和ofType简单介绍："></a>JavaType和ofType简单介绍：</h3><p>JavaType和ofType都是用来指定对象类型的但是JavaType是用来指定pojo中属性的类型，而ofType指定的是映射到list集合属性中pojo的类型的。<br><br></p>
 <p>或者简单一点理解就是：<strong>ofType一半指定的是集合的泛型的类型，而javaType一般指的是变量的属性类型</strong>。</p>
 <p>再多对多的映射关系中，配置文件中没有写入<code>javaType</code>属性，即错误代码如下：</p>
-<p><img src="1573218036(1)-3a337457-cdd3-4599-b21b-1f4286b84abe.jpg" alt></p>
+<p><img src="/images/picture/2019.11.8.png" alt></p>
 <p><strong>运行时映射器会引发异常：</strong></p>
 <p><code>Cause: org.apache.ibatis.builder.BuilderException: Ambiguous collection type for property &#39;orderDetails&#39;. Please add &#39;resultType&#39; or &#39;resultMap&#39;.</code></p>
 <p>查看<a href="https://github.com/mybatis/mybatis-3/wiki/FAQ#how-do-i-map-a-list-of-simple-type-objects-string-integer-etc-to-a-bean-or-map-" target="_blank" rel="noopener">官方文档</a>，其实对此已经进行了说明，只需要在 <code>collection</code>里面添加<code>javaType</code>即可<br><br></p>
@@ -896,7 +896,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">38k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
