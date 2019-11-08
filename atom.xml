@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-06T13:22:23.751Z</updated>
+  <updated>2019-11-07T02:16:18.181Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="https://seven1011.github.io/2019/11/07/parameterType%E5%B1%9E%E6%80%A7%E4%BC%A0%E5%8F%82%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/"/>
     <id>https://seven1011.github.io/2019/11/07/parameterType属性传参类型介绍/</id>
     <published>2019-11-06T21:20:03.000Z</published>
-    <updated>2019-11-06T13:22:23.751Z</updated>
+    <updated>2019-11-07T02:16:18.181Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p>mybatis中定义sql语句 可以通过parameterType指定指定参数的类型，通过resultType指定输出参数的类型</p><p>![](/images/picture/20170318234958039 .png)</p><a id="more"></a><p>MyBatis可以使用的parameterType有基本数据类型和Java复杂数据类型。复杂数据类型包含Java实体类、Map等。</p><p>基本数据类型：int,string,long,Date;</p><p>复杂数据类型：类和Map</p><p>获取参数的值：</p><ol><li><p>基本数据类型，可以通过#{参数名}获取参数的值（参数名可以任意填写，为阅读方便还需填写对应的参数名较好）。</p><p> 原因：JAVA反射只能获取方法参数的类型，不能得知方法参数的名字</p></li><li><p>当有多个参数需要传递时，可以使用Map，通过#{map的key来获取相应的传递的值}</p><p> 注意：参数传递是，sql语句和map中相应的key值要完全一样，注意区分大小写，否则会报错。</p></li><li><p>Java实体类型，通过#{属性名}获取相应的参数的值</p></li></ol><hr><p>参考：<a href="https://blog.csdn.net/u010235716/article/details/51698422" target="_blank" rel="noopener">MyBatis中传入参数parameterType类型详解</a></p><hr>]]></content>
+    <content type="html"><![CDATA[<pre><code>parameterType属性传参类型介绍</code></pre><a id="more"></a><p>mybatis中定义sql语句 可以通过parameterType指定指定参数的类型，通过resultType指定输出参数的类型</p><p><img src="/images/picture/2019.11.6.png" alt></p><p>MyBatis可以使用的parameterType有基本数据类型和Java复杂数据类型。复杂数据类型包含Java实体类、Map等。<br><br></p><p><strong>基本数据类型：</strong>int,string,long,Date;  </p><p><strong>复杂数据类型：</strong>类和Map</p><h3 id="获取参数的值："><a href="#获取参数的值：" class="headerlink" title="获取参数的值："></a>获取参数的值：</h3><p><strong>1. 基本数据类型</strong>，可以通过#{参数名}获取参数的值（参数名可以任意填写，为阅读方便还需填写对应的参数名较好）。<br><br></p><p><strong>原因：</strong>JAVA反射只能获取方法参数的类型，不能得知方法参数的名字<br><br></p><p><strong>2. 当有多个参数需要传递时</strong>，可以使用Map，通过#{map的key来获取相应的传递的值}<br><br></p><p><strong>注意：</strong>参数传递是，sql语句和map中相应的key值要完全一样，注意区分大小写，否则会报错。<br><br></p><p><strong>3. Java实体类型</strong>，通过#{属性名}获取相应的参数的值</p><h3 id="和"><a href="#和" class="headerlink" title="#{}和${}"></a>#{}和${}</h3><p><strong>#{}：</strong>相当于预处理中的占位符？</p><pre><code>#{}里面的参数表示接收java输入参数的名称。#{}可以接受HashMap、POJO类型的参数。当接受简单类型的参数时，#{}里面可以是value，也可以是其他。</code></pre><p><strong>#{}</strong>可以防止SQL注入。</p><p><strong>${}：</strong>相当于拼接SQL串，对传入的值不做任何解释的原样输出。</p><pre><code>${}会引起SQL注入，所以要谨慎使用。${}可以接受HashMap、POJO类型的参数。当接受简单类型的参数时，${}里面只能是value。</code></pre><hr><p>参考：<a href="https://blog.csdn.net/u010235716/article/details/51698422" target="_blank" rel="noopener">MyBatis中传入参数parameterType类型详解</a></p><hr>]]></content>
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;p&gt;mybatis中定义sql语句 可以通过parameterType指定指定参数的类型，通过resultType指定输出参数的类型&lt;/p&gt;&lt;p&gt;![](/images/picture/20170318234958039 .png)&lt;/p&gt;
+      &lt;pre&gt;&lt;code&gt;parameterType属性传参类型介绍&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
