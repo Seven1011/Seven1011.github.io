@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-08T13:24:38.852Z</updated>
+  <updated>2019-11-09T12:36:33.824Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Cause:org.apache.ibatis.builder.BuilderException</title>
+    <title>JavaType和ofType区别简单介绍</title>
     <link href="https://seven1011.github.io/2019/11/09/MMyBatis-%E5%A4%9A%E5%AF%B9%E5%A4%9A%E6%98%A0%E5%B0%84/"/>
     <id>https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/</id>
     <published>2019-11-08T21:14:39.000Z</published>
-    <updated>2019-11-08T13:24:38.852Z</updated>
+    <updated>2019-11-09T12:36:33.824Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>Cause:org.apache.ibatis.builder.BuilderException</code></pre><a id="more"></a><h3 id="JavaType和ofType简单介绍："><a href="#JavaType和ofType简单介绍：" class="headerlink" title="JavaType和ofType简单介绍："></a>JavaType和ofType简单介绍：</h3><p>JavaType和ofType都是用来指定对象类型的但是JavaType是用来指定pojo中属性的类型，而ofType指定的是映射到list集合属性中pojo的类型的。<br><br></p><p>或者简单一点理解就是：<strong>ofType一半指定的是集合的泛型的类型，而javaType一般指的是变量的属性类型</strong>。</p><p>再多对多的映射关系中，配置文件中没有写入<code>javaType</code>属性，即错误代码如下：</p><p><img src="/images/picture/2019.11.8.png" alt></p><p><strong>运行时映射器会引发异常：</strong></p><p><code>Cause: org.apache.ibatis.builder.BuilderException: Ambiguous collection type for property &#39;orderDetails&#39;. Please add &#39;resultType&#39; or &#39;resultMap&#39;.</code></p><p>查看<a href="https://github.com/mybatis/mybatis-3/wiki/FAQ#how-do-i-map-a-list-of-simple-type-objects-string-integer-etc-to-a-bean-or-map-" target="_blank" rel="noopener">官方文档</a>，其实对此已经进行了说明，只需要在 <code>collection</code>里面添加<code>javaType</code>即可<br><br></p><p>重新运行，显示成功。<br><br></p><p><strong>官方的说明一定要大致的浏览一下，会在写代码时省去很多麻烦….</strong></p>]]></content>
+    <content type="html"><![CDATA[<pre><code>JavaType和ofType区别讲解以及BuilderException报错解决。</code></pre><a id="more"></a><h3 id="JavaType和ofType简单介绍："><a href="#JavaType和ofType简单介绍：" class="headerlink" title="JavaType和ofType简单介绍："></a>JavaType和ofType简单介绍：</h3><p>JavaType和ofType都是用来指定对象类型的但是JavaType是用来指定pojo中属性的类型，而ofType指定的是映射到list集合属性中pojo的类型的。<br><br></p><p>或者简单一点理解就是：<strong>ofType一半指定的是集合的泛型的类型，而javaType一般指的是变量的属性类型</strong>。</p><p>再多对多的映射关系中，配置文件中没有写入<code>javaType</code>属性，即错误代码如下：</p><p><img src="/images/picture/2019.11.8.png" alt></p><p><strong>运行时映射器会引发异常：</strong></p><p><code>Cause: org.apache.ibatis.builder.BuilderException: Ambiguous collection type for property &#39;orderDetails&#39;. Please add &#39;resultType&#39; or &#39;resultMap&#39;.</code></p><p>查看<a href="https://github.com/mybatis/mybatis-3/wiki/FAQ#how-do-i-map-a-list-of-simple-type-objects-string-integer-etc-to-a-bean-or-map-" target="_blank" rel="noopener">官方文档</a>，其实对此已经进行了说明，只需要在 <code>collection</code>里面添加<code>javaType</code>即可<br><br></p><p>重新运行，显示成功。<br><br></p><p><strong>官方的说明一定要大致的浏览一下，会在写代码时省去很多麻烦….</strong></p>]]></content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;Cause:org.apache.ibatis.builder.BuilderException&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre&gt;&lt;code&gt;JavaType和ofType区别讲解以及BuilderException报错解决。&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     

@@ -58,19 +58,19 @@
   };
 </script>
 
-  <meta name="description" content="Cause:org.apache.ibatis.builder.BuilderException">
+  <meta name="description" content="JavaType和ofType区别讲解以及BuilderException报错解决。">
 <meta name="keywords" content="JavaType,ofType">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cause:org.apache.ibatis.builder.BuilderException">
+<meta property="og:title" content="JavaType和ofType区别简单介绍">
 <meta property="og:url" content="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/index.html">
 <meta property="og:site_name" content="Sevenの博客">
-<meta property="og:description" content="Cause:org.apache.ibatis.builder.BuilderException">
+<meta property="og:description" content="JavaType和ofType区别讲解以及BuilderException报错解决。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://seven1011.github.io/images/picture/2019.11.8.png">
-<meta property="og:updated_time" content="2019-11-08T13:24:38.852Z">
+<meta property="og:updated_time" content="2019-11-09T12:36:33.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cause:org.apache.ibatis.builder.BuilderException">
-<meta name="twitter:description" content="Cause:org.apache.ibatis.builder.BuilderException">
+<meta name="twitter:title" content="JavaType和ofType区别简单介绍">
+<meta name="twitter:description" content="JavaType和ofType区别讲解以及BuilderException报错解决。">
 <meta name="twitter:image" content="https://seven1011.github.io/images/picture/2019.11.8.png">
   <link rel="canonical" href="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/">
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title>Cause:org.apache.ibatis.builder.BuilderException | Sevenの博客</title>
+  <title>JavaType和ofType区别简单介绍 | Sevenの博客</title>
 
   
 
@@ -303,7 +303,7 @@
       <meta itemprop="name" content="Sevenの博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Cause:org.apache.ibatis.builder.BuilderException
+        <h1 class="post-title" itemprop="name headline">JavaType和ofType区别简单介绍
 
           
         </h1>
@@ -319,11 +319,19 @@
                 
               
 
-              <time title="创建时间：2019-11-08 21:14:39 / 修改时间：13:24:38" itemprop="dateCreated datePublished" datetime="2019-11-08T21:14:39Z">2019-11-08</time>
+              <time title="创建时间：2019-11-08 21:14:39" itemprop="dateCreated datePublished" datetime="2019-11-08T21:14:39Z">2019-11-08</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-09 12:36:33" itemprop="dateModified" datetime="2019-11-09T12:36:33Z">2019-11-09</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -371,7 +379,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>501</span>
+              <span>495</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -394,7 +402,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre><code>Cause:org.apache.ibatis.builder.BuilderException</code></pre><a id="more"></a>
+        <pre><code>JavaType和ofType区别讲解以及BuilderException报错解决。</code></pre><a id="more"></a>
 <h3 id="JavaType和ofType简单介绍："><a href="#JavaType和ofType简单介绍：" class="headerlink" title="JavaType和ofType简单介绍："></a>JavaType和ofType简单介绍：</h3><p>JavaType和ofType都是用来指定对象类型的但是JavaType是用来指定pojo中属性的类型，而ofType指定的是映射到list集合属性中pojo的类型的。<br><br></p>
 <p>或者简单一点理解就是：<strong>ofType一半指定的是集合的泛型的类型，而javaType一般指的是变量的属性类型</strong>。</p>
 <p>再多对多的映射关系中，配置文件中没有写入<code>javaType</code>属性，即错误代码如下：</p>
@@ -422,7 +430,7 @@
     <strong>本文作者： </strong>Seven</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/" title="Cause:org.apache.ibatis.builder.BuilderException">https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/</a>
+    <a href="https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/" title="JavaType和ofType区别简单介绍">https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
