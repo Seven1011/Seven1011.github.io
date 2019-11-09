@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-09T12:36:33.824Z</updated>
+  <updated>2019-11-09T12:54:58.348Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://seven1011.github.io/2019/11/09/MMyBatis-%E5%A4%9A%E5%AF%B9%E5%A4%9A%E6%98%A0%E5%B0%84/"/>
     <id>https://seven1011.github.io/2019/11/09/MMyBatis-多对多映射/</id>
     <published>2019-11-08T21:14:39.000Z</published>
-    <updated>2019-11-09T12:36:33.824Z</updated>
+    <updated>2019-11-09T12:54:58.348Z</updated>
     
     <content type="html"><![CDATA[<pre><code>JavaType和ofType区别讲解以及BuilderException报错解决。</code></pre><a id="more"></a><h3 id="JavaType和ofType简单介绍："><a href="#JavaType和ofType简单介绍：" class="headerlink" title="JavaType和ofType简单介绍："></a>JavaType和ofType简单介绍：</h3><p>JavaType和ofType都是用来指定对象类型的但是JavaType是用来指定pojo中属性的类型，而ofType指定的是映射到list集合属性中pojo的类型的。<br><br></p><p>或者简单一点理解就是：<strong>ofType一半指定的是集合的泛型的类型，而javaType一般指的是变量的属性类型</strong>。</p><p>再多对多的映射关系中，配置文件中没有写入<code>javaType</code>属性，即错误代码如下：</p><p><img src="/images/picture/2019.11.8.png" alt></p><p><strong>运行时映射器会引发异常：</strong></p><p><code>Cause: org.apache.ibatis.builder.BuilderException: Ambiguous collection type for property &#39;orderDetails&#39;. Please add &#39;resultType&#39; or &#39;resultMap&#39;.</code></p><p>查看<a href="https://github.com/mybatis/mybatis-3/wiki/FAQ#how-do-i-map-a-list-of-simple-type-objects-string-integer-etc-to-a-bean-or-map-" target="_blank" rel="noopener">官方文档</a>，其实对此已经进行了说明，只需要在 <code>collection</code>里面添加<code>javaType</code>即可<br><br></p><p>重新运行，显示成功。<br><br></p><p><strong>官方的说明一定要大致的浏览一下，会在写代码时省去很多麻烦….</strong></p>]]></content>
     
@@ -107,11 +107,11 @@
   </entry>
   
   <entry>
-    <title>Error running Tomcat 9.0.241: port out of range:-1 </title>
+    <title>Tomcat端口修改</title>
     <link href="https://seven1011.github.io/2019/11/05/9-0-241-port-out-of-range-1/"/>
     <id>https://seven1011.github.io/2019/11/05/9-0-241-port-out-of-range-1/</id>
     <published>2019-11-04T20:56:20.000Z</published>
-    <updated>2019-11-04T13:25:34.527Z</updated>
+    <updated>2019-11-09T13:18:02.545Z</updated>
     
     <content type="html"><![CDATA[<pre><code>运行TomCat发现报错</code></pre><a id="more"></a><p><img src="/images/picture/TomCat1.png" alt></p><p>这种情况是因为端口号不能是-1；<br><br></p><p>修改：</p><p>打开TomCat配置文件<code>./confl</code>里面的server.xml检查，修改端口，一般为80，或者1-65535之间任意一个整数：<br><br></p><p><img src="/images/picture/TomCat3.png" alt></p><p>重新启动。</p><br><p>如果出现报错：<code>java.net.BindException: Address already in use: JVM_Bind</code></p><p>说明端口冲突，修改后的端口已经被占用了。需要重新进行修改：</p><p>或者可以打开cmd命令窗口，输入<code>netstat -ano</code>，可以查看端口被占用情况。</p><hr><p>参考：<a href="https://stackoverflow.com/questions/12737293/how-do-i-resolve-the-java-net-bindexception-address-already-in-use-jvm-bind" target="_blank" rel="noopener">How do I resolve the “java.net.BindException: Address already in use: JVM_Bind” error?</a></p><hr>]]></content>
     
@@ -238,17 +238,17 @@
   </entry>
   
   <entry>
-    <title>webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件</title>
+    <title>Yarn简单介绍及报错处理</title>
     <link href="https://seven1011.github.io/2019/11/02/webpack-dev-server-%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4%EF%BC%8C%E4%B9%9F%E4%B8%8D%E6%98%AF%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%88%96%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/"/>
     <id>https://seven1011.github.io/2019/11/02/webpack-dev-server-不是内部或外部命令，也不是可运行的程序或批处理文件/</id>
     <published>2019-11-02T10:14:36.000Z</published>
-    <updated>2019-11-02T02:31:04.938Z</updated>
+    <updated>2019-11-09T13:17:08.105Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>【运行报错:】webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件</code></pre><a id="more"></a><hr><p>Yarn 的全称是 <strong>Yet Another Resource Negotiator</strong>，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。</p><hr><p>运行项目显示缺少必要的插件<br><br></p><p>运行npm下载</p><pre><code>npm install webpack-dev-server --save</code></pre><br><p>安装成功之后再次运行</p><pre><code>yarn install</code></pre><br><p>结果还是报错</p><pre><code>Error: Cannot find module &apos;webpack&apos;    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)    at Function.Module._load (internal/modules/cjs/loader.js:562:25)    at Module.require (internal/modules/cjs/loader.js:690:17)    at require (internal/modules/cjs/helpers.js:25:18)    at Object.&lt;anonymous&gt; (E:\code\admin\vue-antd-admin\node_modules\webpack-dev-server\lib\Server.js:22:17)    at Module._compile (internal/modules/cjs/loader.js:776:30)    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)    at Module.load (internal/modules/cjs/loader.js:653:32)    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)    at Function.Module._load (internal/modules/cjs/loader.js:585:3)</code></pre><p>索性删除项目目录下的<code>node_modules</code>文件夹</p><blockquote><p>npm 的工作是把将各种各样的包拉到您的计算机上，并且进行管理，这是 Nodejs 周边生态的重要体现，而node_modules文档就是存放这些安装包的地方。</p></blockquote><p>然后重新运行</p><pre><code>yarn install</code></pre><p>再运行</p><pre><code>yarn install</code></pre><p>成功运行。<br><br></p><p>解决<code>Error: Cannot find module &#39;webpack&#39;</code>可以尝试<a href="https://juejin.im/post/5cb860445188253b454b7568" target="_blank" rel="noopener">这里</a>…<br><br></p>]]></content>
+    <content type="html"><![CDATA[<pre><code>【介绍:】Yarn简单介绍及：webpack-dev-server 不是内部或外部命令报错解决办法</code></pre><a id="more"></a><hr><p>Yarn 的全称是 <strong>Yet Another Resource Negotiator</strong>，意思是“另一种资源调度器”，是一个新的快速安全可信赖的可以替代NPM的依赖管理工具，由 facebook 推出并开源。</p><hr><p>运行项目显示缺少必要的插件<br><br></p><p>运行npm下载</p><pre><code>npm install webpack-dev-server --save</code></pre><br><p>安装成功之后再次运行</p><pre><code>yarn install</code></pre><br><p>结果还是报错</p><pre><code>Error: Cannot find module &apos;webpack&apos;    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)    at Function.Module._load (internal/modules/cjs/loader.js:562:25)    at Module.require (internal/modules/cjs/loader.js:690:17)    at require (internal/modules/cjs/helpers.js:25:18)    at Object.&lt;anonymous&gt; (E:\code\admin\vue-antd-admin\node_modules\webpack-dev-server\lib\Server.js:22:17)    at Module._compile (internal/modules/cjs/loader.js:776:30)    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)    at Module.load (internal/modules/cjs/loader.js:653:32)    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)    at Function.Module._load (internal/modules/cjs/loader.js:585:3)</code></pre><p>索性删除项目目录下的<code>node_modules</code>文件夹</p><blockquote><p>npm 的工作是把将各种各样的包拉到您的计算机上，并且进行管理，这是 Nodejs 周边生态的重要体现，而node_modules文档就是存放这些安装包的地方。</p></blockquote><p>然后重新运行</p><pre><code>yarn install</code></pre><p>再运行</p><pre><code>yarn install</code></pre><p>成功运行。<br><br></p><p>解决<code>Error: Cannot find module &#39;webpack&#39;</code>可以尝试<a href="https://juejin.im/post/5cb860445188253b454b7568" target="_blank" rel="noopener">这里</a>…<br><br></p>]]></content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;【运行报错:】webpack-dev-server 不是内部或外部命令，也不是可运行的程序或批处理文件&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre&gt;&lt;code&gt;【介绍:】Yarn简单介绍及：webpack-dev-server 不是内部或外部命令报错解决办法&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
@@ -261,17 +261,17 @@
   </entry>
   
   <entry>
-    <title>bash-yarn-command-not-found</title>
+    <title>Yarn安装过程过程及可能出现的问题</title>
     <link href="https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/"/>
     <id>https://seven1011.github.io/2019/11/02/bash-yarn-command-not-found/</id>
     <published>2019-11-01T22:27:58.000Z</published>
-    <updated>2019-11-02T02:22:35.811Z</updated>
+    <updated>2019-11-09T13:15:57.026Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>【运行报错】：bash: yarn command not found </code></pre><a id="more"></a><h2 id="错误介绍"><a href="#错误介绍" class="headerlink" title="错误介绍"></a>错误介绍</h2><br><p>在bash中安装依赖   </p><p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>yarn install</code><br><br></p><p>出现如下错误</p><p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>bash: yarn: command not found</code><br><br></p><p>这是因为npm没有安装yarn，使用npm进行安装</p><p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>npm install -g yarn</code></p><p><strong>解释：</strong><code>-g(-global)</code> 该命令就是以全局模式安装yarn</p><blockquote><p><strong>注意：</strong>通常情况下不建议通过npm进行安装。npm安装是非确定性的，程序包没有签名，并且npm除了做了基本的SHA1哈希之外不执行任何完整性检查，这给安装系统程序带来了安全风险。</p></blockquote><p>除此之外，还有通过适合自己操作系统的安装方法来安装yarn<br><br></p><h3 id="windows："><a href="#windows：" class="headerlink" title="windows："></a>windows：</h3><br><ol><li><p>进入<a href="https://yarnpkg.com/en/docs/install#windows-stable" target="_blank" rel="noopener">官网下载页面</a>安装(按照引导操作完成)</p><br></li><li><p>安装完成之后查看yarn版本</p><pre><code>yarn --version</code></pre></li></ol><pre><code>![](/images/picture/20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png)</code></pre><br>]]></content>
+    <content type="html"><![CDATA[<pre><code>【介绍：】Yarn安装过程及报错 bash: yarn command not found 解决办法</code></pre><a id="more"></a><h2 id="错误介绍"><a href="#错误介绍" class="headerlink" title="错误介绍"></a>错误介绍</h2><br><p>在bash中安装依赖   </p><p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>yarn install</code><br><br></p><p>出现如下错误</p><p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>bash: yarn: command not found</code><br><br></p><p>这是因为npm没有安装yarn，使用npm进行安装</p><p> &nbsp;&nbsp;&nbsp;&nbsp;    <code>npm install -g yarn</code></p><p><strong>解释：</strong><code>-g(-global)</code> 该命令就是以全局模式安装yarn</p><blockquote><p><strong>注意：</strong>通常情况下不建议通过npm进行安装。npm安装是非确定性的，程序包没有签名，并且npm除了做了基本的SHA1哈希之外不执行任何完整性检查，这给安装系统程序带来了安全风险。</p></blockquote><p>除此之外，还有通过适合自己操作系统的安装方法来安装yarn<br><br></p><h3 id="windows："><a href="#windows：" class="headerlink" title="windows："></a>windows：</h3><br><ol><li><p>进入<a href="https://yarnpkg.com/en/docs/install#windows-stable" target="_blank" rel="noopener">官网下载页面</a>安装(按照引导操作完成)</p><br></li><li><p>安装完成之后查看yarn版本</p><pre><code>yarn --version</code></pre></li></ol><pre><code>![](/images/picture/20191029143233-8e86a4fa-67af-478b-a2dc-edde7bc70c08.png)</code></pre><br>]]></content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;【运行报错】：bash: yarn command not found &lt;/code&gt;&lt;/pre&gt;
+      &lt;pre&gt;&lt;code&gt;【介绍：】Yarn安装过程及报错 bash: yarn command not found 解决办法&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
