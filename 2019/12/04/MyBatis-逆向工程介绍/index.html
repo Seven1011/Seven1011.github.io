@@ -68,7 +68,7 @@
 <meta property="og:image" content="https://seven1011.github.io/images/picture/20191204152415.png">
 <meta property="og:image" content="https://seven1011.github.io/images/picture/20191204110.png">
 <meta property="og:image" content="https://seven1011.github.io/images/picture/20191204153813.png">
-<meta property="og:updated_time" content="2019-12-04T08:02:05.503Z">
+<meta property="og:updated_time" content="2019-12-04T08:52:32.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis 逆向工程介绍">
 <meta name="twitter:image" content="https://seven1011.github.io/images/picture/mybatis.png">
@@ -319,7 +319,7 @@
                 
               
 
-              <time title="创建时间：2019-12-04 15:05:43 / 修改时间：08:02:05" itemprop="dateCreated datePublished" datetime="2019-12-04T15:05:43Z">2019-12-04</time>
+              <time title="创建时间：2019-12-04 15:05:43 / 修改时间：08:52:32" itemprop="dateCreated datePublished" datetime="2019-12-04T15:05:43Z">2019-12-04</time>
             </span>
           
             
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>2.5k</span>
+              <span>2.7k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -384,15 +384,23 @@
         <p><img src="/images/picture/mybatis.png" alt></p>
 <a id="more"></a>
 
-<h2 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h2><p>逆向工程就是根据数据库中对应的表在项目工程中生成相应的MyBatis代码（XXXMapper.java/XXXMapper.xml/Moudle(XXX)）,逆向工程生成的代码可以进行简单的数据库操作，能够节省不少的时间，MyBatis官方提供了相应的代码，所以在实际中运用较多。</p>
-<h2 id="2-操作配置"><a href="#2-操作配置" class="headerlink" title="2. 操作配置"></a>2. 操作配置</h2><p><strong>1. 下载相应的jar包，主要有两个：</strong></p>
+<h2 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h2><br>
+
+<p>逆向工程就是根据数据库中对应的表在项目工程中生成相应的MyBatis代码（XXXMapper.java/XXXMapper.xml/Moudle(XXX)）,逆向工程生成的代码可以进行简单的数据库操作，能够节省不少的时间，MyBatis官方提供了相应的代码，所以在实际中运用较多。<br><br></p>
+<h2 id="2-操作配置"><a href="#2-操作配置" class="headerlink" title="2. 操作配置"></a>2. 操作配置</h2><br>
+
+<p><strong>1. 下载相应的jar包，主要有两个：</strong></p>
 <p><img src="/images/picture/20191204152303.png" alt></p>
-<p>  <a href="//download.csdn.net/download/weixin_45910396/12013449">下载链接：</a> </p>
+<p>&emsp;&emsp;<strong>下载链接：</strong><a href="//download.csdn.net/download/weixin_45910396/12013449">//download.csdn.net/download/weixin_45910396/12013449</a><br><br></p>
 <p><strong>2. 项目目录：</strong></p>
 <p><img src="/images/picture/20191204152415.png" alt></p>
+<br>
+
 <p><strong>3. main方法：</strong></p>
 <p>导入jar之后编写核心代码：<a href="http://mybatis.org/generator/running/runningWithJava.html" target="_blank" rel="noopener">打开网址</a></p>
 <p><img src="/images/picture/20191204110.png" alt></p>
+<br>
+
 <p>代码如下：</p>
 <pre><code>public static void main(String[] args)throws Exception {
         List&lt;String&gt; warnings = new ArrayList&lt;String&gt;();
@@ -404,9 +412,13 @@
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,
                 callback, warnings);
         myBatisGenerator.generate(null);
-    }</code></pre><p><strong>4. generator.xml配置文件</strong></p>
+    }</code></pre><br>
+
+<p><strong>4. generator.xml配置文件</strong></p>
 <p>同样的网址，打开 <code>XML Configuration  Reference</code></p>
 <p><img src="/images/picture/20191204153813.png" alt></p>
+<br>
+
 <p>我的代码如下：</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE generatorConfiguration
@@ -450,7 +462,8 @@
         &lt;table tableName=&quot;pollutiontrend&quot; domainObjectName=&quot;PollutionTrend&quot;/&gt;
 
     &lt;/context&gt;
-&lt;/generatorConfiguration&gt;</code></pre><p>至此，MyBatis逆向工程的所有配置都已经完成了，运行main方法即可得到对应的model和mapper以及mapper.xml文件。</p>
+&lt;/generatorConfiguration&gt;</code></pre><p>至此，MyBatis逆向工程的所有配置都已经完成了，运行main方法即可得到对应的model和mapper以及mapper.xml文件。<br><br></p>
+<p>&emsp;&emsp;<strong>附上完整的项目代码，直接下载即可使用：</strong><a href="//download.csdn.net/download/weixin_45910396/12013612">//download.csdn.net/download/weixin_45910396/12013612</a> </p>
 
     </div>
 
@@ -937,7 +950,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
 
 
