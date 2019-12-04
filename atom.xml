@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-11-09T12:54:58.348Z</updated>
+  <updated>2019-12-04T08:02:05.503Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyBatis 逆向工程介绍</title>
+    <link href="https://seven1011.github.io/2019/12/04/MyBatis-%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://seven1011.github.io/2019/12/04/MyBatis-逆向工程介绍/</id>
+    <published>2019-12-04T15:05:43.000Z</published>
+    <updated>2019-12-04T08:02:05.503Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/picture/mybatis.png" alt></p><a id="more"></a><h2 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h2><p>逆向工程就是根据数据库中对应的表在项目工程中生成相应的MyBatis代码（XXXMapper.java/XXXMapper.xml/Moudle(XXX)）,逆向工程生成的代码可以进行简单的数据库操作，能够节省不少的时间，MyBatis官方提供了相应的代码，所以在实际中运用较多。</p><h2 id="2-操作配置"><a href="#2-操作配置" class="headerlink" title="2. 操作配置"></a>2. 操作配置</h2><p><strong>1. 下载相应的jar包，主要有两个：</strong></p><p><img src="/images/picture/20191204152303.png" alt></p><p>  <a href="//download.csdn.net/download/weixin_45910396/12013449">下载链接：</a> </p><p><strong>2. 项目目录：</strong></p><p><img src="/images/picture/20191204152415.png" alt></p><p><strong>3. main方法：</strong></p><p>导入jar之后编写核心代码：<a href="http://mybatis.org/generator/running/runningWithJava.html" target="_blank" rel="noopener">打开网址</a></p><p><img src="/images/picture/20191204110.png" alt></p><p>代码如下：</p><pre><code>public static void main(String[] args)throws Exception {        List&lt;String&gt; warnings = new ArrayList&lt;String&gt;();        boolean overwrite = true;        File configFile = new File(&quot;src/generator.xml&quot;);        ConfigurationParser cp = new ConfigurationParser(warnings);        Configuration config = cp.parseConfiguration(configFile);        DefaultShellCallback callback = new DefaultShellCallback(overwrite);        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,                callback, warnings);        myBatisGenerator.generate(null);    }</code></pre><p><strong>4. generator.xml配置文件</strong></p><p>同样的网址，打开 <code>XML Configuration  Reference</code></p><p><img src="/images/picture/20191204153813.png" alt></p><p>我的代码如下：</p><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;!DOCTYPE generatorConfiguration        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;&lt;generatorConfiguration&gt;    &lt;context id=&quot;mysqlTables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;        &lt;!--数据库配置--&gt;        &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;                        connectionURL=&quot;jdbc:mysql://localhost:3306/test&quot;                        userId=&quot;root&quot;                        password=&quot;root0809&quot;&gt;        &lt;/jdbcConnection&gt;        &lt;!-- java类型解析 --&gt;        &lt;javaTypeResolver &gt;            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;        &lt;/javaTypeResolver&gt;        &lt;!-- 模型生成包名--&gt;        &lt;javaModelGenerator targetPackage=&quot;com.seven.model&quot; targetProject=&quot;.\src&quot;&gt;            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;        &lt;/javaModelGenerator&gt;        &lt;!-- mybatis的映射.xml--&gt;        &lt;sqlMapGenerator targetPackage=&quot;com.seven.mapper&quot; targetProject=&quot;.\src&quot;&gt;            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;        &lt;/sqlMapGenerator&gt;        &lt;!-- mybatis 的mapper接口生成的包路径--&gt;        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;com.seven.mapper&quot; targetProject=&quot;.\src&quot;&gt;            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;        &lt;/javaClientGenerator&gt;        &lt;!-- 配置生成表的模型--&gt;        &lt;table tableName=&quot;rs&quot; domainObjectName=&quot;Rs&quot;/&gt;        &lt;table tableName=&quot;pollutiontrend&quot; domainObjectName=&quot;PollutionTrend&quot;/&gt;    &lt;/context&gt;&lt;/generatorConfiguration&gt;</code></pre><p>至此，MyBatis逆向工程的所有配置都已经完成了，运行main方法即可得到对应的model和mapper以及mapper.xml文件。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/picture/mybatis.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>JavaType和ofType区别简单介绍</title>
@@ -462,31 +481,6 @@
     <summary type="html">
     
       &lt;pre&gt;&lt;code&gt;【介绍】java学习过程中重点知识的总结-第五天&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
-    
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java重点知识总结-day04</title>
-    <link href="https://seven1011.github.io/2019/09/28/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day04/"/>
-    <id>https://seven1011.github.io/2019/09/28/Java重点知识总结-day04/</id>
-    <published>2019-09-27T16:34:44.000Z</published>
-    <updated>2019-10-23T13:41:51.288Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>【介绍】java学习过程中重点知识的总结-第四天</code></pre><a id="more"></a><h2 id="1-Object类"><a href="#1-Object类" class="headerlink" title="1.Object类"></a>1.Object类</h2><p> <em>· 是所有类的根类</em></p><pre><code>boolean eauals(Object obj); a.Object类中equals方法,比较 是两个对象地址 ,就是 ==号的作用 b.子类为了改变比较规则,可以重写equals方法     比如:Java提供的String 重写了equals,变成比较两个字符串的内容     比如: 我们自己定义的类,也可以重写equals方法,一般比较两个对象的成员变量的值String toString();//返回该对象的字符串表示 ----&gt;hashCode()返回该对象的数字表示 a.Object类中的toString,返回值: &quot;包名.类名@地址值&quot; b.子类为了快速打印一个对象的信息,一般重写toString    在toString方法中,返回需要成员变量的值 注意:    syso(对象) &lt;====&gt; syso(对象.toString());</code></pre><h2 id="2-异常"><a href="#2-异常" class="headerlink" title="2.异常"></a>2.异常</h2><pre><code>异常的根类:    Throwable        --Exception:异常类            -- 编译时异常:编译时报错            -- 运行时异常:运行时报错        --Error:错误类(不研究,出现了错误,改代码)异常的抛出:    throw new 异常类(&quot;&quot;);异常的处理:  不处理,再次声明抛出处理        在抛出异常的方法上  throws xxxException       然后该方法的调用者就必须处理这个异常   捕获处理:        标准的方法:      try{            可能出现问题的代码      }catch(所有可能出现异常的父类 变量名){            处理异常,打印,提示,写入日志      }finally{            释放资源:            1.IO流  2.网络连接 3.数据库连接        }        了解一下:       一次捕获多次处理: 一个try 多个catch  (多个catch中 必须是异常子类在前,父类在后)       多次捕获多次处理: 多个try,每个try多应一个catch        一次捕获一次处理(最常用的):一个try一个catch(catch中异常类必须所有可能出现异常的父类)自定义异常:    固定套路:    1.异常类名 必须用Exception结尾    2.异常类必须 继承 Exception 或者RuntimeException    3.异常类一般提供两个构造: 无参构造+String参数构造编译时异常和运行时异常 怎么区分别:    1.编译时异常 在编译的时候会报错的 (需要我们去处理)    2.运行时异常 在编译的时候不会报错    只要定义一个方法,在方法中抛出一个异常对象,如果编译报错那么就是编译时异常    如果编译成功,那么就是运行时异常</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;【介绍】java学习过程中重点知识的总结-第四天&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
