@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-12-04T08:56:29.501Z</updated>
+  <updated>2019-12-04T11:54:37.123Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mybatis逆向工程中生成的Example类详细介绍</title>
+    <link href="https://seven1011.github.io/2019/12/05/Mybatis%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%94%9F%E6%88%90%E7%9A%84Example%E7%B1%BB%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://seven1011.github.io/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/</id>
+    <published>2019-12-04T18:46:41.000Z</published>
+    <updated>2019-12-04T11:54:37.123Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/picture/mybatis.png" alt></p><a id="more"></a><h2 id="1-内容介绍"><a href="#1-内容介绍" class="headerlink" title="1. 内容介绍"></a>1. 内容介绍</h2><p>Example类主要是用来对查询进行添加条件的。Model类只能进行简单的查询操作，如果想要自己加一些查询的条件，可以使用Example类。<br><br></p><p><strong>关于类中定义的三个变量如图所示：</strong></p><p><img src="/images/picture/20191204185823.png" alt><br><br></p><p>根据名字可以很容易理解：</p><p><strong>orderByClause：</strong>主要进行ORDER BY条件（升序：asc  降序：desc）</p><p><strong>distinct：</strong>主要是用来指定DISTINCT查询的。（DISTINCT可以为从表中某字段中选取出唯一不同的值）</p><p><strong>oredCriteria：</strong>主要用于自定义查询条件<br><br></p><p><strong>Example中的一些内部类：</strong></p><p><img src="/images/picture/20191204192217.png" alt><br><br></p><p><strong>Criteria：</strong> GeneratedCriteria的子类，我们进行构造查询就是利用这个类中的方法。</p><p><strong>Cretiron：</strong>最底层的where条件，主要用于字段级别的一些条件查询。例如：id=5</p><p><strong>GeneratedCriteria：</strong>里面是字段的一些方法，他保存一组Cretiron对象。<br><br></p><p>这是关于Example类的一些主要的内容。</p><h2 id="2-方法介绍"><a href="#2-方法介绍" class="headerlink" title="2. 方法介绍"></a>2. 方法介绍</h2><table><thead><tr><th align="center"><strong>方法</strong></th><th align="center"><strong>说明</strong></th></tr></thead><tbody><tr><td align="center">example.setOrderByClause(“字段名 ASC”);</td><td align="center">添加升序排列条件，DESC为降序</td></tr><tr><td align="center">example.setDistinct(false)</td><td align="center">去除重复，boolean型，true为选择不重复的记录。</td></tr><tr><td align="center">criteria.andXxxIsNull</td><td align="center">添加字段xxx为null的条件</td></tr><tr><td align="center">criteria.andXxxIsNotNull</td><td align="center">添加字段xxx不为null的条件</td></tr><tr><td align="center">criteria.andXxxEqualTo(value)</td><td align="center">添加xxx字段等于value条件</td></tr><tr><td align="center">criteria.andXxxNotEqualTo(value)</td><td align="center">添加xxx字段不等于value条件</td></tr><tr><td align="center">criteria.andXxxGreaterThan(value)</td><td align="center">添加xxx字段大于value条件</td></tr><tr><td align="center">criteria.andXxxGreaterThanOrEqualTo(value)</td><td align="center">添加xxx字段大于等于value条件</td></tr><tr><td align="center">criteria.andXxxLessThan(value)</td><td align="center">添加xxx字段小于value条件</td></tr><tr><td align="center">criteria.andXxxLessThanOrEqualTo(value)</td><td align="center">添加xxx字段小于等于value条件</td></tr><tr><td align="center">criteria.andXxxIn(List&lt;？&gt;)</td><td align="center">添加xxx字段值在List&lt;？&gt;条件</td></tr><tr><td align="center">criteria.andXxxNotIn(List&lt;？&gt;)</td><td align="center">添加xxx字段值不在List&lt;？&gt;条件</td></tr><tr><td align="center">criteria.andXxxLike(“%”+value+”%”)</td><td align="center">添加xxx字段值为value的模糊查询条件</td></tr><tr><td align="center">criteria.andXxxNotLike(“%”+value+”%”)</td><td align="center">添加xxx字段值不为value的模糊查询条件</td></tr><tr><td align="center">criteria.andXxxBetween(value1,value2)</td><td align="center">添加xxx字段值在value1和value2之间条件</td></tr><tr><td align="center">criteria.andXxxNotBetween(value1,value2)</td><td align="center">添加xxx字段值不在value1和value2之间条件</td></tr><tr><td align="center"><br></td><td align="center"></td></tr></tbody></table><p>关于一些具体用法参考第二篇参考文章</p><hr><p><strong>参考文章:</strong> &emsp;<a href="https://blog.csdn.net/Nerver_77/article/details/79707190" target="_blank" rel="noopener">《Mybatis逆向工程中生成的Example类》</a>&emsp;&emsp;<a href="https://blog.csdn.net/biandous/article/details/65630783" target="_blank" rel="noopener">《MyBatis的Mapper接口以及Example的实例函数及详解》</a></p><hr><br>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/picture/mybatis.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>MyBatis 逆向工程介绍</title>
@@ -466,31 +485,6 @@
     
     
       <category term="MySQL" scheme="https://seven1011.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java重点知识总结-day05</title>
-    <link href="https://seven1011.github.io/2019/10/04/Java%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93-day05/"/>
-    <id>https://seven1011.github.io/2019/10/04/Java重点知识总结-day05/</id>
-    <published>2019-10-04T09:45:52.000Z</published>
-    <updated>2019-10-23T13:41:57.250Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>【介绍】java学习过程中重点知识的总结-第五天</code></pre><a id="more"></a><h1 id="1-Date类-日期类"><a href="#1-Date类-日期类" class="headerlink" title="1.Date类:日期类"></a>1.Date类:日期类</h1><pre><code>*     构造:*     public Date();//代表当前系统时间的Date对象*     public Date(long time);//代表距离标准时间 time毫秒值的Date对象*     成员方法:    *     public String toString();//Date    重写Object类的toString方法    *     public long getTime();//获取当前Date对象的毫n秒值</code></pre><h1 id="2-DateFormat-日期格式化类-抽象类"><a href="#2-DateFormat-日期格式化类-抽象类" class="headerlink" title="2.DateFormat:日期格式化类 抽象类"></a>2.DateFormat:日期格式化类 抽象类</h1><pre><code>*     具体的子类:SimpleDateFormat*     构造:*     public SimpleDateFormat(String pattern);//以指定的模式创建格式化对象*     成员方法:*     public String format(Date d);//把date对象按照指定的模式 转成字符串*     public Date parse(String s);//把字符串转成Date对象,如果字符串有问题,就会抛出ParseException  </code></pre><h1 id="3-Calendar-日历类"><a href="#3-Calendar-日历类" class="headerlink" title="3.Calendar:日历类"></a>3.Calendar:日历类</h1><pre><code>* 3.1获取Calendar对象     *     public static Calendar getInstance();//返回的是抽象类Calendar的某一个子类* 3.2成员方法:     *     public int get(int field);//获取指定字段的值     *     public void add(int field,int amount);//给指定的字段增加值     *     public void set(int field,int value);//修改指定字段的值     *     public Date getTime();//把Calendar对象转成Date 对象  </code></pre><h1 id="4-System-系统类"><a href="#4-System-系统类" class="headerlink" title="4.System:系统类"></a>4.System:系统类</h1><pre><code>*     public static void exit(0);//结束JVM*     public static void gc();//通知垃圾回收器过来收垃圾*     public static getProperty(String key);//根据键 获取值*     public static long currentTimeMillis();//获取当前系统的毫秒值  </code></pre><h1 id="5-Math-数学类"><a href="#5-Math-数学类" class="headerlink" title="5.Math:数学类"></a>5.Math:数学类</h1><pre><code>1.求最大值 2.求最小值 3.求绝对值    4.求随机数  5.求四舍五入  6.ceil(向上取整) 7.floor(向下取整) 8.pow(求次幂)  </code></pre><h1 id="6-基类数据类型包装类"><a href="#6-基类数据类型包装类" class="headerlink" title="6.基类数据类型包装类"></a>6.基类数据类型包装类</h1><pre><code>* (8中基本类对应的包装类型)* (自动拆箱装箱)  </code></pre><h1 id="7-正则表达式"><a href="#7-正则表达式" class="headerlink" title="7.正则表达式:"></a>7.正则表达式:</h1><pre><code>* boolean b = &quot;普通字符串&quot;.matches(&quot;正则表达式&quot;);</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;【介绍】java学习过程中重点知识的总结-第五天&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://seven1011.github.io/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://seven1011.github.io/tags/java/"/>
-    
-      <category term="notes" scheme="https://seven1011.github.io/tags/notes/"/>
     
   </entry>
   

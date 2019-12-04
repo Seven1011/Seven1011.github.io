@@ -58,17 +58,19 @@
   };
 </script>
 
-  <meta name="description" content="于无声处听惊雷,于无色处见繁花">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sevenの博客">
-<meta property="og:url" content="https://seven1011.github.io/categories/springboot/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis逆向工程中生成的Example类详细介绍">
+<meta property="og:url" content="https://seven1011.github.io/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/index.html">
 <meta property="og:site_name" content="Sevenの博客">
-<meta property="og:description" content="于无声处听惊雷,于无色处见繁花">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://seven1011.github.io/images/picture/mybatis.png">
+<meta property="og:image" content="https://seven1011.github.io/images/picture/20191204185823.png">
+<meta property="og:image" content="https://seven1011.github.io/images/picture/20191204192217.png">
+<meta property="og:updated_time" content="2019-12-04T11:54:37.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sevenの博客">
-<meta name="twitter:description" content="于无声处听惊雷,于无色处见繁花">
-  <link rel="canonical" href="https://seven1011.github.io/categories/springboot/">
+<meta name="twitter:title" content="Mybatis逆向工程中生成的Example类详细介绍">
+<meta name="twitter:image" content="https://seven1011.github.io/images/picture/mybatis.png">
+  <link rel="canonical" href="https://seven1011.github.io/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/">
 
 
 <script id="page-configurations">
@@ -76,13 +78,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: springboot | Sevenの博客</title>
+  <title>Mybatis逆向工程中生成的Example类详细介绍 | Sevenの博客</title>
 
   
 
@@ -278,86 +280,276 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block category">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">springboot<small>分类</small>
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://seven1011.github.io/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Seven">
+      <meta itemprop="description" content="于无声处听惊雷,于无色处见繁花">
+      <meta itemprop="image" content="/images/qiaoba1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sevenの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Mybatis逆向工程中生成的Example类详细介绍
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-04 18:46:41 / 修改时间：11:54:37" itemprop="dateCreated datePublished" datetime="2019-12-04T18:46:41Z">2019-12-04</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" >
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.4k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="/images/picture/mybatis.png" alt></p>
+<a id="more"></a>
+
+<h2 id="1-内容介绍"><a href="#1-内容介绍" class="headerlink" title="1. 内容介绍"></a>1. 内容介绍</h2><p>Example类主要是用来对查询进行添加条件的。Model类只能进行简单的查询操作，如果想要自己加一些查询的条件，可以使用Example类。<br><br></p>
+<p><strong>关于类中定义的三个变量如图所示：</strong></p>
+<p><img src="/images/picture/20191204185823.png" alt><br><br></p>
+<p>根据名字可以很容易理解：</p>
+<p><strong>orderByClause：</strong>主要进行ORDER BY条件（升序：asc  降序：desc）</p>
+<p><strong>distinct：</strong>主要是用来指定DISTINCT查询的。（DISTINCT可以为从表中某字段中选取出唯一不同的值）</p>
+<p><strong>oredCriteria：</strong>主要用于自定义查询条件<br><br></p>
+<p><strong>Example中的一些内部类：</strong></p>
+<p><img src="/images/picture/20191204192217.png" alt><br><br></p>
+<p><strong>Criteria：</strong> GeneratedCriteria的子类，我们进行构造查询就是利用这个类中的方法。</p>
+<p><strong>Cretiron：</strong>最底层的where条件，主要用于字段级别的一些条件查询。例如：id=5</p>
+<p><strong>GeneratedCriteria：</strong>里面是字段的一些方法，他保存一组Cretiron对象。<br><br></p>
+<p>这是关于Example类的一些主要的内容。</p>
+<h2 id="2-方法介绍"><a href="#2-方法介绍" class="headerlink" title="2. 方法介绍"></a>2. 方法介绍</h2><table>
+<thead>
+<tr>
+<th align="center"><strong>方法</strong></th>
+<th align="center"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">example.setOrderByClause(“字段名 ASC”);</td>
+<td align="center">添加升序排列条件，DESC为降序</td>
+</tr>
+<tr>
+<td align="center">example.setDistinct(false)</td>
+<td align="center">去除重复，boolean型，true为选择不重复的记录。</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxIsNull</td>
+<td align="center">添加字段xxx为null的条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxIsNotNull</td>
+<td align="center">添加字段xxx不为null的条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxEqualTo(value)</td>
+<td align="center">添加xxx字段等于value条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxNotEqualTo(value)</td>
+<td align="center">添加xxx字段不等于value条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxGreaterThan(value)</td>
+<td align="center">添加xxx字段大于value条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxGreaterThanOrEqualTo(value)</td>
+<td align="center">添加xxx字段大于等于value条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxLessThan(value)</td>
+<td align="center">添加xxx字段小于value条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxLessThanOrEqualTo(value)</td>
+<td align="center">添加xxx字段小于等于value条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxIn(List&lt;？&gt;)</td>
+<td align="center">添加xxx字段值在List&lt;？&gt;条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxNotIn(List&lt;？&gt;)</td>
+<td align="center">添加xxx字段值不在List&lt;？&gt;条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxLike(“%”+value+”%”)</td>
+<td align="center">添加xxx字段值为value的模糊查询条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxNotLike(“%”+value+”%”)</td>
+<td align="center">添加xxx字段值不为value的模糊查询条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxBetween(value1,value2)</td>
+<td align="center">添加xxx字段值在value1和value2之间条件</td>
+</tr>
+<tr>
+<td align="center">criteria.andXxxNotBetween(value1,value2)</td>
+<td align="center">添加xxx字段值不在value1和value2之间条件</td>
+</tr>
+<tr>
+<td align="center"><br></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>关于一些具体用法参考第二篇参考文章</p>
+<hr>
+<p><strong>参考文章:</strong> &emsp;<a href="https://blog.csdn.net/Nerver_77/article/details/79707190" target="_blank" rel="noopener">《Mybatis逆向工程中生成的Example类》</a>&emsp;&emsp;<a href="https://blog.csdn.net/biandous/article/details/65630783" target="_blank" rel="noopener">《MyBatis的Mapper接口以及Example的实例函数及详解》</a></p>
+<hr>
+<br>
+
+
+    </div>
+
+    
+    
+    
+      
+
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Seven</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://seven1011.github.io/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/" title="Mybatis逆向工程中生成的Example类详细介绍">https://seven1011.github.io/2019/12/05/Mybatis逆向工程中生成的Example类详细介绍/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
 
       
 
-  
-  
-
-  
+        <div>
+          
+            <div>
     
-    <div class="my-collection-year">
-      <h1 class="my-collection-header">2019</h1>
-    </div>
-  
+        <div style="text-align:center;color: #DB5;font-size:14px;">-------------　　　　本文结束　<i class="fa fa-heart"></i>　感谢您的阅读　　　　-------------</div>
+    
+</div>
+          
+        </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="my-post-header">
+      <footer class="post-footer">
 
-      <div class="my-post-meta">
-        <time class="my-post-time" itemprop="dateCreated"
-              datetime="2019-10-17T19:16:55Z"
-              content="2019-10-17">
-          10-17
-        </time>
-      </div>
-
-      <h2 class="my-post-title">
         
-          <a class="my-post-title-link" href="/2019/10/18/Spring-Boot-JDBC-连接数据库/" itemprop="url">
-            <span itemprop="name">Spring Boot JDBC 连接数据库</span>
-          </a>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/12/04/MyBatis-逆向工程介绍/" rel="next" title="MyBatis 逆向工程介绍">
+                  <i class="fa fa-chevron-left"></i> MyBatis 逆向工程介绍
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
-      </h2>
-
-
-    </header>
-  </article>
-
-
-
-    </div>
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -372,6 +564,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -384,6 +581,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-内容介绍"><span class="nav-number">1.</span> <span class="nav-text">1. 内容介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-方法介绍"><span class="nav-number">2.</span> <span class="nav-text">2. 方法介绍</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -848,6 +1047,56 @@
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   
