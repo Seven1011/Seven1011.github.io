@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-12-27T08:29:47.237Z</updated>
+  <updated>2019-12-27T08:58:49.232Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -21,13 +21,21 @@
     <link href="https://seven1011.github.io/2019/12/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://seven1011.github.io/2019/12/28/Git常用命令/</id>
     <published>2019-12-27T16:29:47.000Z</published>
-    <updated>2019-12-27T08:29:47.237Z</updated>
+    <updated>2019-12-27T08:58:49.232Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>【介绍】MySQL多表和事物知识点总结</code></pre><a id="more"></a><br><h2 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h2><p><img src="/images/picture/20191227165200.png" alt><br><br></p><p><strong>名词解释：</strong><br><img src="/images/picture/20191227165211.png" alt></p><br><h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><h2 id="创建："><a href="#创建：" class="headerlink" title="创建："></a><strong>创建：</strong></h2><br><p><strong>1. 创建一个新的本地仓库</strong></p><pre><code>git init</code></pre><p><strong>2. 克隆</strong></p><pre><code>git clone [url]</code></pre><br><h2 id="分支："><a href="#分支：" class="headerlink" title="分支："></a><strong>分支：</strong></h2><br><p><strong>1. 创建分支</strong></p><pre><code>git branch develop</code></pre><p><strong>2. 查看本地分支 （字体颜色变绿，前面带有’*’号的是当前使用的分支）</strong></p><pre><code>git branch</code></pre><p><strong>3. 查看远程分支（远程分支会用红色表示出来）</strong></p><pre><code>git branch -r</code></pre><p><strong>4. 查看所有分支</strong></p><pre><code>git branch -a</code></pre><p><strong>5. 切换分支</strong></p><pre><code>git checkou </code></pre><p><strong>6. 切换到上一个分区</strong></p><pre><code>git checkout -</code></pre><p><strong>7. 新建一个分支并于指定的远程分支建立追踪关系</strong></p><pre><code>git branch   -- [local-branch]  [remote-branch]</code></pre><p><strong>8. 修改追踪关系</strong><br>   <code>1. 切换分支 git checkout [local-branch]    2. 修改追踪仓库 git branch  --set-upstream-to  [remote-branch]</code></p><p><strong>ps: 也可以在初次push的时候 加上-u参数</strong></p><pre><code>git push -u [remote-branch]</code></pre><p><strong>9. 删除分支</strong></p><pre><code>git branch -d [branch]</code></pre><p><strong>10. 删除远程分支</strong></p><pre><code>git push origin -delete [branch]git branch -dr [remote-branch]</code></pre><br><h2 id="变化："><a href="#变化：" class="headerlink" title="变化："></a><strong>变化：</strong></h2><br><p><strong>1. 比较两次修改的差异</strong></p><pre><code>git diff</code></pre><p><strong>2. 查看当前的工作目录和暂存区的状态</strong></p><pre><code>git status</code></pre><br><h2 id="添加、删除、提交："><a href="#添加、删除、提交：" class="headerlink" title="添加、删除、提交："></a><strong>添加、删除、提交：</strong></h2><br><p><strong>1. 添加指定文件到暂存区</strong></p><pre><code>git add [file1] [file2]</code></pre><p><strong>2. 添加所有文件到暂存区</strong></p><pre><code>git add .</code></pre><p><strong>3. 添加指定目录以及子目录到暂存区</strong></p><pre><code>git add [dir]</code></pre><p><strong>4. 提交暂存区代码到仓库区</strong></p><pre><code>git commit -m [备注]</code></pre><p><strong>5. 提交指定文件到仓库区</strong></p><pre><code>git commmit [file1] [file2] ... -m [message]</code></pre><p><strong>6. 对上一次提交进行修改</strong></p><pre><code>git commit --amend  </code></pre><p><strong>7. 删除暂存区或者分支上的文件，同时工作区也不需要该文件</strong></p><pre><code>git rm [file]  (git rm=rm+git add)</code></pre><p><strong>8. 删除暂存区或分支上的文件，但本地继续使用，且不希望该文件被版本控制</strong></p><pre><code>git rm --cached [file]</code></pre><br><h2 id="同步："><a href="#同步：" class="headerlink" title="同步："></a><strong>同步：</strong></h2><br><p><strong>1. 下载远程仓库的所有变动</strong></p><pre><code>git fetch [remote]</code></pre><p><strong>2. 显示所有的远程仓库</strong></p><pre><code>git remote -v</code></pre><p><strong>3. 将远程仓库的代码拉取下来与本地进行合并</strong></p><pre><code>git pull [remote-branch]</code></pre><p><strong>4. 上传本地指定分支到远程仓库</strong></p><pre><code>git push [remote-branch]</code></pre><br><h2 id="版本、撤销："><a href="#版本、撤销：" class="headerlink" title="版本、撤销："></a><strong>版本、撤销：</strong></h2><br><p><strong>1. 显示当前分支版本的历史</strong></p><pre><code>git log</code></pre><p><strong>2. 显示指定文件的每一次变化</strong></p><pre><code>git log -p [file]</code></pre><p><strong>3. 显示指定文件在什么时间被怎样修改</strong></p><pre><code>git blame [file]</code></pre><p><strong>4. 恢复暂存区的指定文件到工作区</strong></p><pre><code>git checkout [file]</code></pre><p><strong>5. 恢复暂存区的所有文件到工作区</strong></p><pre><code>git checkout .</code></pre><p><strong>6. 重做工作区与暂存区，与上一次commit保持一致</strong></p><pre><code>git reset  —hard</code></pre><hr><p>参考文章：&#160;&#160;<a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">http://www.ruanyifeng.com</a>     &#160;&#160;&#160;&#160;&#160;      <a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf" target="_blank" rel="noopener">英文PDF下载地址</a></p><hr>]]></content>
     
     <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;【介绍】MySQL多表和事物知识点总结&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
+      <category term="Git" scheme="https://seven1011.github.io/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://seven1011.github.io/tags/Git/"/>
     
   </entry>
   
