@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-03T02:37:50.900Z">
+<meta property="og:updated_time" content="2020-01-03T06:22:09.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《剑指offer》解题答案(持续更新)">
 <meta name="twitter:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
@@ -316,7 +316,7 @@
                 
               
 
-              <time title="创建时间：2020-01-03 10:11:04 / 修改时间：02:37:50" itemprop="dateCreated datePublished" datetime="2020-01-03T10:11:04Z">2020-01-03</time>
+              <time title="创建时间：2020-01-03 10:11:04 / 修改时间：06:22:09" itemprop="dateCreated datePublished" datetime="2020-01-03T10:11:04Z">2020-01-03</time>
             </span>
           
             
@@ -355,7 +355,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>886</span>
+              <span>1.7k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -365,7 +365,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
           
 
@@ -419,6 +419,38 @@ private void swap(int[] nums, int i, int j) {
     int t = nums[i];
     nums[i] = nums[j];
     nums[j] = t;
+}</code></pre><h2 id="2-二维数组中查找"><a href="#2-二维数组中查找" class="headerlink" title="2.二维数组中查找"></a>2.二维数组中查找</h2><p><strong>题目描述:</strong><br>在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br><br></p>
+<p><strong>思路一：</strong><br>通过两个for循环，<code>array.length 获取行数；array[0].length获取列数。</code>挨个循环得到想要查找的元素，然后返回。<br><strong>代码：</strong></p>
+<pre><code>public class Solution1 {
+       public boolean Find(int target, int [][] array) {
+           for(int i=0;i&lt;array.length;i++){
+               for(int j=0;j&lt;array[0].length;j++){
+                   if (target==array[i][j]){
+                       return true;
+                   }
+               }
+           }
+           return false;
+       }
+   }</code></pre><p><strong>思路二：</strong><br>从最右上角开始查找，如果得到的数比要查找的元素大，则行数减去1（去查找小的数字）；如果得到的数比目标元素小，则行数加1（去查找大的数字）。以此来查找目标元素。</p>
+<p><strong>代码：</strong></p>
+<pre><code>public class Solution {
+    public boolean Find(int target, int [][] array) {
+        if( array == null || array.length == 0 || array[0].length == 0)
+            return false;
+        int r = 0;
+        int c = array[0].length-1;
+        while(r &lt;= array.length-1 &amp;&amp; c &gt;= 0){
+            if(target == array[r][c]){
+                return true;
+            } else if(target &gt; array[r][c]){
+                r++;
+            } else if(target &lt; array[r][c]){
+                c--;
+            }
+        }
+          return false;
+    }
 }</code></pre>
     </div>
 
@@ -523,7 +555,7 @@ private void swap(int[] nums, int i, int j) {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -900,12 +932,12 @@ private void swap(int[] nums, int i, int j) {
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">44k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">40 分钟</span>
+    <span title="站点阅读时长">41 分钟</span>
 </div>
 
 
