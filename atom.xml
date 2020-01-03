@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seven1011.github.io/"/>
-  <updated>2019-12-27T08:58:49.232Z</updated>
+  <updated>2020-01-03T02:37:50.900Z</updated>
   <id>https://seven1011.github.io/</id>
   
   <author>
@@ -17,13 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>《剑指offer》解题答案(持续更新)</title>
+    <link href="https://seven1011.github.io/2020/01/03/%E5%89%91%E6%8C%87offer%E8%A7%A3%E9%A2%98%E7%AD%94%E6%A1%88-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    <id>https://seven1011.github.io/2020/01/03/剑指offer解题答案-持续更新/</id>
+    <published>2020-01-03T10:11:04.000Z</published>
+    <updated>2020-01-03T02:37:50.900Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。</code></pre><a id="more"></a><br><p>(<a href="https://www.nowcoder.com/" target="_blank" rel="noopener">牛客网</a>有相应的题目可供大家练习)</p><h2 id="1-数组中有重复的数字"><a href="#1-数组中有重复的数字" class="headerlink" title="1.数组中有重复的数字"></a>1.数组中有重复的数字</h2><p><strong>题目描述：</strong><br>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。<br><br></p><p><strong>思路一：</strong><br>通过两个for循环进行遍历，分别取出第一、第二..个元素，然后依次与后面的元素进行比较找出相同的值。<br><strong>代码：</strong></p><pre><code>public boolean duplicate(int[] nums,int length,int [] duplication) {    if(nums==null || nums.length &lt;= 0 )        return false;    for (int i = 0; i &lt; nums.length; i++) {        int num1 = nums[i];        for (int j =i+1; j &lt; nums.length; j++) {            int num2 = nums[j];            if (num1 == num2) {                duplication[0] = num1;                return true;            }        }    }    return false;}</code></pre><p><strong>思路二：</strong><br>把值等于i的元素放在i的位置上，如果i位置上已经有值为i的元素，则说明值相等。<br><strong>代码：</strong></p><pre><code>public boolean duplicate(int[] nums, int length, int[] duplication) {    if (nums == null || length &lt;= 0)        return false;    for (int i = 0; i &lt; length; i++) {        while (nums[i] != i) {            if (nums[i] == nums[nums[i]]) {                duplication[0] = nums[i];                return true;            }            swap(nums, i, nums[i]);        }    }    return false;}private void swap(int[] nums, int i, int j) {    int t = nums[i];    nums[i] = nums[j];    nums[j] = t;}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Git常用命令</title>
     <link href="https://seven1011.github.io/2019/12/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://seven1011.github.io/2019/12/28/Git常用命令/</id>
     <published>2019-12-27T16:29:47.000Z</published>
-    <updated>2019-12-27T08:58:49.232Z</updated>
+    <updated>2020-01-02T00:36:52.255Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>【介绍】MySQL多表和事物知识点总结</code></pre><a id="more"></a><br><h2 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h2><p><img src="/images/picture/20191227165200.png" alt><br><br></p><p><strong>名词解释：</strong><br><img src="/images/picture/20191227165211.png" alt></p><br><h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><h2 id="创建："><a href="#创建：" class="headerlink" title="创建："></a><strong>创建：</strong></h2><br><p><strong>1. 创建一个新的本地仓库</strong></p><pre><code>git init</code></pre><p><strong>2. 克隆</strong></p><pre><code>git clone [url]</code></pre><br><h2 id="分支："><a href="#分支：" class="headerlink" title="分支："></a><strong>分支：</strong></h2><br><p><strong>1. 创建分支</strong></p><pre><code>git branch develop</code></pre><p><strong>2. 查看本地分支 （字体颜色变绿，前面带有’*’号的是当前使用的分支）</strong></p><pre><code>git branch</code></pre><p><strong>3. 查看远程分支（远程分支会用红色表示出来）</strong></p><pre><code>git branch -r</code></pre><p><strong>4. 查看所有分支</strong></p><pre><code>git branch -a</code></pre><p><strong>5. 切换分支</strong></p><pre><code>git checkou </code></pre><p><strong>6. 切换到上一个分区</strong></p><pre><code>git checkout -</code></pre><p><strong>7. 新建一个分支并于指定的远程分支建立追踪关系</strong></p><pre><code>git branch   -- [local-branch]  [remote-branch]</code></pre><p><strong>8. 修改追踪关系</strong><br>   <code>1. 切换分支 git checkout [local-branch]    2. 修改追踪仓库 git branch  --set-upstream-to  [remote-branch]</code></p><p><strong>ps: 也可以在初次push的时候 加上-u参数</strong></p><pre><code>git push -u [remote-branch]</code></pre><p><strong>9. 删除分支</strong></p><pre><code>git branch -d [branch]</code></pre><p><strong>10. 删除远程分支</strong></p><pre><code>git push origin -delete [branch]git branch -dr [remote-branch]</code></pre><br><h2 id="变化："><a href="#变化：" class="headerlink" title="变化："></a><strong>变化：</strong></h2><br><p><strong>1. 比较两次修改的差异</strong></p><pre><code>git diff</code></pre><p><strong>2. 查看当前的工作目录和暂存区的状态</strong></p><pre><code>git status</code></pre><br><h2 id="添加、删除、提交："><a href="#添加、删除、提交：" class="headerlink" title="添加、删除、提交："></a><strong>添加、删除、提交：</strong></h2><br><p><strong>1. 添加指定文件到暂存区</strong></p><pre><code>git add [file1] [file2]</code></pre><p><strong>2. 添加所有文件到暂存区</strong></p><pre><code>git add .</code></pre><p><strong>3. 添加指定目录以及子目录到暂存区</strong></p><pre><code>git add [dir]</code></pre><p><strong>4. 提交暂存区代码到仓库区</strong></p><pre><code>git commit -m [备注]</code></pre><p><strong>5. 提交指定文件到仓库区</strong></p><pre><code>git commmit [file1] [file2] ... -m [message]</code></pre><p><strong>6. 对上一次提交进行修改</strong></p><pre><code>git commit --amend  </code></pre><p><strong>7. 删除暂存区或者分支上的文件，同时工作区也不需要该文件</strong></p><pre><code>git rm [file]  (git rm=rm+git add)</code></pre><p><strong>8. 删除暂存区或分支上的文件，但本地继续使用，且不希望该文件被版本控制</strong></p><pre><code>git rm --cached [file]</code></pre><br><h2 id="同步："><a href="#同步：" class="headerlink" title="同步："></a><strong>同步：</strong></h2><br><p><strong>1. 下载远程仓库的所有变动</strong></p><pre><code>git fetch [remote]</code></pre><p><strong>2. 显示所有的远程仓库</strong></p><pre><code>git remote -v</code></pre><p><strong>3. 将远程仓库的代码拉取下来与本地进行合并</strong></p><pre><code>git pull [remote-branch]</code></pre><p><strong>4. 上传本地指定分支到远程仓库</strong></p><pre><code>git push [remote-branch]</code></pre><br><h2 id="版本、撤销："><a href="#版本、撤销：" class="headerlink" title="版本、撤销："></a><strong>版本、撤销：</strong></h2><br><p><strong>1. 显示当前分支版本的历史</strong></p><pre><code>git log</code></pre><p><strong>2. 显示指定文件的每一次变化</strong></p><pre><code>git log -p [file]</code></pre><p><strong>3. 显示指定文件在什么时间被怎样修改</strong></p><pre><code>git blame [file]</code></pre><p><strong>4. 恢复暂存区的指定文件到工作区</strong></p><pre><code>git checkout [file]</code></pre><p><strong>5. 恢复暂存区的所有文件到工作区</strong></p><pre><code>git checkout .</code></pre><p><strong>6. 重做工作区与暂存区，与上一次commit保持一致</strong></p><pre><code>git reset  —hard</code></pre><hr><p>参考文章：&#160;&#160;<a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">http://www.ruanyifeng.com</a>     &#160;&#160;&#160;&#160;&#160;      <a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf" target="_blank" rel="noopener">英文PDF下载地址</a></p><hr>]]></content>
+    <content type="html"><![CDATA[<pre><code>【介绍】MySQL多表和事物知识点总结</code></pre><a id="more"></a><br><h2 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h2><p><img src="/images/picture/20191227165200.png" alt><br><br></p><p><strong>名词解释：</strong><br><img src="/images/picture/20191227165211.png" alt></p><br><h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><h2 id="创建："><a href="#创建：" class="headerlink" title="创建："></a><strong>创建：</strong></h2><br><p><strong>1. 创建一个新的本地仓库</strong></p><pre><code>git init</code></pre><p><strong>2. 克隆</strong></p><pre><code>git clone [url]</code></pre><br><h2 id="分支："><a href="#分支：" class="headerlink" title="分支："></a><strong>分支：</strong></h2><br><p><strong>1. 创建分支</strong></p><pre><code>git branch develop</code></pre><p><strong>2. 查看本地分支 （字体颜色变绿，前面带有’*’号的是当前使用的分支）</strong></p><pre><code>git branch</code></pre><p><strong>3. 查看远程分支（远程分支会用红色表示出来）</strong></p><pre><code>git branch -r</code></pre><p><strong>4. 查看所有分支</strong></p><pre><code>git branch -a</code></pre><p><strong>5. 切换分支</strong></p><pre><code>git checkout</code></pre><p><strong>6. 切换到上一个分区</strong></p><pre><code>git checkout -</code></pre><p><strong>7. 新建一个分支并于指定的远程分支建立追踪关系</strong></p><pre><code>git branch   --track [local-branch]  [remote-branch]</code></pre><p><strong>8. 修改追踪关系</strong><br>   <code>1. 切换分支 git checkout [local-branch]    2. 修改追踪仓库 git branch  --set-upstream-to  [remote-branch]</code></p><p><strong>ps: 也可以在初次push的时候 加上-u参数</strong></p><pre><code>git push -u [remote-branch]</code></pre><p><strong>9. 删除分支</strong></p><pre><code>git branch -d [branch]</code></pre><p><strong>10. 删除远程分支</strong></p><pre><code>git push origin -delete [branch]git branch -dr [remote-branch]</code></pre><br><h2 id="变化："><a href="#变化：" class="headerlink" title="变化："></a><strong>变化：</strong></h2><br><p><strong>1. 比较两次修改的差异</strong></p><pre><code>git diff</code></pre><p><strong>2. 查看当前的工作目录和暂存区的状态</strong></p><pre><code>git status</code></pre><br><h2 id="添加、删除、提交："><a href="#添加、删除、提交：" class="headerlink" title="添加、删除、提交："></a><strong>添加、删除、提交：</strong></h2><br><p><strong>1. 添加指定文件到暂存区</strong></p><pre><code>git add [file1] [file2]</code></pre><p><strong>2. 添加所有文件到暂存区</strong></p><pre><code>git add .</code></pre><p><strong>3. 添加指定目录以及子目录到暂存区</strong></p><pre><code>git add [dir]</code></pre><p><strong>4. 提交暂存区代码到仓库区</strong></p><pre><code>git commit -m [备注]</code></pre><p><strong>5. 提交指定文件到仓库区</strong></p><pre><code>git commmit [file1] [file2] ... -m [message]</code></pre><p><strong>6. 对上一次提交进行修改</strong></p><pre><code>git commit --amend  </code></pre><p><strong>7. 删除暂存区或者分支上的文件，同时工作区也不需要该文件</strong></p><pre><code>git rm [file]  (git rm=rm+git add)</code></pre><p><strong>8. 删除暂存区或分支上的文件，但本地继续使用，且不希望该文件被版本控制</strong></p><pre><code>git rm --cached [file]</code></pre><br><h2 id="同步："><a href="#同步：" class="headerlink" title="同步："></a><strong>同步：</strong></h2><br><p><strong>1. 下载远程仓库的所有变动</strong></p><pre><code>git fetch [remote]</code></pre><p><strong>2. 显示所有的远程仓库</strong></p><pre><code>git remote -v</code></pre><p><strong>3. 将远程仓库的代码拉取下来与本地进行合并</strong></p><pre><code>git pull [remote-branch]</code></pre><p><strong>4. 上传本地指定分支到远程仓库</strong></p><pre><code>git push [remote-branch]</code></pre><br><h2 id="版本、撤销："><a href="#版本、撤销：" class="headerlink" title="版本、撤销："></a><strong>版本、撤销：</strong></h2><br><p><strong>1. 显示当前分支版本的历史</strong></p><pre><code>git log</code></pre><p><strong>2. 显示指定文件的每一次变化</strong></p><pre><code>git log -p [file]</code></pre><p><strong>3. 显示指定文件在什么时间被怎样修改</strong></p><pre><code>git blame [file]</code></pre><p><strong>4. 恢复暂存区的指定文件到工作区</strong></p><pre><code>git checkout [file]</code></pre><p><strong>5. 恢复暂存区的所有文件到工作区</strong></p><pre><code>git checkout .</code></pre><p><strong>6. 重做工作区与暂存区，与上一次commit保持一致</strong></p><pre><code>git reset  —hard</code></pre><hr><p>参考文章：&#160;&#160;<a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">http://www.ruanyifeng.com</a>     &#160;&#160;&#160;&#160;&#160;      <a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf" target="_blank" rel="noopener">英文PDF下载地址</a></p><hr>]]></content>
     
     <summary type="html">
     
@@ -468,31 +487,6 @@
     
     
       <category term="MySQL" scheme="https://seven1011.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客next主题--不蒜子计数不显示问题解决办法</title>
-    <link href="https://seven1011.github.io/2019/10/09/hexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98-%E4%B8%8D%E8%92%9C%E5%AD%90%E8%AE%A1%E6%95%B0%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>https://seven1011.github.io/2019/10/09/hexo博客next主题-不蒜子计数不显示问题解决办法/</id>
-    <published>2019-10-09T12:51:23.000Z</published>
-    <updated>2019-10-23T13:33:56.196Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>【介绍】hexo博客使用next主题时，开启不蒜子计数不显示问题解决办法</code></pre><a id="more"></a><p>最新的next主题中支持了三方插件<code>busuanzi</code>，在主题配置文件中搜索<code>busuanzi</code>，会看到开启不蒜子的按钮。<br><img src="/images/picture/kaiqibusuanzi.jpg" alt="示意图"><br>开启之后部署三连，发现下方的统计图标并没有出现，然后找解决办法，发现网上大多数对于next主题的解决办法修改到期的域名。打开<code>/themes/next/layout/_partials/analytics/busuanzi-counter.swig</code>文件，可以观察到，在新版本next主题中的<code>不蒜子</code>域名已经进行更新:<br><code>&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br>页面却不显示。<br><img src="/images/picture/busuanzijishubuxianshi.jpg" alt><br>查看html代码<br><img src="/images/picture/busuanzicount_1.jpg" alt><br>可以看到<code>style</code>设置为none，在<code>busuanzi-counter.swig</code>将<code>style=&quot;display:none&quot;</code>删除，发现显示还是没有恢复，最后删除同文档中的id即下图红框中内容<br><img src="/images/picture/busuanzicount_2.jpg" alt><br>重新部署后，即可得到最终得结果。<br><img src="/images/picture/busuanzicount_3.jpg" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;【介绍】hexo博客使用next主题时，开启不蒜子计数不显示问题解决办法&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://seven1011.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://seven1011.github.io/tags/hexo/"/>
-    
-      <category term="blog" scheme="https://seven1011.github.io/tags/blog/"/>
     
   </entry>
   

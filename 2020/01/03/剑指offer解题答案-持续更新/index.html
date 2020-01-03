@@ -58,19 +58,18 @@
   };
 </script>
 
-  <meta name="description" content="【介绍】java学习过程中重点知识的总结-第五天">
-<meta name="keywords" content="java,notes">
+  <meta name="description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java重点知识总结-day05">
-<meta property="og:url" content="https://seven1011.github.io/2019/10/04/Java重点知识总结-day05/index.html">
+<meta property="og:title" content="《剑指offer》解题答案(持续更新)">
+<meta property="og:url" content="https://seven1011.github.io/2020/01/03/剑指offer解题答案-持续更新/index.html">
 <meta property="og:site_name" content="Sevenの博客">
-<meta property="og:description" content="【介绍】java学习过程中重点知识的总结-第五天">
+<meta property="og:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T13:41:57.250Z">
+<meta property="og:updated_time" content="2020-01-03T02:37:50.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java重点知识总结-day05">
-<meta name="twitter:description" content="【介绍】java学习过程中重点知识的总结-第五天">
-  <link rel="canonical" href="https://seven1011.github.io/2019/10/04/Java重点知识总结-day05/">
+<meta name="twitter:title" content="《剑指offer》解题答案(持续更新)">
+<meta name="twitter:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
+  <link rel="canonical" href="https://seven1011.github.io/2020/01/03/剑指offer解题答案-持续更新/">
 
 
 <script id="page-configurations">
@@ -84,7 +83,7 @@
   };
 </script>
 
-  <title>Java重点知识总结-day05 | Sevenの博客</title>
+  <title>《剑指offer》解题答案(持续更新) | Sevenの博客</title>
 
   
 
@@ -289,7 +288,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://seven1011.github.io/2019/10/04/Java重点知识总结-day05/">
+    <link itemprop="mainEntityOfPage" href="https://seven1011.github.io/2020/01/03/剑指offer解题答案-持续更新/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seven">
@@ -301,7 +300,7 @@
       <meta itemprop="name" content="Sevenの博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Java重点知识总结-day05
+        <h1 class="post-title" itemprop="name headline">《剑指offer》解题答案(持续更新)
 
           
         </h1>
@@ -317,33 +316,12 @@
                 
               
 
-              <time title="创建时间：2019-10-04 09:45:52" itemprop="dateCreated datePublished" datetime="2019-10-04T09:45:52Z">2019-10-04</time>
+              <time title="创建时间：2020-01-03 10:11:04 / 修改时间：02:37:50" itemprop="dateCreated datePublished" datetime="2020-01-03T10:11:04Z">2020-01-03</time>
             </span>
           
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-23 13:41:57" itemprop="dateModified" datetime="2019-10-23T13:41:57Z">2019-10-23</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -365,7 +343,7 @@
       
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/10/04/Java重点知识总结-day05/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/10/04/Java重点知识总结-day05/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/2020/01/03/剑指offer解题答案-持续更新/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2020/01/03/剑指offer解题答案-持续更新/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -377,7 +355,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1k</span>
+              <span>886</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -400,28 +378,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre><code>【介绍】java学习过程中重点知识的总结-第五天</code></pre><a id="more"></a>
-<h1 id="1-Date类-日期类"><a href="#1-Date类-日期类" class="headerlink" title="1.Date类:日期类"></a>1.Date类:日期类</h1><pre><code>*     构造:
-*     public Date();//代表当前系统时间的Date对象
-*     public Date(long time);//代表距离标准时间 time毫秒值的Date对象
-*     成员方法:
-    *     public String toString();//Date    重写Object类的toString方法
-    *     public long getTime();//获取当前Date对象的毫n秒值</code></pre><h1 id="2-DateFormat-日期格式化类-抽象类"><a href="#2-DateFormat-日期格式化类-抽象类" class="headerlink" title="2.DateFormat:日期格式化类 抽象类"></a>2.DateFormat:日期格式化类 抽象类</h1><pre><code>*     具体的子类:SimpleDateFormat
-*     构造:
-*     public SimpleDateFormat(String pattern);//以指定的模式创建格式化对象
-*     成员方法:
-*     public String format(Date d);//把date对象按照指定的模式 转成字符串
-*     public Date parse(String s);//把字符串转成Date对象,如果字符串有问题,就会抛出ParseException  </code></pre><h1 id="3-Calendar-日历类"><a href="#3-Calendar-日历类" class="headerlink" title="3.Calendar:日历类"></a>3.Calendar:日历类</h1><pre><code>* 3.1获取Calendar对象
-     *     public static Calendar getInstance();//返回的是抽象类Calendar的某一个子类
-* 3.2成员方法:
-     *     public int get(int field);//获取指定字段的值
-     *     public void add(int field,int amount);//给指定的字段增加值
-     *     public void set(int field,int value);//修改指定字段的值
-     *     public Date getTime();//把Calendar对象转成Date 对象  </code></pre><h1 id="4-System-系统类"><a href="#4-System-系统类" class="headerlink" title="4.System:系统类"></a>4.System:系统类</h1><pre><code>*     public static void exit(0);//结束JVM
-*     public static void gc();//通知垃圾回收器过来收垃圾
-*     public static getProperty(String key);//根据键 获取值
-*     public static long currentTimeMillis();//获取当前系统的毫秒值  </code></pre><h1 id="5-Math-数学类"><a href="#5-Math-数学类" class="headerlink" title="5.Math:数学类"></a>5.Math:数学类</h1><pre><code>1.求最大值 2.求最小值 3.求绝对值    4.求随机数  5.求四舍五入  6.ceil(向上取整) 7.floor(向下取整) 8.pow(求次幂)  </code></pre><h1 id="6-基类数据类型包装类"><a href="#6-基类数据类型包装类" class="headerlink" title="6.基类数据类型包装类"></a>6.基类数据类型包装类</h1><pre><code>* (8中基本类对应的包装类型)
-* (自动拆箱装箱)  </code></pre><h1 id="7-正则表达式"><a href="#7-正则表达式" class="headerlink" title="7.正则表达式:"></a>7.正则表达式:</h1><pre><code>* boolean b = &quot;普通字符串&quot;.matches(&quot;正则表达式&quot;);</code></pre>
+        <pre><code>把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。</code></pre><a id="more"></a>
+
+<br>
+
+<p>(<a href="https://www.nowcoder.com/" target="_blank" rel="noopener">牛客网</a>有相应的题目可供大家练习)</p>
+<h2 id="1-数组中有重复的数字"><a href="#1-数组中有重复的数字" class="headerlink" title="1.数组中有重复的数字"></a>1.数组中有重复的数字</h2><p><strong>题目描述：</strong><br>在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。<br><br></p>
+<p><strong>思路一：</strong><br>通过两个for循环进行遍历，分别取出第一、第二..个元素，然后依次与后面的元素进行比较找出相同的值。<br><strong>代码：</strong></p>
+<pre><code>public boolean duplicate(int[] nums,int length,int [] duplication) {
+    if(nums==null || nums.length &lt;= 0 )
+        return false;
+    for (int i = 0; i &lt; nums.length; i++) {
+        int num1 = nums[i];
+        for (int j =i+1; j &lt; nums.length; j++) {
+            int num2 = nums[j];
+            if (num1 == num2) {
+                duplication[0] = num1;
+                return true;
+            }
+        }
+    }
+    return false;
+}</code></pre><p><strong>思路二：</strong><br>把值等于i的元素放在i的位置上，如果i位置上已经有值为i的元素，则说明值相等。<br><strong>代码：</strong></p>
+<pre><code>public boolean duplicate(int[] nums, int length, int[] duplication) {
+    if (nums == null || length &lt;= 0)
+        return false;
+    for (int i = 0; i &lt; length; i++) {
+        while (nums[i] != i) {
+            if (nums[i] == nums[nums[i]]) {
+                duplication[0] = nums[i];
+                return true;
+            }
+            swap(nums, i, nums[i]);
+        }
+    }
+    return false;
+}
+
+private void swap(int[] nums, int i, int j) {
+    int t = nums[i];
+    nums[i] = nums[j];
+    nums[j] = t;
+}</code></pre>
     </div>
 
     
@@ -439,7 +437,7 @@
     <strong>本文作者： </strong>Seven</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://seven1011.github.io/2019/10/04/Java重点知识总结-day05/" title="Java重点知识总结-day05">https://seven1011.github.io/2019/10/04/Java重点知识总结-day05/</a>
+    <a href="https://seven1011.github.io/2020/01/03/剑指offer解题答案-持续更新/" title="《剑指offer》解题答案(持续更新)">https://seven1011.github.io/2020/01/03/剑指offer解题答案-持续更新/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -459,25 +457,14 @@
         </div>
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i>java</a>
-            
-              <a href="/tags/notes/" rel="tag"><i class="fa fa-tag"></i>notes</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/28/Java重点知识总结-day04/" rel="next" title="Java重点知识总结-day04">
-                  <i class="fa fa-chevron-left"></i> Java重点知识总结-day04
+                <a href="/2019/12/28/Git常用命令/" rel="next" title="Git常用命令">
+                  <i class="fa fa-chevron-left"></i> Git常用命令
                 </a>
               
             </div>
@@ -485,10 +472,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/08/MySQL基础知识总结/" rel="prev" title="MySQL基础知识总结">
-                  MySQL基础知识总结 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -540,7 +523,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Date类-日期类"><span class="nav-number">1.</span> <span class="nav-text">1.Date类:日期类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-DateFormat-日期格式化类-抽象类"><span class="nav-number">2.</span> <span class="nav-text">2.DateFormat:日期格式化类 抽象类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Calendar-日历类"><span class="nav-number">3.</span> <span class="nav-text">3.Calendar:日历类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-System-系统类"><span class="nav-number">4.</span> <span class="nav-text">4.System:系统类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Math-数学类"><span class="nav-number">5.</span> <span class="nav-text">5.Math:数学类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-基类数据类型包装类"><span class="nav-number">6.</span> <span class="nav-text">6.基类数据类型包装类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-正则表达式"><span class="nav-number">7.</span> <span class="nav-text">7.正则表达式:</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -1006,6 +989,56 @@
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   
