@@ -1681,7 +1681,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #cd0bb9;
+  background: #042553;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2823,7 +2823,17 @@ pre,
 /*background: url(../images/scrollbar_arrow.png) no-repeat 0 0;*/
 /*可以添加滚动条样式*/
 }
-/*给博客添加背景图片*/
+/*给博客添加背景图片  星空：https://i.loli.net/2019/10/10/fTaJ5OvlNSHEprX.jpg
+                            https://i.loli.net/2020/01/03/yTu5jtzYJWLqAC2.jpg
+                            https://i.loli.net/2020/01/03/kFsipdRZbrnaL5X.jpg
+                            https://i.loli.net/2020/01/03/NTuZiCsQphU3FeH.jpg
+  */
+body {
+  background: url("https://i.loli.net/2020/01/03/kFsipdRZbrnaL5X.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
 .footer {
   color: #c18;
   font-size: 0.875em;
@@ -2831,7 +2841,7 @@ pre,
 /*文章背景不透明度*/
 .main-inner {
   background: #fff;
-  opacity: 0.95;
+  opacity: 0.8;
 }
 /*RSS按钮设置*/
 .feed-link a,
@@ -2969,30 +2979,60 @@ div.post-block.tag .collection-title h2 {
 :link {
   cursor: url("/images/pointer.cur"), auto;
 }
-/* 网站logo炫彩效果 */
-.site-title {
-  background-image: linear-gradient(to right, #ff4500, #ffa500, #ffd700, #90ee90, #0ff, #1e90ff, #9370db, #ff69b4, #ff4500);
+/*网站logo背景颜色*/
+.site-meta {
+  background: #4d4d4c;
+}
+/* 网站logo炫彩效果
+.site-title{
+  background-image: linear-gradient(
+    to right,
+    orangered,
+    orange,
+    gold,
+    lightgreen,
+    cyan,
+    dodgerblue,
+    mediumpurple,
+    hotpink,
+    orangered
+  );
   background-size: 110vw;
   -webkit-background-clip: text;
-  color: rgba(0,0,0,0.1); /* transparent IE 不支持 */
+  color: rgba(0,0,0,0.1); 
   animation: sliding 30s linear infinite;
 }
-.site-meta,
-.site-subtitle {
-  color: rgba(0,0,0,0.1); /* transparent IE 不支持 */
-  animation: hue 1.5s linear infinite;
-  background-image: linear-gradient(to right bottom, #f00, #ff8000, #ff0, #0f0, #00ff80, #0ff, #0080ff, #00f, #8000ff, #f0f, #ff0080);
-  -webkit-background-clip: text;
-}
-.site-meta {
-  background: rgba(245,17,185,0.231);
-}
-@media (max-width: 767px) {
-  .site-meta {
-    padding: 10px 0;
-    background-image: linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%) !important;
+@keyframes sliding{
+  to{
+    background-position:  -2000vw;
   }
 }
+
+.site-meta,
+.site-subtitle {
+  color: rgba(0,0,0,0.1); 
+  animation: hue 1.5s linear infinite;
+  background-image: linear-gradient(to right bottom, rgb(255,0,0), rgb(255,128,0), rgb(255,255,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255), rgb(0,0,255), rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));
+  -webkit-background-clip: text;
+}
+@keyframes hue {
+  from {
+      filter: hue-rotate(0);
+  }
+  to {
+      filter: hue-rotate(-360deg);
+  }
+}
+
+.site-meta{
+  background: #4d4d4c;
+  +mobile(){
+    padding: 10px 0;
+    background-image: linear-gradient(90deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%)!important;
+  }
+}
+
+ */
 .back-to-top {
   width: 70px;
   height: 900px;
@@ -3014,56 +3054,4 @@ div.post-block.tag .collection-title h2 {
 }
 .post-body {
   color: #333;
-}
-@-moz-keyframes sliding {
-  to {
-    background-position: -2000vw;
-  }
-}
-@-webkit-keyframes sliding {
-  to {
-    background-position: -2000vw;
-  }
-}
-@-o-keyframes sliding {
-  to {
-    background-position: -2000vw;
-  }
-}
-@keyframes sliding {
-  to {
-    background-position: -2000vw;
-  }
-}
-@-moz-keyframes hue {
-  from {
-    filter: hue-rotate(0);
-  }
-  to {
-    filter: hue-rotate(-360deg);
-  }
-}
-@-webkit-keyframes hue {
-  from {
-    filter: hue-rotate(0);
-  }
-  to {
-    filter: hue-rotate(-360deg);
-  }
-}
-@-o-keyframes hue {
-  from {
-    filter: hue-rotate(0);
-  }
-  to {
-    filter: hue-rotate(-360deg);
-  }
-}
-@keyframes hue {
-  from {
-    filter: hue-rotate(0);
-  }
-  to {
-    filter: hue-rotate(-360deg);
-  }
 }
