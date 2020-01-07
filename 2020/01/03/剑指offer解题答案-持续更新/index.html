@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-04T03:39:56.369Z">
+<meta property="og:updated_time" content="2020-01-07T12:03:47.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《剑指offer》解题答案(持续更新)">
 <meta name="twitter:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
@@ -328,7 +328,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-04 03:39:56" itemprop="dateModified" datetime="2020-01-04T03:39:56Z">2020-01-04</time>
+                <time title="修改时间：2020-01-07 12:03:47" itemprop="dateModified" datetime="2020-01-07T12:03:47Z">2020-01-07</time>
               </span>
             
           
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.2k</span>
+              <span>6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -387,7 +387,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
           
 
@@ -518,7 +518,131 @@ private void swap(int[] nums, int i, int j) {
         list.add(sta.pop());
     }
     return list;
-}         </code></pre>
+}    </code></pre><h3 id="5-重建二叉树"><a href="#5-重建二叉树" class="headerlink" title="5.重建二叉树"></a>5.重建二叉树</h3><p><strong>题目描述：</strong><br>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。<br><br></p>
+<p><strong>思路一：</strong><br>前序遍历的第一个值就为二叉树的根节点，然后根据该根节点将中序遍历分为左部分和右部分，做部分就是左子树的值，有部分就是右子树的值。然后再次在前序遍历中找值然后再中序遍历中进行分块，以此进行递归操作就可以重建二叉树。</p>
+<p><strong>代码：</strong></p>
+<pre><code>/**</code></pre><ul>
+<li><p>Definition for binary tree</p>
+</li>
+<li><p>public class TreeNode {</p>
+</li>
+<li><p>int val;</p>
+</li>
+<li><p>TreeNode left;</p>
+</li>
+<li><p>TreeNode right;</p>
+</li>
+<li><p>TreeNode(int x) { val = x; }</p>
+</li>
+<li><p>}</p>
+</li>
+<li><p>/<br>public class Solution {<br>  public TreeNode reConstructBinaryTree(int [] pre,int [] in) {</p>
+<pre><code>TreeNode tre=constructTree(pre,0,pre.length-1,in,0,in.length-1);
+return tre;</code></pre><p>  }</p>
+<p>  public TreeNode constructTree(int[] pre,int startpre,int endpre,int[] in,int startin,int endin){</p>
+<pre><code>if(startpre &gt; endpre || startin &gt; endin){
+    return null;
+}
+TreeNode node = new TreeNode(pre[startpre]);
+for(int i=startin; i&lt;= endin; i++){
+    if(in[i] == pre[startpre]){
+        node.left = constructTree(pre,startpre+1,startpre+i-startin,in,startin,i-1);
+        node.right = constructTree(pre,startpre+i-startin+1,endpre,in,i+1,endin);
+        break;
+    }
+}
+return node;</code></pre><p>  }<br>}  </p>
+</li>
+</ul>
+<h3 id="6-二叉树的下一个节点"><a href="#6-二叉树的下一个节点" class="headerlink" title="6.二叉树的下一个节点"></a>6.二叉树的下一个节点</h3><p> <strong>题目描述：</strong><br>给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。<strong>注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。</strong><br><br></p>
+<p><strong>思路一：</strong><br>  <strong>中序遍历：左子树—&gt; 根结点 —&gt; 右子树  **<br>  **简记：左根右</strong><br>根据中序遍历的特点，若二叉树不为空，则某一个节点的下一个节点大致可以分为以下两种情况：</p>
+<ol>
+<li>右孩子不为空，那么它的下一个节点就是右子树的最左的一个节点。</li>
+<li>右孩子为空<br>  (1) 该节点是父节点的左孩子，那么父节点就是下一个节点。<br> （2）若为右孩子，那么需要找到父节点的父节点一直向上遍历找到根节点，返回。</li>
+</ol>
+<p><strong>代码：</strong></p>
+<pre><code>/*
+public class TreeLinkNode {
+    int val;
+    TreeLinkNode left = null;
+    TreeLinkNode right = null;
+    TreeLinkNode next = null;
+
+    TreeLinkNode(int val) {
+        this.val = val;
+    }
+}
+*/
+public class Solution {
+    public TreeLinkNode GetNext(TreeLinkNode pNode)
+    {
+       if(pNode == null){
+           return null;
+       }
+        TreeLinkNode targe = null;
+        if(pNode.right != null){
+            targe = pNode.right;
+            while(targe.left != null){
+                targe = targe.left;
+            }
+            return targe;
+        } else{
+            while(pNode.next != null){
+               TreeLinkNode parent = pNode.next;
+                if(parent.left == pNode){
+                    return parent;
+                }
+                pNode = pNode.next;
+            }
+        }
+        return null;
+    }
+}</code></pre><h3 id="7-用两个栈实现队列"><a href="#7-用两个栈实现队列" class="headerlink" title="7.用两个栈实现队列"></a>7.用两个栈实现队列</h3><p><strong>题目描述：</strong><br>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。<br><br></p>
+<p><strong>思路一：</strong><br>原   始：1–&gt;2–&gt;3<br>存入栈1：3–&gt;2–&gt;1<br>存入栈2：1–&gt;2–&gt;3<br>取   出：1–&gt;2–&gt;3<br><strong>代码：</strong></p>
+<p>import java.util.Stack;</p>
+<p>public class Solution {<br>    Stack<integer> stack1 = new Stack<integer>();<br>    Stack<integer> stack2 = new Stack<integer>();</integer></integer></integer></integer></p>
+<pre><code>public void push(int node) {
+    stack1.push(node);
+}
+
+public int pop() throws Exception{
+    if(stack2.isEmpty()){
+        while(!stack1.isEmpty()){
+            stack2.push(stack1.pop());
+        }
+    }
+    if(stack2.isEmpty()){
+        throw new Exception(&quot;stack2 is empty...&quot;);
+    }
+
+    return stack2.pop();
+
+}</code></pre><p>}</p>
+<h3 id="8-旋转数组的最小数字"><a href="#8-旋转数组的最小数字" class="headerlink" title="8.旋转数组的最小数字"></a>8.旋转数组的最小数字</h3><p><strong>题目描述：</strong><br>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。<br>输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。<br>例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。<br>NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。<br><br></p>
+<p><strong>思路一：</strong><br>二分法查找，如果数组为0，则返回0。否则取start、mid、end、三个索引，从中间开始查找，若中间值大于开始的值，因为为非递减，则最小值一定出现在<code>[mid-end]</code>之间，则start=mid，mid再次取中间值。如果中间值小于最后一个值，那么最小值一定在<code>[start-mid]</code>之间，取end=mid，mid取中间值，进行循环。即可得到最小值。</p>
+<p><strong>代码：</strong></p>
+<pre><code>import java.util.ArrayList;
+public class Solution {
+    public int minNumberInRotateArray(int [] array) {
+        int n = array.length;
+     if(n == 0)
+         return 0;
+     int start = 0;
+     int end = array.length-1;
+     int mid =0;
+     while(start+1 != end){
+         mid = (start+end)/2;
+         if(array[mid] &gt; array[start]){
+             start = mid;
+         }else if(array[mid] &lt; array[end]){
+             end = mid;
+         }else {
+             start++;
+         }
+     }
+      return array[end];
+    }
+}</code></pre>
     </div>
 
     
@@ -635,7 +759,7 @@ private void swap(int[] nums, int i, int j) {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-空格替换"><span class="nav-number">2.1.</span> <span class="nav-text">3.空格替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-从尾到头打印链表"><span class="nav-number">2.2.</span> <span class="nav-text">4.从尾到头打印链表</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-空格替换"><span class="nav-number">2.1.</span> <span class="nav-text">3.空格替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-从尾到头打印链表"><span class="nav-number">2.2.</span> <span class="nav-text">4.从尾到头打印链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-重建二叉树"><span class="nav-number">2.3.</span> <span class="nav-text">5.重建二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-二叉树的下一个节点"><span class="nav-number">2.4.</span> <span class="nav-text">6.二叉树的下一个节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-用两个栈实现队列"><span class="nav-number">2.5.</span> <span class="nav-text">7.用两个栈实现队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-旋转数组的最小数字"><span class="nav-number">2.6.</span> <span class="nav-text">8.旋转数组的最小数字</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -1012,12 +1136,12 @@ private void swap(int[] nums, int i, int j) {
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">48k</span>
+    <span title="站点总字数">51k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">44 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div>
 
 
