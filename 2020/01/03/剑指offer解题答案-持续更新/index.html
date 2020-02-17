@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-14T07:48:11.332Z">
+<meta property="og:updated_time" content="2020-02-17T07:43:45.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《剑指offer》解题答案(持续更新)">
 <meta name="twitter:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
@@ -334,7 +334,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-14 07:48:11" itemprop="dateModified" datetime="2020-02-14T07:48:11Z">2020-02-14</time>
+                <time title="修改时间：2020-02-17 07:43:45" itemprop="dateModified" datetime="2020-02-17T07:43:45Z">2020-02-17</time>
               </span>
             
           
@@ -383,7 +383,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>8.7k</span>
+              <span>9.8k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -393,7 +393,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>8 分钟</span>
+              <span>9 分钟</span>
             </span>
           
 
@@ -801,6 +801,73 @@ public class Solution {
         return p2;
 
     }
+}</code></pre><h2 id="17-反转链表"><a href="#17-反转链表" class="headerlink" title="17.反转链表"></a>17.反转链表</h2><p><strong>题目描述：</strong><br>输入一个链表，输出新链表的表头。<br><br></p>
+<p><strong>思路一：</strong><br>只需要使得pre–&gt;head–&gt;next，转变为pre&lt;–head&lt;–next即可，在此过程中需要记录下next节点，如不然转变时，单链表会断开。<br><strong>代码：</strong></p>
+<pre><code>       /*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode p = null;
+        ListNode n = null;
+        while(head != null){
+            n = head.next;
+            head.next = p;
+            p = head;
+            head = n;
+        }
+        return p;
+    }
+}</code></pre><h2 id="18-斐波那契数列"><a href="#18-斐波那契数列" class="headerlink" title="18.斐波那契数列"></a>18.斐波那契数列</h2><p><strong>题目描述：</strong><br>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br>n&lt;=39<br><br></p>
+<p><strong>思路一：</strong><br>很明显可以看到题目下面提示知识点是递归算法。(斐波那契数列:从第三项开始每一项都等于前面两项的和)。注意：题目说第0项是0。递归会进行大量的重复计算，效率比较低。<br><strong>代码：</strong></p>
+<pre><code>public class Solution {
+    public int Fibonacci(int n) {
+    if(n&lt;2)
+    return n==0?0:1;
+    int result = Fibonacci(n-1)+Fibonacci(n-2);
+    return result;
+    }
+}</code></pre><p> <strong>思路二：</strong><br> 根据斐波那契数列的特性，使用循环进行解答。<br> <strong>代码：</strong>（转自：<a href="https://www.nowcoder.com/questionTerminal/c6c7742f5ba7442aada113136ddea0c3?toCommentId=120877" target="_blank" rel="noopener">牛客</a>）</p>
+<pre><code>/*
+整体思路：考虑负数，大数，算法的复杂度，空间的浪费
+*/
+
+public class Solution {
+    public int Fibonacci(int n) {
+        //方法1：用递归，系统会让一个超大的n来让Stack Overflow，所以
+        //递归就不考虑了
+
+        //使用迭代法，用fn1和fn2保存计算过程中的结果，并复用起来
+        int fn1 = 1;
+        int fn2 = 1;
+
+        //考虑出错情况
+        if (n &lt;= 0) {
+            return 0;
+        }
+        //第一和第二个数直接返回
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+
+        //当n&gt;=3时，走这里，用迭代法算出结果
+        //这里也说明了，要用三个数操作的情况，其实也可以简化为两
+        //个数，从而节省内存空间
+        while (n-- &gt; 2) {
+            fn1 += fn2;
+            fn2 = fn1 - fn2;
+        }
+        return fn1;
+    }
 }</code></pre>
     </div>
 
@@ -918,7 +985,7 @@ public class Solution {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-空格替换"><span class="nav-number">3.</span> <span class="nav-text">3.空格替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-从尾到头打印链表"><span class="nav-number">4.</span> <span class="nav-text">4.从尾到头打印链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-重建二叉树"><span class="nav-number">5.</span> <span class="nav-text">5.重建二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-二叉树的下一个节点"><span class="nav-number">6.</span> <span class="nav-text">6.二叉树的下一个节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-用两个栈实现队列"><span class="nav-number">7.</span> <span class="nav-text">7.用两个栈实现队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-旋转数组的最小数字"><span class="nav-number">8.</span> <span class="nav-text">8.旋转数组的最小数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-斐波那契数列"><span class="nav-number">9.</span> <span class="nav-text">9.斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-跳台阶"><span class="nav-number">10.</span> <span class="nav-text">10.跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-变态跳台阶"><span class="nav-number">11.</span> <span class="nav-text">11.变态跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-矩阵覆盖"><span class="nav-number">12.</span> <span class="nav-text">12.矩阵覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-二进制中1的个数"><span class="nav-number">13.</span> <span class="nav-text">13.二进制中1的个数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-数值的整数次方"><span class="nav-number">14.</span> <span class="nav-text">14.数值的整数次方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-调整数组顺序使奇数位于偶数前面"><span class="nav-number">15.</span> <span class="nav-text">15.调整数组顺序使奇数位于偶数前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-链表中倒数第k个结点"><span class="nav-number">16.</span> <span class="nav-text">16.链表中倒数第k个结点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-空格替换"><span class="nav-number">3.</span> <span class="nav-text">3.空格替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-从尾到头打印链表"><span class="nav-number">4.</span> <span class="nav-text">4.从尾到头打印链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-重建二叉树"><span class="nav-number">5.</span> <span class="nav-text">5.重建二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-二叉树的下一个节点"><span class="nav-number">6.</span> <span class="nav-text">6.二叉树的下一个节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-用两个栈实现队列"><span class="nav-number">7.</span> <span class="nav-text">7.用两个栈实现队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-旋转数组的最小数字"><span class="nav-number">8.</span> <span class="nav-text">8.旋转数组的最小数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-斐波那契数列"><span class="nav-number">9.</span> <span class="nav-text">9.斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-跳台阶"><span class="nav-number">10.</span> <span class="nav-text">10.跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-变态跳台阶"><span class="nav-number">11.</span> <span class="nav-text">11.变态跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-矩阵覆盖"><span class="nav-number">12.</span> <span class="nav-text">12.矩阵覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-二进制中1的个数"><span class="nav-number">13.</span> <span class="nav-text">13.二进制中1的个数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-数值的整数次方"><span class="nav-number">14.</span> <span class="nav-text">14.数值的整数次方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-调整数组顺序使奇数位于偶数前面"><span class="nav-number">15.</span> <span class="nav-text">15.调整数组顺序使奇数位于偶数前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-链表中倒数第k个结点"><span class="nav-number">16.</span> <span class="nav-text">16.链表中倒数第k个结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-反转链表"><span class="nav-number">17.</span> <span class="nav-text">17.反转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-斐波那契数列"><span class="nav-number">18.</span> <span class="nav-text">18.斐波那契数列</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -1295,12 +1362,12 @@ public class Solution {
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">54k</span>
+    <span title="站点总字数">55k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">49 分钟</span>
+    <span title="站点阅读时长">50 分钟</span>
 </div>
 
 
