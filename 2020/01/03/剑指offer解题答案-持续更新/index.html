@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Sevenの博客">
 <meta property="og:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-18T14:32:37.089Z">
+<meta property="og:updated_time" content="2020-02-26T13:02:34.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《剑指offer》解题答案(持续更新)">
 <meta name="twitter:description" content="把自己学习算法的过程以及思考记录下来，与大家一起分享讨论。">
@@ -239,7 +239,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">34</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">33</span></a>
 
   </li>
       
@@ -334,7 +334,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-18 14:32:37" itemprop="dateModified" datetime="2020-02-18T14:32:37Z">2020-02-18</time>
+                <time title="修改时间：2020-02-26 13:02:34" itemprop="dateModified" datetime="2020-02-26T13:02:34Z">2020-02-26</time>
               </span>
             
           
@@ -383,7 +383,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>10k</span>
+              <span>11k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -393,7 +393,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>9 分钟</span>
+              <span>10 分钟</span>
             </span>
           
 
@@ -868,29 +868,67 @@ public class Solution {
         }
         return fn1;
     }
-}</code></pre><h2 id="19-跳台阶"><a href="#19-跳台阶" class="headerlink" title="19.跳台阶"></a>19.跳台阶</h2><p><strong>题目描述：</strong><br>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果</p>
-<p> <strong>思路一：</strong><br>思想很简单，当台阶数只有一个的时候，只有一种跳法，当台阶数有两个的时候，有两种跳法。当台阶数有n(n&gt;=3)个的时候，可以先跳一个，再跳n-1个；也可以先跳2个，再跳n-2个，接下来n-1和n-2可看成子问题利用同样的方法进行求解。</p>
+}</code></pre><h2 id="19-合并两个排序的链表"><a href="#19-合并两个排序的链表" class="headerlink" title="19.合并两个排序的链表"></a>19.合并两个排序的链表</h2><p><strong>题目描述：</strong><br>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
+<p> <strong>思路一：</strong><br>要求合成后的链表满足单调不减的规则，所以在链表合成是需要对当前节点的值的大小进行分情况，运用递归分方法进行解答。</p>
 <p>  <strong>代码：</strong></p>
-<pre><code>  public class Solution {
-    public int JumpFloor(int target) {
-         if(target &lt;= 2){
-             return target;
-         }
-        int result = JumpFloor(target-1)+JumpFloor(target-2);
-        return result;
+<pre><code>      public ListNode Merge(ListNode list1,ListNode list2) {
+    if(list1 == null)
+        return list2;
+    if(list2 == null)
+        return list1;
+    if(list1.val &lt;= list2.val){
+        list1.next = Merge(list1.next,list2);
+        return list1;
+    }else{
+        list2.next = Merge(list1,list2.next);
+        return list2;
     }
-}</code></pre><h2 id="20-变态跳台阶"><a href="#20-变态跳台阶" class="headerlink" title="20.变态跳台阶"></a>20.变态跳台阶</h2><p><strong>题目描述：</strong><br>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
-<p> <strong>思路一：</strong><br>根据题目的描述进行思考：<br>    1个台阶，1种跳法；<br>    2个台阶，2种跳法；<br>    3个台阶，4种跳法；<br>    4个台阶，8种跳法；<br>    …..<br>等比数列，看出这点，题目就变得很简单了。</p>
+}</code></pre><h2 id="20-树的子结构"><a href="#20-树的子结构" class="headerlink" title="20. 树的子结构"></a>20. 树的子结构</h2><p><strong>题目描述：</strong><br>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
+<p> <strong>思路一：</strong><br>思路很简单，先判断当前根节点是不是相等，不相等的话以A的左子点或者右子点作为起点重新进行判断。</p>
 <p>  <strong>代码：</strong></p>
-<pre><code>public class Solution {
-  public int JumpFloorII(int target) {
-      if(target &lt;= 0){
-          return 0;
-      }else {
-          return (int)Math.pow(2,target-1);
-      }
+<pre><code> public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+    if(root1 == null || root2 == null)
+        return false;
+    if(root1.val == root2.val){
+        if(judge(root1,root2))
+            return true;
     }
-  }</code></pre>
+    return HasSubtree(root1.left,root2) || HasSubtree(root1.right,root2);
+}
+
+public boolean judge(TreeNode root1,TreeNode root2){
+    if(root2 == null)
+        return true;
+    if(root1 == null)
+        return false;
+    if(root1.val == root2.val)
+        return judge(root1.left,root2.left) &amp;&amp; judge(root1.right, root2.right);
+    return false;
+}</code></pre><h2 id="21-二叉树的镜像"><a href="#21-二叉树的镜像" class="headerlink" title="21. 二叉树的镜像"></a>21. 二叉树的镜像</h2><p><strong>题目描述：</strong><br>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
+<pre><code>输入描述:
+
+    二叉树的镜像定义：源二叉树 
+                8
+               /  \
+              6   10
+             / \  / \
+            5  7 9 11
+            镜像二叉树
+                8
+               /  \
+              10   6
+             / \  / \
+            11 9 7  5 </code></pre><p> <strong>思路一：</strong><br>递归，依次交换每个节点即可。</p>
+<p>  <strong>代码：</strong></p>
+<pre><code>public void Mirror(TreeNode root) {
+     if(root == null)
+         return;
+     TreeNode temp = root.left;
+     root.left = root.right;
+     root.right = temp;
+     Mirror(root.left);
+     Mirror(root.right);
+ }</code></pre>
     </div>
 
     
@@ -1007,7 +1045,7 @@ public class Solution {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-空格替换"><span class="nav-number">3.</span> <span class="nav-text">3.空格替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-从尾到头打印链表"><span class="nav-number">4.</span> <span class="nav-text">4.从尾到头打印链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-重建二叉树"><span class="nav-number">5.</span> <span class="nav-text">5.重建二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-二叉树的下一个节点"><span class="nav-number">6.</span> <span class="nav-text">6.二叉树的下一个节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-用两个栈实现队列"><span class="nav-number">7.</span> <span class="nav-text">7.用两个栈实现队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-旋转数组的最小数字"><span class="nav-number">8.</span> <span class="nav-text">8.旋转数组的最小数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-斐波那契数列"><span class="nav-number">9.</span> <span class="nav-text">9.斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-跳台阶"><span class="nav-number">10.</span> <span class="nav-text">10.跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-变态跳台阶"><span class="nav-number">11.</span> <span class="nav-text">11.变态跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-矩阵覆盖"><span class="nav-number">12.</span> <span class="nav-text">12.矩阵覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-二进制中1的个数"><span class="nav-number">13.</span> <span class="nav-text">13.二进制中1的个数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-数值的整数次方"><span class="nav-number">14.</span> <span class="nav-text">14.数值的整数次方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-调整数组顺序使奇数位于偶数前面"><span class="nav-number">15.</span> <span class="nav-text">15.调整数组顺序使奇数位于偶数前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-链表中倒数第k个结点"><span class="nav-number">16.</span> <span class="nav-text">16.链表中倒数第k个结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-反转链表"><span class="nav-number">17.</span> <span class="nav-text">17.反转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-斐波那契数列"><span class="nav-number">18.</span> <span class="nav-text">18.斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-跳台阶"><span class="nav-number">19.</span> <span class="nav-text">19.跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-变态跳台阶"><span class="nav-number">20.</span> <span class="nav-text">20.变态跳台阶</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组中有重复的数字"><span class="nav-number">1.</span> <span class="nav-text">1.数组中有重复的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二维数组中查找"><span class="nav-number">2.</span> <span class="nav-text">2.二维数组中查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-空格替换"><span class="nav-number">3.</span> <span class="nav-text">3.空格替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-从尾到头打印链表"><span class="nav-number">4.</span> <span class="nav-text">4.从尾到头打印链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-重建二叉树"><span class="nav-number">5.</span> <span class="nav-text">5.重建二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-二叉树的下一个节点"><span class="nav-number">6.</span> <span class="nav-text">6.二叉树的下一个节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-用两个栈实现队列"><span class="nav-number">7.</span> <span class="nav-text">7.用两个栈实现队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-旋转数组的最小数字"><span class="nav-number">8.</span> <span class="nav-text">8.旋转数组的最小数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-斐波那契数列"><span class="nav-number">9.</span> <span class="nav-text">9.斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-跳台阶"><span class="nav-number">10.</span> <span class="nav-text">10.跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-变态跳台阶"><span class="nav-number">11.</span> <span class="nav-text">11.变态跳台阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-矩阵覆盖"><span class="nav-number">12.</span> <span class="nav-text">12.矩阵覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-二进制中1的个数"><span class="nav-number">13.</span> <span class="nav-text">13.二进制中1的个数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-数值的整数次方"><span class="nav-number">14.</span> <span class="nav-text">14.数值的整数次方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-调整数组顺序使奇数位于偶数前面"><span class="nav-number">15.</span> <span class="nav-text">15.调整数组顺序使奇数位于偶数前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-链表中倒数第k个结点"><span class="nav-number">16.</span> <span class="nav-text">16.链表中倒数第k个结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-反转链表"><span class="nav-number">17.</span> <span class="nav-text">17.反转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-斐波那契数列"><span class="nav-number">18.</span> <span class="nav-text">18.斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-合并两个排序的链表"><span class="nav-number">19.</span> <span class="nav-text">19.合并两个排序的链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-树的子结构"><span class="nav-number">20.</span> <span class="nav-text">20. 树的子结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-二叉树的镜像"><span class="nav-number">21.</span> <span class="nav-text">21. 二叉树的镜像</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -1025,7 +1063,7 @@ public class Solution {
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1384,12 +1422,12 @@ public class Solution {
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">55k</span>
+    <span title="站点总字数">56k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">50 分钟</span>
+    <span title="站点阅读时长">51 分钟</span>
 </div>
 
 
